@@ -12,11 +12,14 @@
     "mongoose": "*",
     "bcryptjs": "*",
     "cors": "*",
-    "jsonwebtoken":"*",
-    "body-parser":"*",
-    "passport":"*",
+    "jsonwebtoken": "*",
+    "body-parser": "*",
+    "passport": "*",
     "passport-jwt": "*"
   },
   "author": "Brad Traversy",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@angular/cli": "^1.1.2"
+  }
 }
