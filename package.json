@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "bcryptjs": "*",
-    "body-parser": "*",
+    "body-parser": "^1.17.2",
     "cors": "*",
     "express": "^4.15.3",
     "jsonwebtoken": "*",
