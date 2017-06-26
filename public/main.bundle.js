@@ -314,7 +314,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\" >Login</h2>\n<form (submit) =\"onLoginSubmit()\" >\n  <div class=\"form-group\">\n    <label>Username</label>\n    <input type=\"text\" class=\"form-control\" [(ngModel)]=\"username\" name=\"username\" >\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\" >\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Login\" >\n</form>"
+module.exports = "<h2 class=\"page-header\" >Login</h2>\n<form (submit) =\"onLoginSubmit()\" >\n  <div class=\"form-group\">\n    <label>Username</label>\n    <input \n      type=\"text\" \n      class=\"form-control\" \n      [(ngModel)]=\"username\" \n      name=\"username\" \n      placeholder=\"Enter Usename\" >\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input \n      type=\"password\" \n      class=\"form-control\" \n      [(ngModel)]=\"password\" \n      name=\"password\" \n      placeholder=\"Enter password\" >\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Login\" >\n</form>"
 
 /***/ }),
 
