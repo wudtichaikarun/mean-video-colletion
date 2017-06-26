@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl, Validators } from '@angular/forms';
 
 //service
-// import { ValidateService } from '../../services/validate.service';
 import { AuthService } from '../../services/auth.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import { Router } from '@angular/router';
@@ -44,7 +43,6 @@ export class RegisterComponent implements OnInit {
   }
 
   constructor(
-    // private validateService: ValidateService, 
     private authService: AuthService,
     private flashMessages: FlashMessagesService,
     private router:Router
@@ -101,28 +99,6 @@ export class RegisterComponent implements OnInit {
 
  onRegisterSubmit(even){
       event.preventDefault();
-        // const user = this.form;
-        // const name = this.form.get('name').value;
-        // console.log(name);
-        // console.log(user);
-    //   const user = {
-    //     name: this.form.get('name').value,
-    //     email: this.form.get('email').value,
-    //     username: this.form.get('username').value,
-    //     password: this.form.get('password').value
-    // }
-
-    // buildForm() can do everthing
-        // Required Fields
-        // if(!this.validateService.validateRegister(this.form)){
-        //   this.flashMessages.show('Please fill in all fields', {cssClass: 'alert-danger', timeout: 3000 });
-        //   return false;
-        // }
-        // Validate Email
-        // if(!this.validateService.validateEmail(this.form.get('email').value)){
-        //     this.flashMessages.show('Please enter a valid email', {cssClass: 'alert-danger', timeout: 3000 });
-        //   return false;
-        // }
 
    // Register user
     this.authService.registerUser(this.form.value).subscribe(data => {
