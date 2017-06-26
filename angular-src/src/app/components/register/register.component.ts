@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl, Validators } from '@angular/forms';
+import {FormGroup,FormControl, Validators, FormBuilder } from '@angular/forms';
 
 //service
 import { AuthService } from '../../services/auth.service';
@@ -43,6 +43,7 @@ export class RegisterComponent implements OnInit {
   }
 
   constructor(
+    private builder: FormBuilder,
     private authService: AuthService,
     private flashMessages: FlashMessagesService,
     private router:Router
@@ -54,22 +55,22 @@ export class RegisterComponent implements OnInit {
 
   //build and validate form
   buildForm(){
-    this.form = new FormGroup({
-      name: new FormControl('', Validators.required),
-      username: new FormControl('', Validators.compose([
+    this.form = this.builder.group({
+      name: ['', Validators.required],
+      username: ['', Validators.compose([
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(10)
-      ])),
-      email: new FormControl('@hotmail.com', Validators.compose([
+      ])],
+      email: ['@hotmail.com', Validators.compose([
         Validators.required,
         Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
-      ])),
-      password: new FormControl('',Validators.compose([
+      ])],
+      password: ['',Validators.compose([
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(8)
-      ])),
+      ])],
     });
 
     this.form
