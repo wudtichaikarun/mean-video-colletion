@@ -495,7 +495,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" >\n  <h2 class=\"page-header\" > {{user.name}} </h2>\n  <ul class=\"list-group\" >\n    <li class=\"list-group-item\" >Username: {{user.username}} </li>\n    <li class=\"list-group-item\" >Email: {{user.email}} </li>\n  </ul>\n\n</div>"
+module.exports = "<div *ngIf=\"user\" >\n  <h2 class=\"page-header\" > {{user.name}} </h2>\n  <ul class=\"list-group\" >\n    <li class=\"list-group-item\" >Username: {{user.username}} </li>\n    <li class=\"list-group-item\" >Email: {{user.email}} </li>\n  </ul>\n</div>"
 
 /***/ }),
 
