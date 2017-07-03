@@ -19,7 +19,7 @@ export class AuthService {
     .map(res => res.json());
   }
 
-  // Authentication
+// Authentication
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');

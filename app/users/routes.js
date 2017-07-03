@@ -6,7 +6,8 @@ const jwt = require('jsonwebtoken');
 export function  setup(router){
     router
         .get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => { res.json({user: req.user}) })
-        .get('/:id', controller.getUser)
+        //.get('profile', {controller.Passport}.then{pass => controller.getAllUser})
+        //.get('/:id', controller.getUser)
         .post('/register', controller.createUser)
         .post('/authenticate', controller.authUser)
         //.delete('/:id', controller.destroy)

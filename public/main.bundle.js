@@ -811,7 +811,6 @@ var AuthService = (function () {
     AuthService.prototype.loadToken = function () {
         var token = localStorage.getItem('id_token');
         this.authToken = token;
-        return token;
         //show when go to /profile
         //console.log("token_id "+token)
     };

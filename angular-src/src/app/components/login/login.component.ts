@@ -36,10 +36,10 @@ export class LoginComponent implements OnInit {
            timeout: 5000 });
         this.router.navigate(['dashboard'])
       }else{
-        this.flashMessage.show(data.msg, {
-          cssClass: 'alert-danger',
-           timeout: 5000 });
-        this.router.navigate(['login'])
+            this.flashMessage.show(data.msg, {
+            cssClass: 'alert-danger',
+            timeout: 5000 });
+            this.router.navigate(['login'])
       }
     });
   }
