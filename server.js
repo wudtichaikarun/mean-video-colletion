@@ -38,7 +38,7 @@ export function setup () {
     });
     // On Error
     mongoose.connection.on('error', (err) => {
-        console.log('Database error ' + err);
+        //console.log('Database error ' + err);
     });
 
     const port = 3000

@@ -8,8 +8,8 @@ module.exports = function(passport){
     opts.jwtFromRequest = ExtractJwt.fromAuthHeader();
     opts.secretOrKey = 'romantic_cecret';
     passport.use(new JwtStrategy(opts, (jwr_payload, done) =>{
-        //console.log(jwr_payload);
-        User.getUserById(jwr_payload._doc._id, (err, user) => {
+        console.log(jwr_payload);
+        User.getUserById(jwr_payload._id, (err, user) => {
             if(err){
                 return done(err, false);
             }else if(user){

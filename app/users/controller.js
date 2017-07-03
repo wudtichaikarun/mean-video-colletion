@@ -71,7 +71,7 @@ const UsersController = {
             User.comparePassword(password, user.password,(err, isMatch) => {
                 if(err) return (err);
                 if(isMatch){
-                    const token = jwt.sign(user, 'romantic_cecret', {
+                    const token = jwt.sign({_id:user._id, username: user.username}, 'romantic_cecret', {
                         expiresIn: 604800 // 1 week
                     });
                     res 
