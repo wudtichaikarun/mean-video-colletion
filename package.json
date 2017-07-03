@@ -4,7 +4,7 @@
   "description": "mean stack authentication app",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app"
+    "dev": "nodemon --exec babel-node ./index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

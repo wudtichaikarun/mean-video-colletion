@@ -1,7 +1,10 @@
+import { connectDB } from '../model'
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const config = require('../config/database');
+const Schema = mongoose.Schema;
 
+
+connectDB();
 // User Screma
 const UserSchema = mongoose.Schema ({
     name: {
@@ -21,7 +24,7 @@ const UserSchema = mongoose.Schema ({
     }
 });
 
-const User = module.exports = mongoose.model('User', UserSchema, 'users2');
+const User = module.exports = mongoose.model('User', UserSchema, 'users');
 
 module.exports.getUserById = function(id, callback){
     User.findById(id, callback);
@@ -48,5 +51,3 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
         callback(null, isMatch);
     });
 }
-
-

@@ -811,8 +811,9 @@ var AuthService = (function () {
     AuthService.prototype.loadToken = function () {
         var token = localStorage.getItem('id_token');
         this.authToken = token;
+        return token;
         //show when go to /profile
-        console.log("token_id " + token);
+        //console.log("token_id "+token)
     };
     AuthService.prototype.loggedIn = function () {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__["tokenNotExpired"])('id_token');

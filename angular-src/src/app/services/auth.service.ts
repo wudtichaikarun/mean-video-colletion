@@ -49,7 +49,7 @@ export class AuthService {
     const token = localStorage.getItem('id_token');
     this.authToken = token;
     //show when go to /profile
-    console.log("token_id "+token)
+    //console.log("token_id "+token)
   }
 
 
