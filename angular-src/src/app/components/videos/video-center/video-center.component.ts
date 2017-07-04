@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Video } from './../video';
-import { VideoService } from './../video.service';
+import { Video } from '../../../shared/video';
+import { VideoService } from '../../../services/video.service';
 
 @Component({
   selector: 'app-video-center',
