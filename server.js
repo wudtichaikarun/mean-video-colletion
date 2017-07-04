@@ -2,11 +2,14 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const fs = require('fs');
 const bodyParsr = require('body-parser');
+
+import auth from './middleware/auth'
+// const passport = require('passport');
+
 
 //import express from 'express'
 //import fs from 'fs'
@@ -45,13 +48,14 @@ export function setup () {
     const app = express()
 
     app.use(express.static(path.join(__dirname, 'public')))
+    app.use(auth)
     app.use(bodyParsr.urlencoded({extended: true}))
     app.use(bodyParsr.json())
 
     // Passport Middleware
-    app.use(passport.initialize());
-    app.use(passport.session());
-    require('./app/users/passport')(passport);
+    // app.use(passport.initialize());
+    // app.use(passport.session());
+    // require('./middleware/auth')(passport);
 
     setupRoutes(app)
     

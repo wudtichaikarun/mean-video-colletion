@@ -28,6 +28,7 @@ const UserSchema = mongoose.Schema ({
 const User = module.exports = mongoose.model('User', UserSchema, 'users');
 
 module.exports.getUserById = function(id, callback){
+    console.log("deconde id ="+id)
     User.findById(id, callback);
 }
 

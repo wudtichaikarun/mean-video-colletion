@@ -7,25 +7,24 @@ const Promise = require ('promise');
 
 //connectDB();
 const UsersController = {
-    Passport(){
-        function checkPassport (){
-            return new Promise (function(resolve, reject){
-                 resolve (passport.authenticate('jwt', {session:false}))
-            })
-        }   
-    },
+
     // GET user by id
-    // getUser(req, res, next){
-    //     console.log("get by id is:"+req.user);
-    //     User.getUserById(id, callback);
-    // },
+    getUser(req, res, next){
+        const authHeader = req.header('Authorization')
+        const accessToken = authHeader.match(/JWT (.*)/)[1]
+        console.log("get by id is-------->"+ authHeader);
+        console.log("accessToken-------->" + accessToken)
+        console.log("----->"+ req.user)
+       // User.getUserById(id, callback);
+    },
     // GET all users
-    getAllUser(req , res, next){
-        res.json({user: req.user}) 
+    getUserData(req, res){
+        console.log("req = "+req.user)
+       // res.json({user: req.user}) 
             
     },
     // POST add new user
-    createUser(req, res, nexr){
+    createUser(req, res, next){
         let newUser = new User({
             name: req.body.name,
             email: req.body.email,
