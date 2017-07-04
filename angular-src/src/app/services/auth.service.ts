@@ -27,32 +27,6 @@ export class AuthService {
     this.router.navigate(['/'])
   }
 
-<<<<<<< HEAD
-  // Register Sent data to routes/users.js method post('/register', ....) like postMan
-  registerUser(user){
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-    return this.http.post('users/register', user, {headers})
-    .map(res => res.json());
-  }
-
-  // Authentication
-  authenticateUser(user){
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-    return this.http.post('users/authenticate', user, {headers})
-    .map(res => res.json());
-  }
-
-  // Profile get data
-  getProfile(){
-    let headers = new Headers();
-    this.loadToken();
-    headers.append('Authorization', this.authToken);
-    headers.append('Content-Type','application/json');
-    return this.http.get('users/profile',{headers})
-    .map(res => res.json());
-=======
   private setTokenFromResponse(observable: Observable<Response>){
     observable
       .map(({ headers }: Response) => headers.get('Authorization'))
@@ -79,7 +53,6 @@ export class AuthService {
 
   logout(){
     localStorage.clear()
->>>>>>> up-to-git
   }
   registerUser(user){
 
