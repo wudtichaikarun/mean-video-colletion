@@ -15,6 +15,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import {AuthGuard } from './guards/auth.guard';
+import { VideoCenterComponent } from './components/videos/video-center/video-center.component';
+import { VideoDetailComponent } from './components/videos/video-detail/video-detail.component';
+import { VideoListComponent } from './components/videos/video-list/video-list.component';
+import { SafePipe } from './shared/safe.pipe';
+
 
 
 const appRoutes: Routes = [
@@ -51,7 +56,11 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    VideoCenterComponent,
+    VideoDetailComponent,
+    VideoListComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
