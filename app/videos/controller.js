@@ -14,6 +14,8 @@ const VideosController ={
     },
     // GET all videos
     getAll(req, res){
+        // const videos = req.body.video
+        // Video.getVideos(video)
         Video.find()
             .exec(function(err, videos){
                 if(err){

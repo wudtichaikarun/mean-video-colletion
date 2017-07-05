@@ -56,7 +56,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return COMMON_PIPES; });
 
 /**
- * @license Angular v4.2.4
+ * @license Angular v4.2.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -3961,7 +3961,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -4230,7 +4230,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.4'
 /* unused harmony export removeSummaryDuplicates */
 
 /**
- * @license Angular v4.2.4
+ * @license Angular v4.2.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -4250,7 +4250,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.4'
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -31958,7 +31958,7 @@ function _mergeArrays(parts) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵu", function() { return DebugContext; });
 
 /**
- * @license Angular v4.2.4
+ * @license Angular v4.2.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -32754,7 +32754,7 @@ var Version = (function () {
 /**
  * \@stable
  */
-var VERSION = new Version('4.2.4');
+var VERSION = new Version('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -44460,6 +44460,8 @@ function checkNoChangesNodeDynamic(view, nodeDef, values) {
     }
 }
 /**
+ * Workaround https://github.com/angular/tsickle/issues/497
+ * @suppress {misplacedTypeAnnotation}
  * @param {?} view
  * @param {?} nodeDef
  * @return {?}
@@ -45968,7 +45970,7 @@ function animate$1(timings, styles) {
  * how animations in Angular are used.
  *
  * `group` specifies a list of animation steps that are all run in parallel. Grouped animations are
- * useful when a series of styles must be animated/closed off at different statrting/ending times.
+ * useful when a series of styles must be animated/closed off at different starting/ending times.
  *
  * The `group` function can either be used within a {\@link sequence sequence} or a {\@link transition
  * transition} and it will only continue to the next instruction once all of the inner animation
@@ -46830,7 +46832,7 @@ function transition$$1(stateChangeExpr, steps) {
 /* unused harmony export ɵr */
 
 /**
- * @license Angular v4.2.4
+ * @license Angular v4.2.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -52679,7 +52681,7 @@ FormBuilder.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -52893,7 +52895,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return jsonpFactory; });
 
 /**
- * @license Angular v4.2.4
+ * @license Angular v4.2.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -55048,7 +55050,7 @@ JsonpModule.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -55094,7 +55096,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.4'
 /* unused harmony export ɵResourceLoaderImpl */
 
 /**
- * @license Angular v4.2.4
+ * @license Angular v4.2.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -55163,7 +55165,7 @@ ResourceLoaderImpl.ctorParameters = function () { return []; };
  * found in the LICENSE file at https://angular.io/license
  */
 var INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS = [
-    __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["d" /* ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS */],
+    __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["e" /* ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS */],
     {
         provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["COMPILER_OPTIONS"],
         useValue: { providers: [{ provide: __WEBPACK_IMPORTED_MODULE_1__angular_compiler__["a" /* ResourceLoader */], useClass: ResourceLoaderImpl }] },
@@ -55227,7 +55229,7 @@ var CachedResourceLoader = (function (_super) {
 /**
  * @stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.2.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -55277,15 +55279,15 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__
 /* unused harmony export enableDebugTools */
 /* unused harmony export By */
 /* unused harmony export NgProbeToken */
-/* unused harmony export DOCUMENT */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DOCUMENT; });
 /* unused harmony export EVENT_MANAGER_PLUGINS */
 /* unused harmony export EventManager */
 /* unused harmony export HAMMER_GESTURE_CONFIG */
 /* unused harmony export HammerGestureConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DomSanitizer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return DomSanitizer; });
 /* unused harmony export VERSION */
 /* unused harmony export ɵBROWSER_SANITIZATION_PROVIDERS */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return INTERNAL_BROWSER_PLATFORM_PROVIDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return INTERNAL_BROWSER_PLATFORM_PROVIDERS; });
 /* unused harmony export ɵinitDomAdapter */
 /* unused harmony export ɵBrowserDomAdapter */
 /* unused harmony export ɵBrowserPlatformLocation */
@@ -55315,7 +55317,7 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__
 /* unused harmony export ɵe */
 
 /**
- * @license Angular v4.2.4
+ * @license Angular v4.2.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -59739,7 +59741,7 @@ var By = (function () {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.2.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -59866,7 +59868,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.2.4'
 /* unused harmony export ɵl */
 
 /**
- * @license Angular v4.2.4
+ * @license Angular v4.2.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -65942,7 +65944,7 @@ function provideRouterInitializer() {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.2.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -65976,6 +65978,752 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.2.4'
 
 //# sourceMappingURL=router.es5.js.map
 
+
+/***/ }),
+
+/***/ "./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirm.directive.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__confirmPopover_component__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirmPopover.component.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__confirmOptions_provider__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirmOptions.provider.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__position_provider__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/position.provider.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Confirm; });
+
+
+
+
+
+/**
+ * All properties can be set on the directive as attributes like so (use the `ConfirmOptions` provider to configure them globally):
+ * ```
+ * <button
+ *  class="btn btn-default"
+ *  mwlConfirm
+ *  [title]="title"
+ *  [message]="message"
+ *  placement="left"
+ *  (confirm)="confirmClicked = true"
+ *  (cancel)="cancelClicked = true"
+ *  [(isOpen)]="isOpen">
+ *   Show confirm popover!
+ * </button>
+ * ```
+ */
+var Confirm = (function () {
+    /**
+     * @private
+     */
+    function Confirm(viewContainerRef, elm, defaultOptions, cfr, position, renderer, document //tslint:disable-line
+        ) {
+        this.viewContainerRef = viewContainerRef;
+        this.elm = elm;
+        this.defaultOptions = defaultOptions;
+        this.cfr = cfr;
+        this.position = position;
+        this.renderer = renderer;
+        this.document = document;
+        /**
+         * Whether to hide the confirm button. Default `false`.
+         */
+        this.hideConfirmButton = false;
+        /**
+         * Whether to hide the cancel button. Default `false`.
+         */
+        this.hideCancelButton = false;
+        /**
+         * Whether to disable showing the popover. Default `false`.
+         */
+        this.isDisabled = false;
+        /**
+         * Will open or show the popover when changed.
+         * Can be sugared with `isOpenChange` to emulate 2-way binding like so `[(isOpen)]="isOpen"`
+         */
+        this.isOpen = false;
+        /**
+         * Will emit when the popover is opened or closed
+         */
+        this.isOpenChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"](true);
+        /**
+         * An expression that is called when the confirm button is clicked.
+         */
+        this.confirm = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * An expression that is called when the cancel button is clicked.
+         */
+        this.cancel = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * Append the element to the document body rather than the trigger element
+         */
+        this.appendToBody = false;
+        /**
+         * @private
+         */
+        this.popover = null;
+    }
+    /**
+     * @private
+     */
+    Confirm.prototype.ngOnInit = function () {
+        this.isOpenChange.emit(false);
+    };
+    /**
+     * @private
+     */
+    Confirm.prototype.ngOnChanges = function (changes) {
+        if (changes.isOpen) {
+            if (changes.isOpen.currentValue === true) {
+                this.showPopover();
+            }
+            else {
+                this.hidePopover();
+            }
+        }
+    };
+    /**
+     * @private
+     */
+    Confirm.prototype.ngOnDestroy = function () {
+        this.hidePopover();
+    };
+    /**
+     * @private
+     */
+    Confirm.prototype.onConfirm = function () {
+        this.confirm.emit(null);
+        this.hidePopover();
+    };
+    /**
+     * @private
+     */
+    Confirm.prototype.onCancel = function () {
+        this.cancel.emit(null);
+        this.hidePopover();
+    };
+    /**
+     * @private
+     */
+    Confirm.prototype.onDocumentClick = function (target) {
+        if (this.popover && !this.elm.nativeElement.contains(target) && !this.popover.location.nativeElement.contains(target)) {
+            this.hidePopover();
+        }
+    };
+    /**
+     * @private
+     */
+    Confirm.prototype.togglePopover = function () {
+        if (!this.popover) {
+            this.showPopover();
+        }
+        else {
+            this.hidePopover();
+        }
+    };
+    /**
+     * @private
+     */
+    Confirm.prototype.onResize = function () {
+        this.positionPopover();
+    };
+    Confirm.prototype.showPopover = function () {
+        var _this = this;
+        if (!this.popover && !this.isDisabled) {
+            var options_1 = new __WEBPACK_IMPORTED_MODULE_3__confirmOptions_provider__["a" /* PopoverConfirmOptions */]();
+            Object.assign(options_1, this.defaultOptions, {
+                title: this.title,
+                message: this.message,
+                onConfirm: function () {
+                    _this.onConfirm();
+                },
+                onCancel: function () {
+                    _this.onCancel();
+                },
+                onAfterViewInit: function () {
+                    _this.positionPopover();
+                }
+            });
+            var optionalParams = [
+                'confirmText',
+                'cancelText',
+                'placement',
+                'confirmButtonType',
+                'cancelButtonType',
+                'focusButton',
+                'hideConfirmButton',
+                'hideCancelButton',
+                'popoverClass',
+                'appendToBody',
+                'customTemplate'
+            ];
+            optionalParams.forEach(function (param) {
+                if (_this[param]) {
+                    options_1[param] = _this[param];
+                }
+            });
+            var componentFactory = this.cfr.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_2__confirmPopover_component__["a" /* ConfirmPopover */]);
+            var binding = __WEBPACK_IMPORTED_MODULE_0__angular_core__["ReflectiveInjector"].resolve([{
+                    provide: __WEBPACK_IMPORTED_MODULE_3__confirmOptions_provider__["a" /* PopoverConfirmOptions */],
+                    useValue: options_1
+                }]);
+            var contextInjector = this.viewContainerRef.parentInjector;
+            var childInjector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["ReflectiveInjector"].fromResolvedProviders(binding, contextInjector);
+            this.popover = this.viewContainerRef.createComponent(componentFactory, this.viewContainerRef.length, childInjector);
+            if (this.appendToBody) {
+                this.renderer.invokeElementMethod(this.document.body, 'appendChild', [this.popover.location.nativeElement]);
+            }
+            this.isOpenChange.emit(true);
+        }
+    };
+    Confirm.prototype.positionPopover = function () {
+        if (this.popover) {
+            var popoverElement = this.popover.location.nativeElement.children[0];
+            var popoverPosition = this.position.positionElements(this.elm.nativeElement, popoverElement, this.placement || this.defaultOptions.placement, this.appendToBody || this.defaultOptions.appendToBody);
+            this.renderer.setElementStyle(popoverElement, 'top', popoverPosition.top + "px");
+            this.renderer.setElementStyle(popoverElement, 'left', popoverPosition.left + "px");
+        }
+    };
+    Confirm.prototype.hidePopover = function () {
+        if (this.popover) {
+            this.popover.destroy();
+            this.popover = null;
+            this.isOpenChange.emit(false);
+        }
+    };
+    Confirm.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                    selector: '[mwlConfirm]'
+                },] },
+    ];
+    /** @nocollapse */
+    Confirm.ctorParameters = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_3__confirmOptions_provider__["b" /* ConfirmOptions */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__position_provider__["a" /* Position */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DOCUMENT */],] },] },
+    ];
+    Confirm.propDecorators = {
+        'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'message': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'confirmText': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'cancelText': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'confirmButtonType': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'cancelButtonType': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'focusButton': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'hideConfirmButton': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'hideCancelButton': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'isOpen': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'customTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'isOpenChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+        'confirm': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+        'cancel': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+        'popoverClass': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'appendToBody': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'onDocumentClick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['document:click', ['$event.target'],] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['document:touchend', ['$event.target'],] },],
+        'togglePopover': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['click',] },],
+        'onResize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['window:resize',] },],
+    };
+    return Confirm;
+}());
+//# sourceMappingURL=confirm.directive.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirm.module.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__confirm_directive__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirm.directive.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__confirmPopover_component__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirmPopover.component.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__focus_directive__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/focus.directive.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfirmModule; });
+
+
+
+
+
+var ConfirmModule = (function () {
+    function ConfirmModule() {
+    }
+    ConfirmModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                    declarations: [__WEBPACK_IMPORTED_MODULE_2__confirm_directive__["a" /* Confirm */], __WEBPACK_IMPORTED_MODULE_3__confirmPopover_component__["a" /* ConfirmPopover */], __WEBPACK_IMPORTED_MODULE_4__focus_directive__["a" /* Focus */]],
+                    imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]],
+                    exports: [__WEBPACK_IMPORTED_MODULE_2__confirm_directive__["a" /* Confirm */], __WEBPACK_IMPORTED_MODULE_4__focus_directive__["a" /* Focus */]],
+                    entryComponents: [__WEBPACK_IMPORTED_MODULE_3__confirmPopover_component__["a" /* ConfirmPopover */]]
+                },] },
+    ];
+    /** @nocollapse */
+    ConfirmModule.ctorParameters = [];
+    return ConfirmModule;
+}());
+//# sourceMappingURL=confirm.module.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirmOptions.provider.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ConfirmOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PopoverConfirmOptions; });
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+/**
+ * Use this for configuring the confirmation popover defaults
+ *
+ * Use it like so:
+ * ```
+ * const options: ConfirmOptions = new ConfirmOptions();
+ * // focus the confirm button by default. See below for an explanation of all options.
+ * options.focusButton = 'confirm';
+ *
+ * providers: [{provide: ConfirmOptions, useValue: options}]
+ * ```
+ */
+var ConfirmOptions = (function () {
+    function ConfirmOptions() {
+        /**
+         * The popover confirmation button text
+         */
+        this.confirmText = 'Confirm';
+        /**
+         * The popover cancel button text
+         */
+        this.cancelText = 'Cancel';
+        /**
+         * The popover confirm button type e.g. `success`, `danger` etc
+         */
+        this.confirmButtonType = 'success';
+        /**
+         * The popover cancel button type  e.g. `success`, `danger` etc
+         */
+        this.cancelButtonType = 'default';
+        /**
+         * The popover placement. Can be `top`, `bottom`, `left`, `right`
+         */
+        this.placement = 'top';
+        /**
+         * Whether to hide the confirmation button
+         */
+        this.hideConfirmButton = false;
+        /**
+         * Whether to hide the cancel button
+         */
+        this.hideCancelButton = false;
+        /**
+         * A custom CSS class to be added to the popover
+         */
+        this.popoverClass = '';
+        /**
+         * Whether to append the popover to the document body
+         */
+        this.appendToBody = false;
+    }
+    ConfirmOptions.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+    ];
+    /** @nocollapse */
+    ConfirmOptions.ctorParameters = [];
+    return ConfirmOptions;
+}());
+/**
+ * @private
+ */
+var PopoverConfirmOptions = (function (_super) {
+    __extends(PopoverConfirmOptions, _super);
+    function PopoverConfirmOptions() {
+        _super.apply(this, arguments);
+    }
+    PopoverConfirmOptions.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+    ];
+    /** @nocollapse */
+    PopoverConfirmOptions.ctorParameters = [];
+    return PopoverConfirmOptions;
+}(ConfirmOptions));
+//# sourceMappingURL=confirmOptions.provider.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirmPopover.component.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__confirmOptions_provider__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirmOptions.provider.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfirmPopover; });
+
+
+/**
+ * @private
+ */
+var ConfirmPopover = (function () {
+    function ConfirmPopover(options) {
+        this.options = options;
+    }
+    ConfirmPopover.prototype.ngAfterViewInit = function () {
+        this.options.onAfterViewInit();
+    };
+    ConfirmPopover.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                    styles: ["\n    .popover {\n      display: block;\n    }\n  "],
+                    template: "\n    <template #defaultTemplate let-options=\"options\">\n      <div [class]=\"'popover ' + options.placement + ' popover-' + options.placement + ' ' + options.popoverClass\">\n        <div class=\"popover-arrow arrow\"></div>\n        <h3 class=\"popover-title\" [innerHTML]=\"options.title\"></h3>\n        <div class=\"popover-content\">\n          <p [innerHTML]=\"options.message\"></p>\n          <div class=\"row\">\n            <div\n              class=\"col-xs-6\"\n              [class.col-xs-offset-3]=\"options.hideCancelButton\"\n              *ngIf=\"!options.hideConfirmButton\">\n              <button\n                [mwlFocus]=\"options.focusButton === 'confirm'\"\n                [class]=\"'btn btn-block btn-' + options.confirmButtonType\"\n                (click)=\"options.onConfirm()\"\n                [innerHtml]=\"options.confirmText\">\n              </button>\n            </div>\n            <div\n              class=\"col-xs-6\"\n              [class.col-xs-offset-3]=\"options.hideConfirmButton\"\n              *ngIf=\"!options.hideCancelButton\">\n              <button\n                [mwlFocus]=\"options.focusButton === 'cancel'\"\n                [class]=\"'btn btn-block btn-' + options.cancelButtonType\"\n                (click)=\"options.onCancel()\"\n                [innerHtml]=\"options.cancelText\">\n              </button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </template>\n    <template\n      [ngTemplateOutlet]=\"options.customTemplate || defaultTemplate\"\n      [ngOutletContext]=\"{options: options}\">\n    </template>\n  "
+                },] },
+    ];
+    /** @nocollapse */
+    ConfirmPopover.ctorParameters = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__confirmOptions_provider__["a" /* PopoverConfirmOptions */], },
+    ];
+    return ConfirmPopover;
+}());
+//# sourceMappingURL=confirmPopover.component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular2-bootstrap-confirm/dist/esm/src/focus.directive.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Focus; });
+
+/**
+ * A helper directive to focus buttons. You will only need this if using a custom template
+ */
+var Focus = (function () {
+    function Focus(renderer, elm) {
+        this.renderer = renderer;
+        this.elm = elm;
+    }
+    Focus.prototype.ngOnChanges = function (changes) {
+        if (changes.mwlFocus && this.mwlFocus === true) {
+            this.renderer.invokeElementMethod(this.elm.nativeElement, 'focus', []);
+        }
+    };
+    Focus.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                    selector: '[mwlFocus]'
+                },] },
+    ];
+    /** @nocollapse */
+    Focus.ctorParameters = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    ];
+    Focus.propDecorators = {
+        'mwlFocus': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    };
+    return Focus;
+}());
+//# sourceMappingURL=focus.directive.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular2-bootstrap-confirm/dist/esm/src/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__confirmOptions_provider__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirmOptions.provider.js");
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__confirmOptions_provider__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__position_provider__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/position.provider.js");
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__position_provider__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__confirm_module__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirm.module.js");
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__confirm_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__confirmPopover_component__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirmPopover.component.js");
+/* unused harmony reexport PrivateComponent1 */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__focus_directive__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/focus.directive.js");
+/* unused harmony reexport PrivateComponent2 */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__confirm_directive__ = __webpack_require__("./node_modules/angular2-bootstrap-confirm/dist/esm/src/confirm.directive.js");
+/* unused harmony reexport PrivateComponent3 */
+
+
+
+// Private components, don't import or use these within your app, they are only exported so that AOT can work
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular2-bootstrap-confirm/dist/esm/src/position.provider.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Position; });
+
+/**
+ * A placeholder token that you need to overwrite with the actual Position service
+ *
+ * ```
+ *  // if not also using the @ng-bootstrap/ng-bootstrap module
+ * import {Positioning} from 'angular2-bootstrap-confirm/position';
+ *  // if already using the @ng-bootstrap/ng-bootstrap module
+ * import {Positioning} from '@ng-bootstrap/ng-bootstrap/util/positioning';
+ * import {Position} from 'angular2-bootstrap-confirm';
+ *
+ * providers: [
+ *   provide(Position, {
+ *     useClass: Positioning
+ *   })
+ * ]
+ * ```
+ */
+var Position = (function () {
+    function Position() {
+        throw new Error('You must provide a service that implements the Position when bootstrapping your app.');
+    }
+    Position.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+    ];
+    /** @nocollapse */
+    Position.ctorParameters = [];
+    return Position;
+}());
+//# sourceMappingURL=position.provider.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular2-bootstrap-confirm/position/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["ng2BootstrapPosition"] = factory();
+	else
+		root["ng2BootstrapPosition"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmory exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		Object.defineProperty(exports, name, {
+/******/ 			configurable: false,
+/******/ 			enumerable: true,
+/******/ 			get: getter
+/******/ 		});
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(exports, "Positioning", function() { return Positioning; });
+/* harmony export (immutable) */ exports["positionElements"] = positionElements;
+// previous version:
+// https://github.com/angular-ui/bootstrap/blob/07c31d0731f7cb068a1932b8e01d2312b796b4ec/src/position/position.js
+var Positioning = (function () {
+    function Positioning() {
+    }
+    Positioning.prototype.getStyle = function (element, prop) { return window.getComputedStyle(element)[prop]; };
+    Positioning.prototype.isStaticPositioned = function (element) {
+        return (this.getStyle(element, 'position') || 'static') === 'static';
+    };
+    Positioning.prototype.offsetParent = function (element) {
+        var offsetParentEl = element.offsetParent || document.documentElement;
+        while (offsetParentEl && offsetParentEl !== document.documentElement && this.isStaticPositioned(offsetParentEl)) {
+            offsetParentEl = offsetParentEl.offsetParent;
+        }
+        return offsetParentEl || document.documentElement;
+    };
+    Positioning.prototype.position = function (element, round) {
+        if (round === void 0) { round = true; }
+        var elPosition;
+        var parentOffset = { width: 0, height: 0, top: 0, bottom: 0, left: 0, right: 0 };
+        if (this.getStyle(element, 'position') === 'fixed') {
+            elPosition = element.getBoundingClientRect();
+        }
+        else {
+            var offsetParentEl = this.offsetParent(element);
+            elPosition = this.offset(element, false);
+            if (offsetParentEl !== document.documentElement) {
+                parentOffset = this.offset(offsetParentEl, false);
+            }
+            parentOffset.top += offsetParentEl.clientTop;
+            parentOffset.left += offsetParentEl.clientLeft;
+        }
+        elPosition.top -= parentOffset.top;
+        elPosition.bottom -= parentOffset.top;
+        elPosition.left -= parentOffset.left;
+        elPosition.right -= parentOffset.left;
+        if (round) {
+            elPosition.top = Math.round(elPosition.top);
+            elPosition.bottom = Math.round(elPosition.bottom);
+            elPosition.left = Math.round(elPosition.left);
+            elPosition.right = Math.round(elPosition.right);
+        }
+        return elPosition;
+    };
+    Positioning.prototype.offset = function (element, round) {
+        if (round === void 0) { round = true; }
+        var elBcr = element.getBoundingClientRect();
+        var viewportOffset = {
+            top: window.pageYOffset - document.documentElement.clientTop,
+            left: window.pageXOffset - document.documentElement.clientLeft
+        };
+        var elOffset = {
+            height: elBcr.height || element.offsetHeight,
+            width: elBcr.width || element.offsetWidth,
+            top: elBcr.top + viewportOffset.top,
+            bottom: elBcr.bottom + viewportOffset.top,
+            left: elBcr.left + viewportOffset.left,
+            right: elBcr.right + viewportOffset.left
+        };
+        if (round) {
+            elOffset.height = Math.round(elOffset.height);
+            elOffset.width = Math.round(elOffset.width);
+            elOffset.top = Math.round(elOffset.top);
+            elOffset.bottom = Math.round(elOffset.bottom);
+            elOffset.left = Math.round(elOffset.left);
+            elOffset.right = Math.round(elOffset.right);
+        }
+        return elOffset;
+    };
+    Positioning.prototype.positionElements = function (hostElement, targetElement, placement, appendToBody) {
+        var hostElPosition = appendToBody ? this.offset(hostElement, false) : this.position(hostElement, false);
+        var shiftWidth = {
+            left: hostElPosition.left,
+            center: hostElPosition.left + hostElPosition.width / 2 - targetElement.offsetWidth / 2,
+            right: hostElPosition.left + hostElPosition.width
+        };
+        var shiftHeight = {
+            top: hostElPosition.top,
+            center: hostElPosition.top + hostElPosition.height / 2 - targetElement.offsetHeight / 2,
+            bottom: hostElPosition.top + hostElPosition.height
+        };
+        var targetElBCR = targetElement.getBoundingClientRect();
+        var placementPrimary = placement.split('-')[0] || 'top';
+        var placementSecondary = placement.split('-')[1] || 'center';
+        var targetElPosition = {
+            height: targetElBCR.height || targetElement.offsetHeight,
+            width: targetElBCR.width || targetElement.offsetWidth,
+            top: 0,
+            bottom: targetElBCR.height || targetElement.offsetHeight,
+            left: 0,
+            right: targetElBCR.width || targetElement.offsetWidth
+        };
+        switch (placementPrimary) {
+            case 'top':
+                targetElPosition.top = hostElPosition.top - targetElement.offsetHeight;
+                targetElPosition.bottom += hostElPosition.top - targetElement.offsetHeight;
+                targetElPosition.left = shiftWidth[placementSecondary];
+                targetElPosition.right += shiftWidth[placementSecondary];
+                break;
+            case 'bottom':
+                targetElPosition.top = shiftHeight[placementPrimary];
+                targetElPosition.bottom += shiftHeight[placementPrimary];
+                targetElPosition.left = shiftWidth[placementSecondary];
+                targetElPosition.right += shiftWidth[placementSecondary];
+                break;
+            case 'left':
+                targetElPosition.top = shiftHeight[placementSecondary];
+                targetElPosition.bottom += shiftHeight[placementSecondary];
+                targetElPosition.left = hostElPosition.left - targetElement.offsetWidth;
+                targetElPosition.right += hostElPosition.left - targetElement.offsetWidth;
+                break;
+            case 'right':
+                targetElPosition.top = shiftHeight[placementSecondary];
+                targetElPosition.bottom += shiftHeight[placementSecondary];
+                targetElPosition.left = shiftWidth[placementPrimary];
+                targetElPosition.right += shiftWidth[placementPrimary];
+                break;
+        }
+        targetElPosition.top = Math.round(targetElPosition.top);
+        targetElPosition.bottom = Math.round(targetElPosition.bottom);
+        targetElPosition.left = Math.round(targetElPosition.left);
+        targetElPosition.right = Math.round(targetElPosition.right);
+        return targetElPosition;
+    };
+    return Positioning;
+}());
+var positionService = new Positioning();
+function positionElements(hostElement, targetElement, placement, appendToBody) {
+    var pos = positionService.positionElements(hostElement, targetElement, placement, appendToBody);
+    targetElement.style.top = pos.top + "px";
+    targetElement.style.left = pos.left + "px";
+}
+//# sourceMappingURL=positioning.js.map
+
+/***/ }
+/******/ ])
+});
+;
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 
@@ -66805,7 +67553,7 @@ var Notification = (function () {
         if (typeof value !== 'undefined') {
             return new Notification('N', value);
         }
-        return this.undefinedValueNotification;
+        return Notification.undefinedValueNotification;
     };
     /**
      * A shortcut to create a Notification instance of the type `error` from a
@@ -66822,7 +67570,7 @@ var Notification = (function () {
      * @return {Notification<any>} The valueless "complete" Notification.
      */
     Notification.createComplete = function () {
-        return this.completeNotification;
+        return Notification.completeNotification;
     };
     Notification.completeNotification = new Notification('C');
     Notification.undefinedValueNotification = new Notification('N', undefined);
