@@ -10,8 +10,8 @@ const videoSchema = new Schema({
     discription: String
 });
 
-const Video = module.exports =mongoose.model('Video', videoSchema, 'videos');
+module.exports = mongoose.model('Video', videoSchema, 'videos');
 
-module.exports.getVideos = function(){
+// module.exports.getVideos = function(){
     
-}
+// }
