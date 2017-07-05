@@ -9,16 +9,14 @@ const Promise = require ('promise');
 //connectDB();
 const UsersController = {
 
-    getUser(req, res, next){
+    getAll(req, res){
         const authHeader = req.header('Authorization')
-        const accessToken = authHeader.match(/JWT (.*)/)[1]
         console.log("get by id is-------->"+ authHeader);
-        console.log("accessToken-------->" + accessToken)
-        console.log("----->"+ req.user)
     },
 
-    getUserData(req, res){
-        console.log("req = "+req.user)       
+    get(req, res){
+        console.log(req.user)  
+ 
     },
 
     //-------------- METHOD FOR REGISTER ------------------------//

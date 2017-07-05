@@ -575,13 +575,13 @@ var ProfileComponent = (function () {
         this.router = router;
     }
     ProfileComponent.prototype.ngOnInit = function () {
-        // this.authService.getProfile().subscribe(profile => {
-        //   this.user = profile.user;
-        // },
-        // err => {
-        //   console.log(err);
-        //   return false;
-        // });
+        var _this = this;
+        this.authService.getProfile().subscribe(function (profile) {
+            _this.user = profile.user;
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
     };
     return ProfileComponent;
 }());
@@ -1095,9 +1095,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var AuthService = (function () {
-    //-----------------_> New HTTP- SERVICE START ---------------------------
-    //loggedIn = new Subject<boolean>();
-    // authToken: any;
     function AuthService(http, router) {
         this.http = http;
         this.router = router;
@@ -1144,13 +1141,19 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
     };
     AuthService.prototype.getProfile = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('users/profile', { headers: headers })
+            .map(function (res) { return res.json(); });
     };
-    //  loadToken(){
-    //   const token = localStorage.getItem('access-token');
-    //   this.authToken = token;
-    //   //show when go to /profile
-    //   //console.log("token_id "+token)
-    // }
+    AuthService.prototype.loadToken = function () {
+        var token = localStorage.getItem('access-token');
+        this.authToken = token;
+        //show when go to /profile
+        //console.log("token_id "+token)
+    };
     AuthService.prototype.loggedIn = function () {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_angular2_jwt__["tokenNotExpired"])('access-token');
     };

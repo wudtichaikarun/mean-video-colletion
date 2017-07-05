@@ -28,10 +28,16 @@ const User = module.exports = mongoose.model('User', UserSchema, 'users');
 
 
 //-------------- METHOD FOR REGISTER ------------------------//
-module.exports.getUserById = function(id, callback){
-    console.log("deconde id ="+id)
-    User.findById(id, callback);
-}
+module.exports.getUserById = function(id){
+   const findUser = User.findById(id, function(err, user){
+       if(err){
+           console.log("findById err")
+       }else{
+           return user
+       }
+   })
+   return findUser
+}   
 module.exports.addUser = function(newUser){
     return new Promise((resolve, reject) => {
         bcrypt.genSalt(10, (err, salt) => {

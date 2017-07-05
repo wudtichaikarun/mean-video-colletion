@@ -9,7 +9,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthService {
   //-----------------_> New HTTP- SERVICE START ---------------------------
   //loggedIn = new Subject<boolean>();
-  // authToken: any;
+   authToken: any;
 
   constructor(
     private http: Http,
@@ -59,15 +59,20 @@ export class AuthService {
   }
 
   getProfile(){
-
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type','application/json');
+    return this.http.get('users/profile',{headers: headers})
+    .map(res => res.json());
   }
 
-  //  loadToken(){
-  //   const token = localStorage.getItem('access-token');
-  //   this.authToken = token;
-  //   //show when go to /profile
-  //   //console.log("token_id "+token)
-  // }
+   loadToken(){
+    const token = localStorage.getItem('access-token');
+    this.authToken = token;
+    //show when go to /profile
+    //console.log("token_id "+token)
+  }
 
   loggedIn() {
   return  tokenNotExpired('access-token');

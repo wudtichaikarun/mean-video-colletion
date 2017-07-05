@@ -7,14 +7,8 @@ const config = require('./config/database');
 const fs = require('fs');
 const bodyParsr = require('body-parser');
 
-import auth from './middleware/auth'
+ import auth from './middleware/auth'
 // const passport = require('passport');
-
-
-//import express from 'express'
-//import fs from 'fs'
-//import bodyParsr from 'body-parser'
-//import path from 'path'
 
 //for call folder app
 function setupRoutes(app){
@@ -55,7 +49,7 @@ export function setup () {
     // Passport Middleware
     // app.use(passport.initialize());
     // app.use(passport.session());
-    // require('./middleware/auth')(passport);
+    // require('./app/users/passport')(passport);
 
     setupRoutes(app)
     
