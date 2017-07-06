@@ -6,7 +6,7 @@ const mongoose = require('./config/mongoose');
 const fs = require('fs');
 const bodyParsr = require('body-parser');
 
-  import auth from './middleware/auth'
+  //import auth from './middleware/auth'
 //const passport = require('passport');
 
 //for call folder app
@@ -26,14 +26,12 @@ function setupRoutes(app){
 }
 
 export function setup () {
-    // Connect To Database
-    const db = mongoose()
-    
-    const app = express()
+    const db = mongoose();
     const port = 3000
-  
+    const app = express()
+
     app.use(express.static(path.join(__dirname, 'public')))
-    app.use(auth)
+    //app.use(auth)
     app.use(bodyParsr.urlencoded({extended: true}))
     app.use(bodyParsr.json())
 
