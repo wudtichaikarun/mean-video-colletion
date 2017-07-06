@@ -1,8 +1,4 @@
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">Video List</h4>
-    <ul class="nav nav-pills nav-stacked">
-      <li (click)="onSelect(video)" *ngFor="let video of videos"><a>{{video.title}}</a></li>
-    </ul>
-  </div>
-</div>
+    <a (click)="onSelect(video)" 
+        class="list-group-item list-group-item-action" 
+        *ngFor="let video of videos">{{video.title}}
+    </a>

@@ -37,8 +37,11 @@ export class VideoDetailComponent implements OnInit {
     this.editTitle = false;
   }
 
-onTitleClick(){
+btnEditClick(){
   this.editTitle = true
+}
+btnCancelClick(){
+  this.editTitle = false;
 }
 
 //onblur title

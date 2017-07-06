@@ -1,29 +1,49 @@
 <div>
+    <!-- ######################## iframe play video ########################-->
     <div>
         <iframe [src]="video.url | safe" width="100%" height="500"></iframe>
     </div>
+
     <form>
-        <!--//video tilte edit status-->
+        <!-- ######################## Always show  #########################-->
+        <!--title content-->
+        <h3 *ngIf="!editTitle">{{video.title}} 
+            <!--Edit btn-->
+            <button 
+                (click)="btnEditClick()"
+                class="btn btn-default btn-title" >
+                edit
+            </button> 
+        </h3>
+         <!--url content-->
+        <h4>video url: {{video.url}} </h4>
+         <!--description content-->
+        <h4>video description: {{video.discription}} </h4>
+
+        <!-- ######################## video show when btn-edit click #########################-->
         <div *ngIf="editTitle" class="form-group">
-            <input (mouseout)="onMouseout()" type="input" class="form-control" name="title" required placeholder="title" 
+            <input type="input" class="form-control" name="title" required placeholder="title" 
             [(ngModel)]="video.title">
         </div>
-         <!--//video tilte normol status-->
-        <h3 *ngIf="!editTitle" (click)="onTitleClick()">{{video.title}}</h3>
-
-        <div class="form-group">
-            <h5>Video url:</h5>
+        <div *ngIf="editTitle" class="form-group">
            <input type="input" class="form-control" name="url" required placeholder="url" 
            [(ngModel)]="video.url">
         </div>
-        <div class="form-group">
-            <h5>Video Description</h5>
+        <div *ngIf="editTitle" class="form-group">
            <input  type="input" name="desc" class="form-control" placeholder="discription"
             [(ngModel)]="video.discription">
         </div>
-        <button type="button" (click)="updateVideo()" class="btn btn-primary">Update</button>
-        <!--<//button type="button" (click)="deleteVideo()" class="btn btn-danger">Delete</button>-->
-       <button
+        <!--Update btn-->
+        <button 
+            *ngIf="editTitle" 
+            type="button" 
+            (click)="updateVideo()" 
+            class="btn btn-warning">
+            Update
+        </button>
+        <!--Delete btn-->
+        <button
+            *ngIf="editTitle" 
             class="btn btn-danger"
             mwlConfirm
             [title]="title"
@@ -34,5 +54,13 @@
             [(isOpen)]="isOpen">
             Delete
         </button>
+        <!--Cancel btn-->
+        <button 
+            *ngIf="editTitle" 
+            (click)="btnCancelClick()"
+            class="btn btn-default" >
+            Cancel
+        </button> 
+
     </form>
 </div> 

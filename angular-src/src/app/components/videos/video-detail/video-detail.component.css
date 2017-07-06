@@ -5,3 +5,7 @@ iframe{
 form{
     margin-bottom: 10px;
 }
+
+.btn-default.btn-title{
+    padding: 5px;
+}

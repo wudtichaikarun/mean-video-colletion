@@ -467,7 +467,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "   <nav class=\"navbar navbar-default\">\n      <div class=\"container\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" (click)=\"toggleState()\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" href=\"#\">My Video Collection</a>\n        </div>\n        <div id=\"navbar\" class=\"collapse navbar-collapse\" [ngClass]=\"{ 'in': isIn }\" (click)=\"toggleState()\">\n          <ul class=\"nav navbar-nav navbar-left\" >\n            <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"> <a [routerLink]=\"['/']\" >Home</a> </li>\n            <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"> <a [routerLink]=\"['/dashboard']\" >Dashboard</a> </li>\n            <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"> <a [routerLink]=\"['/videos']\" >Videos</a> </li>\n            <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"> <a [routerLink]=\"['/profile']\" >Profile</a> </li>\n          </ul>\n\n          <ul class=\"nav navbar-nav navbar-right\" >\n            <li  *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"> <a [routerLink]=\"['/register']\">Register</a> </li>\n            <li  *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"> <a [routerLink]=\"['/login']\" >Login</a> </li>\n            <li *ngIf=\"authService.loggedIn()\" > <a (click)=\"onLogoutClick()\" >Logout</a> </li>\n          </ul>\n        </div><!--/.nav-collapse -->\n      </div>\n    </nav>"
+module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" (click)=\"toggleState()\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"\n        aria-expanded=\"false\" aria-controls=\"navbar\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n      <a class=\"navbar-brand\" href=\"#\">My Video Collection</a>\n    </div>\n    <div id=\"navbar\" class=\"collapse navbar-collapse\" [ngClass]=\"{ 'in': isIn }\" (click)=\"toggleState()\">\n      <ul class=\"nav navbar-nav navbar-left\">\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"> <a [routerLink]=\"['/']\">Home</a> </li>\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"> <a [routerLink]=\"['/dashboard']\">Dashboard</a> </li>\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"> <a [routerLink]=\"['/videos']\">Videos</a> </li>\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"> <a [routerLink]=\"['/profile']\">Profile</a> </li>\n      </ul>\n      <form class=\"navbar-form navbar-left\" role=\"search\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n        </div>\n        <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n      </form>\n\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"> <a [routerLink]=\"['/register']\">Register</a> </li>\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"> <a [routerLink]=\"['/login']\">Login</a> </li>\n        <li *ngIf=\"authService.loggedIn()\"> <a (click)=\"onLogoutClick()\">Logout</a> </li>\n      </ul>\n    </div>\n    <!--/.nav-collapse -->\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -758,7 +758,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".panel-body{\n    padding: 0;\n}\n", ""]);
 
 // exports
 
@@ -771,7 +771,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/videos/video-center/video-center.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <div *ngIf=\"!hidenewVideo\">\n      <h2>New Video</h2>\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\n        <div class=\"form-group\">\n          <label>Title</label>\n          <input \n            type=\"text\" \n            class=\"form-control\" \n            required \n            name=\"title\" \n            ngModel\n            placeholder=\"Enter titie name\" >\n        </div>\n        <div class=\"form-group\">\n          <label>Url</label>\n          <input \n            type=\"text\" \n            class=\"form-control\" \n            required \n            name=\"url\" \n            ngModel\n            placeholder=\"Enter url link\" >\n        </div>\n        <div class=\"form-group\">\n          <label>Description</label>\n          <input \n            type=\"text\" \n            class=\"form-control\"  \n            name=\"discription\" \n            ngModel\n            placeholder=\"Enter descrtption\" >\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\">Save</button>\n      </form>\n    </div>\n\n    <video-detail \n    (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\n    (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\n    *ngIf=\"selectedVideo && hidenewVideo\" \n    [video]=\"selectedVideo\"></video-detail>\n  </div>\n  \n  <div class=\"col-sm-3\">\n    <button (click)=\"newVideo()\" style=\"margin-bottom: 2px;\" type=\"button\" class=\"btn btn-success btn-block\">+ New Video</button>\n    <video-list (SelectVideo)=\"onSelectVideo($event)\" [videos]=\"videos\"></video-list>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <div *ngIf=\"!hidenewVideo\">\n      <h2>New Video</h2>\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\n        <div class=\"form-group\">\n          <label>Title</label>\n          <input \n            type=\"text\" \n            class=\"form-control\" \n            required \n            name=\"title\" \n            ngModel\n            placeholder=\"Enter titie name\" >\n        </div>\n        <div class=\"form-group\">\n          <label>Url</label>\n          <input \n            type=\"text\" \n            class=\"form-control\" \n            required \n            name=\"url\" \n            ngModel\n            placeholder=\"Enter url link\" >\n        </div>\n        <div class=\"form-group\">\n          <label>Description</label>\n          <input \n            type=\"text\" \n            class=\"form-control\"  \n            name=\"discription\" \n            ngModel\n            placeholder=\"Enter descrtption\" >\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\">Save</button>\n      </form>\n    </div>\n    <video-detail \n      (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\n      *ngIf=\"selectedVideo && hidenewVideo\" \n      [video]=\"selectedVideo\">\n    </video-detail>\n  </div>\n  \n  <div class=\"col-sm-3\">\n    <div class=\"panel panel-default\">\n      <div class=\"panel-body\">\n          <button (click)=\"newVideo()\" type=\"button\" class=\"btn btn-default btn-lg btn-block\">+ New Video</button>\n          <video-list (SelectVideo)=\"onSelectVideo($event)\" [videos]=\"videos\"></video-list>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -873,7 +873,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "iframe{\n    border-radius: 9px;\n}\n\nform{\n    margin-bottom: 10px;\n}", ""]);
+exports.push([module.i, "iframe{\n    border-radius: 9px;\n}\n\nform{\n    margin-bottom: 10px;\n}\n\n.btn-default.btn-title{\n    padding: 5px;\n}", ""]);
 
 // exports
 
@@ -886,7 +886,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/videos/video-detail/video-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <div>\n        <iframe [src]=\"video.url | safe\" width=\"100%\" height=\"500\"></iframe>\n    </div>\n    <form>\n        <!--//video tilte edit status-->\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input (mouseout)=\"onMouseout()\" type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\" \n            [(ngModel)]=\"video.title\">\n        </div>\n         <!--//video tilte normol status-->\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n\n        <div class=\"form-group\">\n            <h5>Video url:</h5>\n           <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\" \n           [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n            <h5>Video Description</h5>\n           <input  type=\"input\" name=\"desc\" class=\"form-control\" placeholder=\"discription\"\n            [(ngModel)]=\"video.discription\">\n        </div>\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!--<//button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>-->\n       <button\n            class=\"btn btn-danger\"\n            mwlConfirm\n            [title]=\"title\"\n            [message]=\"message\"\n            placement=\"top\"\n            (confirm)=\"ConfirmClicked()\"\n            (cancel)=\"cancelClicked = true\"\n            [(isOpen)]=\"isOpen\">\n            Delete\n        </button>\n    </form>\n</div> "
+module.exports = "<div>\n    <!-- ######################## iframe play video ########################-->\n    <div>\n        <iframe [src]=\"video.url | safe\" width=\"100%\" height=\"500\"></iframe>\n    </div>\n\n    <form>\n        <!-- ######################## Always show  #########################-->\n        <!--title content-->\n        <h3 *ngIf=\"!editTitle\">{{video.title}} \n            <!--Edit btn-->\n            <button \n                (click)=\"btnEditClick()\"\n                class=\"btn btn-default btn-title\" >\n                edit\n            </button> \n        </h3>\n         <!--url content-->\n        <h4>video url: {{video.url}} </h4>\n         <!--description content-->\n        <h4>video description: {{video.discription}} </h4>\n\n        <!-- ######################## video show when btn-edit click #########################-->\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\" \n            [(ngModel)]=\"video.title\">\n        </div>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n           <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\" \n           [(ngModel)]=\"video.url\">\n        </div>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n           <input  type=\"input\" name=\"desc\" class=\"form-control\" placeholder=\"discription\"\n            [(ngModel)]=\"video.discription\">\n        </div>\n        <!--Update btn-->\n        <button \n            *ngIf=\"editTitle\" \n            type=\"button\" \n            (click)=\"updateVideo()\" \n            class=\"btn btn-warning\">\n            Update\n        </button>\n        <!--Delete btn-->\n        <button\n            *ngIf=\"editTitle\" \n            class=\"btn btn-danger\"\n            mwlConfirm\n            [title]=\"title\"\n            [message]=\"message\"\n            placement=\"top\"\n            (confirm)=\"ConfirmClicked()\"\n            (cancel)=\"cancelClicked = true\"\n            [(isOpen)]=\"isOpen\">\n            Delete\n        </button>\n        <!--Cancel btn-->\n        <button \n            *ngIf=\"editTitle\" \n            (click)=\"btnCancelClick()\"\n            class=\"btn btn-default\" >\n            Cancel\n        </button> \n\n    </form>\n</div> "
 
 /***/ }),
 
@@ -928,8 +928,11 @@ var VideoDetailComponent = (function () {
     VideoDetailComponent.prototype.ngOnChange = function () {
         this.editTitle = false;
     };
-    VideoDetailComponent.prototype.onTitleClick = function () {
+    VideoDetailComponent.prototype.btnEditClick = function () {
         this.editTitle = true;
+    };
+    VideoDetailComponent.prototype.btnCancelClick = function () {
+        this.editTitle = false;
     };
     //onblur title
     VideoDetailComponent.prototype.onMouseout = function () {
@@ -977,7 +980,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".list-group-item{\n    border: 1px 0px;\n    padding: 10px 10px;\n    border-radius: 0; \n}", ""]);
 
 // exports
 
@@ -990,7 +993,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/videos/video-list/video-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav nav-pills nav-stacked\">\n <li (click)=\"onSelect(video)\" *ngFor=\"let video of videos\"><a>{{video.title}}</a></li>\n</ul>"
+module.exports = "    <a (click)=\"onSelect(video)\" \n        class=\"list-group-item list-group-item-action\" \n        *ngFor=\"let video of videos\">{{video.title}}\n    </a>\n"
 
 /***/ }),
 
