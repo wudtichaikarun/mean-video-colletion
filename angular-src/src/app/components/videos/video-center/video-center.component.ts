@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Video } from '../../../shared/video';
 import { VideoService } from '../../../services/video.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-video-center',
   templateUrl: './video-center.component.html',
-  styleUrls: ['./video-center.component.css'],
-  providers: [VideoService]
+  styleUrls: ['./video-center.component.css']
 })
 export class VideoCenterComponent implements OnInit {
 
-  constructor(private _videoService: VideoService) { }
+  constructor(
+    private _videoService: VideoService, 
+    private router: Router
+  ) {}
 
   videos: Array<Video>;
 
@@ -19,8 +22,14 @@ export class VideoCenterComponent implements OnInit {
 
   ngOnInit() {
     this._videoService.getVideos()
-    .subscribe(resVideoData => this.videos = resVideoData);
+    .subscribe(resVideoData => {
+      this.videos = resVideoData
+    }, err => {
+      console.log(err);
+      return false;
+    });
   }
+  
 
 //select video
 onSelectVideo(video: any){

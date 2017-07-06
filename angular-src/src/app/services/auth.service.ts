@@ -23,7 +23,7 @@ export class AuthService {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
     const response : Observable<Response> = this.http
-      .post('/users/login', user, options);
+      .post('/api/users/login', user, options);
     this.setTokenFromResponse(response);
     this.router.navigate(['/'])
   }
@@ -47,7 +47,7 @@ export class AuthService {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
     const response : Observable<Response> = this.http
-      .post('/users/register', user, options);
+      .post('/api/users/register', user, options);
     this.setTokenFromResponse(response);
     this.router.navigate(['/'])
   }
@@ -60,7 +60,7 @@ export class AuthService {
   }
 
   getProfile(){
-    return this.http.get('users/profile')
+    return this.http.get('/api/users/profile')
     .map(res => res.json());
   }
 

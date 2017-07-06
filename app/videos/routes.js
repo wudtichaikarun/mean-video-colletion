@@ -3,6 +3,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 import controller from './controller';
 const Video = require('./model');
+const mongoose = require('mongoose');
 
 export function  setup(router){
     router

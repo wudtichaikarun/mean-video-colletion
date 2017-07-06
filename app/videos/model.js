@@ -5,8 +5,14 @@ const Schema = mongoose.Schema;
 
 //connectDB();
 const videoSchema = new Schema({
-    title: String,
-    url: String,
+    title:{
+        type: String,
+        required: true,
+    },   
+    url: {
+        type: String,
+        required: true,
+    },
     discription: String
 });
 

@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { SafePipe } from './shared/safe.pipe';
 import { AuthHttpService } from './shared/auth-http.service'
+import { VideoService } from './services/video.service'
 
 // Component
 import { AppComponent } from './app.component';
@@ -55,7 +56,8 @@ import { routes } from './app-routing.module';
   providers: [
     AuthService,
     AuthGuard,
-    AuthHttpService
+    AuthHttpService,
+    VideoService
     ],
   bootstrap: [AppComponent]
 })

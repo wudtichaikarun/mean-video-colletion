@@ -141,18 +141,19 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_safe_pipe__ = __webpack_require__("./src/app/shared/safe.pipe.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_auth_http_service__ = __webpack_require__("./src/app/shared/auth-http.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__ = __webpack_require__("./src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_register_register_component__ = __webpack_require__("./src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__ = __webpack_require__("./src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__ = __webpack_require__("./src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_videos_video_center_video_center_component__ = __webpack_require__("./src/app/components/videos/video-center/video-center.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_videos_video_detail_video_detail_component__ = __webpack_require__("./src/app/components/videos/video-detail/video-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_videos_video_list_video_list_component__ = __webpack_require__("./src/app/components/videos/video-list/video-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__guards_auth_guard__ = __webpack_require__("./src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_video_service__ = __webpack_require__("./src/app/services/video.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__ = __webpack_require__("./src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_register_register_component__ = __webpack_require__("./src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_home_home_component__ = __webpack_require__("./src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_profile_profile_component__ = __webpack_require__("./src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_videos_video_center_video_center_component__ = __webpack_require__("./src/app/components/videos/video-center/video-center.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_videos_video_detail_video_detail_component__ = __webpack_require__("./src/app/components/videos/video-detail/video-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_videos_video_list_video_list_component__ = __webpack_require__("./src/app/components/videos/video-list/video-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__guards_auth_guard__ = __webpack_require__("./src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -164,6 +165,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // Service
+
 
 
 
@@ -194,33 +196,34 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_videos_video_center_video_center_component__["a" /* VideoCenterComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_videos_video_detail_video_detail_component__["a" /* VideoDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_videos_video_list_video_list_component__["a" /* VideoListComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_videos_video_center_video_center_component__["a" /* VideoCenterComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_videos_video_detail_video_detail_component__["a" /* VideoDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_videos_video_list_video_list_component__["a" /* VideoListComponent */],
             __WEBPACK_IMPORTED_MODULE_8__shared_safe_pipe__["a" /* SafePipe */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_21__app_routing_module__["a" /* routes */]),
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_22__app_routing_module__["a" /* routes */]),
             __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__["FlashMessagesModule"],
             __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_bootstrap_confirm__["a" /* ConfirmModule */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_20__guards_auth_guard__["a" /* AuthGuard */],
-            __WEBPACK_IMPORTED_MODULE_9__shared_auth_http_service__["a" /* AuthHttpService */]
+            __WEBPACK_IMPORTED_MODULE_21__guards_auth_guard__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_9__shared_auth_http_service__["a" /* AuthHttpService */],
+            __WEBPACK_IMPORTED_MODULE_10__services_video_service__["a" /* VideoService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -778,6 +781,7 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <div *ngI
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_video_service__ = __webpack_require__("./src/app/services/video.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoCenterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -790,15 +794,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var VideoCenterComponent = (function () {
-    function VideoCenterComponent(_videoService) {
+    function VideoCenterComponent(_videoService, router) {
         this._videoService = _videoService;
+        this.router = router;
         this.hidenewVideo = true;
     }
     VideoCenterComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._videoService.getVideos()
-            .subscribe(function (resVideoData) { return _this.videos = resVideoData; });
+            .subscribe(function (resVideoData) {
+            _this.videos = resVideoData;
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
     };
     //select video
     VideoCenterComponent.prototype.onSelectVideo = function (video) {
@@ -844,13 +855,12 @@ VideoCenterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-video-center',
         template: __webpack_require__("./src/app/components/videos/video-center/video-center.component.html"),
-        styles: [__webpack_require__("./src/app/components/videos/video-center/video-center.component.css")],
-        providers: [__WEBPACK_IMPORTED_MODULE_1__services_video_service__["a" /* VideoService */]]
+        styles: [__webpack_require__("./src/app/components/videos/video-center/video-center.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_video_service__["a" /* VideoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_video_service__["a" /* VideoService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_video_service__["a" /* VideoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_video_service__["a" /* VideoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], VideoCenterComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=video-center.component.js.map
 
 /***/ }),
@@ -1111,7 +1121,7 @@ var AuthService = (function () {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' })
         };
         var response = this.http
-            .post('/users/login', user, options);
+            .post('/api/users/login', user, options);
         this.setTokenFromResponse(response);
         this.router.navigate(['/']);
     };
@@ -1137,7 +1147,7 @@ var AuthService = (function () {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' })
         };
         var response = this.http
-            .post('/users/register', user, options);
+            .post('/api/users/register', user, options);
         this.setTokenFromResponse(response);
         this.router.navigate(['/']);
     };
@@ -1147,7 +1157,7 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
     };
     AuthService.prototype.getProfile = function () {
-        return this.http.get('users/profile')
+        return this.http.get('/api/users/profile')
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loggedIn = function () {
@@ -1224,8 +1234,9 @@ var _a, _b;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_auth_http_service__ = __webpack_require__("./src/app/shared/auth-http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1239,21 +1250,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var VideoService = (function () {
     function VideoService(_http) {
         this._http = _http;
     }
     // READ video
     VideoService.prototype.getVideos = function () {
-        return this._http.get('/videos')
-            .map(function (response) { return response.json(); });
+        return this._http.get('/api/videos')
+            .map(function (res) { return res.json(); });
     };
     // CREATE video
     VideoService.prototype.addVideo = function (video) {
         var options = {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' })
         };
-        return this._http.post('/videos', JSON.stringify(video), options)
+        return this._http.post('/api/videos', JSON.stringify(video), options)
             .map(function (response) { return response.json(); });
     };
     // UPDATE video 
@@ -1261,19 +1273,19 @@ var VideoService = (function () {
         var options = {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' })
         };
-        return this._http.put("videos/" + video._id, JSON.stringify(video), options)
+        return this._http.put("/api/videos/" + video._id, JSON.stringify(video), options)
             .map(function (response) { return response.json(); });
     };
     // DELETE video
     VideoService.prototype.deleteVideo = function (video) {
-        return this._http.delete("videos/" + video._id)
+        return this._http.delete("/api/videos/" + video._id)
             .map(function (response) { return response.json(); });
     };
     return VideoService;
 }());
 VideoService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_auth_http_service__["a" /* AuthHttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_auth_http_service__["a" /* AuthHttpService */]) === "function" && _a || Object])
 ], VideoService);
 
 var _a;
