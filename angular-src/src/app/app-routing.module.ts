@@ -40,6 +40,7 @@ export  const routes: Routes = [
     },
     {
         path: 'videos',
-        component: VideoCenterComponent
+        component: VideoCenterComponent,
+        canActivate: [AuthGuard]
     }
 ]
