@@ -1,4 +1,25 @@
-    <a (click)="onSelect(video)" 
-        class="list-group-item list-group-item-action" 
-        *ngFor="let video of videos">{{video.title}}
-    </a>
+<div class="list-group">
+  <a class="list-group-item" (click)="onSelect(video)" *ngFor="let video of videos">
+    {{ video.title }}
+  </a>
+</div>
+
+<nav class="mt-1">
+  <ul class="pagination">
+    <!--<li 
+    *ngFor= "let page of totalPages" 
+    [ngClass]="{'page-item': true, 'active': page === currentPage }" >
+      <a 
+      class="page-link"
+      [routerLink]="['/books']" [queryParams]="{ page: page }" >
+      {{ page }}
+      </a>
+    </li>-->
+    <li><a class="page-link">1</a></li>
+    <li><a class="page-link">2</a></li>
+    <li><a class="page-link">3</a></li>
+    <li><a class="page-link">4</a></li>
+    <li><a class="page-link">5</a></li>
+    <li><a class="page-link">6</a></li>
+  </ul>
+</nav>

@@ -1,5 +1,12 @@
+
 .list-group-item{
     border: 1px 0px;
     padding: 10px 10px;
-    border-radius: 0; 
+    border-radius: 5px; 
+}
+.list-group-item:hover{
+    background-color: rgba(192,192,192,0.3);
+}
+.list-group{
+    margin: 0px;
 }

@@ -91,7 +91,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n    <flash-messages></flash-messages>\n    <router-outlet></router-outlet>\n</div>"
+module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n    <flash-messages></flash-messages>\n    <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -758,7 +758,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".panel-body{\n    padding: 0;\n}\n", ""]);
+exports.push([module.i, ".panel-body{\n    padding: 0;\n}\n.videoListText{\n    margin-bottom: 10px 0px 1px 0px;\n}\nhr{\n    margin: 1px 0px 5px 0px;\n}\n", ""]);
 
 // exports
 
@@ -771,7 +771,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/videos/video-center/video-center.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <div *ngIf=\"!hidenewVideo\">\n      <h2>New Video</h2>\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\n        <div class=\"form-group\">\n          <label>Title</label>\n          <input \n            type=\"text\" \n            class=\"form-control\" \n            required \n            name=\"title\" \n            ngModel\n            placeholder=\"Enter titie name\" >\n        </div>\n        <div class=\"form-group\">\n          <label>Url</label>\n          <input \n            type=\"text\" \n            class=\"form-control\" \n            required \n            name=\"url\" \n            ngModel\n            placeholder=\"Enter url link\" >\n        </div>\n        <div class=\"form-group\">\n          <label>Description</label>\n          <input \n            type=\"text\" \n            class=\"form-control\"  \n            name=\"discription\" \n            ngModel\n            placeholder=\"Enter descrtption\" >\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\">Save</button>\n      </form>\n    </div>\n    <video-detail \n      (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\n      *ngIf=\"selectedVideo && hidenewVideo\" \n      [video]=\"selectedVideo\">\n    </video-detail>\n  </div>\n  \n  <div class=\"col-sm-3\">\n    <div class=\"panel panel-default\">\n      <div class=\"panel-body\">\n          <button (click)=\"newVideo()\" type=\"button\" class=\"btn btn-default btn-lg btn-block\">+ New Video</button>\n          <video-list (SelectVideo)=\"onSelectVideo($event)\" [videos]=\"videos\"></video-list>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n"
+module.exports = "<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <div *ngIf=\"!hidenewVideo\">\n      <h2>New Video</h2>\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\n        <div class=\"form-group\">\n          <label>Title</label>\n          <input \n            type=\"text\" \n            class=\"form-control\" \n            required \n            name=\"title\" \n            ngModel\n            placeholder=\"Enter titie name\" >\n        </div>\n        <div class=\"form-group\">\n          <label>Url</label>\n          <input \n            type=\"text\" \n            class=\"form-control\" \n            required \n            name=\"url\" \n            ngModel\n            placeholder=\"Enter url link\" >\n        </div>\n        <div class=\"form-group\">\n          <label>Description</label>\n          <input \n            type=\"text\" \n            class=\"form-control\"  \n            name=\"discription\" \n            ngModel\n            placeholder=\"Enter descrtption\" >\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\">Save</button>\n      </form>\n    </div>\n    <video-detail \n      (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\n      *ngIf=\"selectedVideo && hidenewVideo\" \n      [video]=\"selectedVideo\">\n    </video-detail>\n  </div>\n  \n  <div class=\"col-sm-3\">\n    <div><button (click)=\"newVideo()\" type=\"button\" class=\"btn btn-default btn-lg btn-block\">+ New Video</button></div>\n    <div class=\"videoListText\"><h4>Videos List</h4></div>\n    <hr />\n    <video-list (SelectVideo)=\"onSelectVideo($event)\" [videos]=\"videos\"></video-list>\n\n  </div>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -873,7 +873,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "iframe{\n    border-radius: 9px;\n}\n\nform{\n    margin-bottom: 10px;\n}\n\n.btn-default.btn-title{\n    padding: 5px;\n}", ""]);
+exports.push([module.i, "iframe{\n    border-radius: 9px;\n}\n\nform{\n    margin-bottom: 10px;\n}\n\n.btn-default.btn-title{\n    padding: 5px;\n}\n", ""]);
 
 // exports
 
@@ -980,7 +980,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".list-group-item{\n    border: 1px 0px;\n    padding: 10px 10px;\n    border-radius: 0; \n}", ""]);
+exports.push([module.i, "\n.list-group-item{\n    border: 1px 0px;\n    padding: 10px 10px;\n    border-radius: 5px; \n}\n.list-group-item:hover{\n    background-color: rgba(192,192,192,0.3);\n}\n.list-group{\n    margin: 0px;\n}", ""]);
 
 // exports
 
@@ -993,7 +993,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/videos/video-list/video-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "    <a (click)=\"onSelect(video)\" \n        class=\"list-group-item list-group-item-action\" \n        *ngFor=\"let video of videos\">{{video.title}}\n    </a>\n"
+module.exports = "<div class=\"list-group\">\n  <a class=\"list-group-item\" (click)=\"onSelect(video)\" *ngFor=\"let video of videos\">\n    {{ video.title }}\n  </a>\n</div>\n\n<nav class=\"mt-1\">\n  <ul class=\"pagination\">\n    <!--<li \n    *ngFor= \"let page of totalPages\" \n    [ngClass]=\"{'page-item': true, 'active': page === currentPage }\" >\n      <a \n      class=\"page-link\"\n      [routerLink]=\"['/books']\" [queryParams]=\"{ page: page }\" >\n      {{ page }}\n      </a>\n    </li>-->\n    <li><a class=\"page-link\">1</a></li>\n    <li><a class=\"page-link\">2</a></li>\n    <li><a class=\"page-link\">3</a></li>\n    <li><a class=\"page-link\">4</a></li>\n    <li><a class=\"page-link\">5</a></li>\n    <li><a class=\"page-link\">6</a></li>\n  </ul>\n</nav>\n"
 
 /***/ }),
 
