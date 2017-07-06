@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptionsArgs, Response ,Headers } from '@angular/http';
+import { RequestOptionsArgs, Response ,Headers } from '@angular/http';
+import { AuthHttpService } from '../shared/auth-http.service'
 import { Observable, BehaviorSubject} from 'rxjs';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
@@ -12,7 +13,7 @@ export class AuthService {
    authToken: any;
 
   constructor(
-    private http: Http,
+    private http: AuthHttpService,
     private router: Router
   ){}
 
@@ -59,20 +60,10 @@ export class AuthService {
   }
 
   getProfile(){
-    let headers = new Headers();
-    this.loadToken();
-    headers.append('Authorization', this.authToken);
-    headers.append('Content-Type','application/json');
-    return this.http.get('users/profile',{headers: headers})
+    return this.http.get('users/profile')
     .map(res => res.json());
   }
 
-   loadToken(){
-    const token = localStorage.getItem('access-token');
-    this.authToken = token;
-    //show when go to /profile
-    //console.log("token_id "+token)
-  }
 
   loggedIn() {
   return  tokenNotExpired('access-token');

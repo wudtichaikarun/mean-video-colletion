@@ -7,15 +7,13 @@ export default function(req, res, next){
     const authHeader = req.header('Authorization')
     if(!authHeader) return next()
     console.log(` :-------> authHeader jwt token value: ${authHeader} `)
-    // select only token not need Bearer use regulaexpression /Bearer (.*)/
-    //const accessToken = authHeader.match(/JWT (.*)/)[1]
-
-    jwt.verify(authHeader, 'romantic_secret', (err, decoded) => {
-        if(err) return next()
-
+    // select only token not need Bearer use regulaexpression /JWT (.*)/
+    const accessToken = authHeader.match(/JWT (.*)/)[1]
+    jwt.verify(accessToken, 'romantic_secret', (err, decoded) => {
         console.log(` :-------> decoded value: ${decoded.sub} `)
+        if(err) return next()
         req.user = User.getUserById(decoded.sub)
-        console.log(req.user)
+        console.log(User.getUserById(decoded.sub))
         next()
     })
 }

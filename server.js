@@ -2,13 +2,12 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mongoose = require('mongoose');
-const config = require('./config/database');
+const mongoose = require('./config/mongoose');
 const fs = require('fs');
 const bodyParsr = require('body-parser');
 
- import auth from './middleware/auth'
-// const passport = require('passport');
+  import auth from './middleware/auth'
+//const passport = require('passport');
 
 //for call folder app
 function setupRoutes(app){
@@ -28,19 +27,11 @@ function setupRoutes(app){
 
 export function setup () {
     // Connect To Database
-    mongoose.connect(config.database);
-    // On Connection
-    mongoose.connection.on('connected', () => {
-        console.log('Connected to database ' + config.database);
-    });
-    // On Error
-    mongoose.connection.on('error', (err) => {
-        //console.log('Database error ' + err);
-    });
-
-    const port = 3000
+    const db = mongoose()
+    
     const app = express()
-
+    const port = 3000
+  
     app.use(express.static(path.join(__dirname, 'public')))
     app.use(auth)
     app.use(bodyParsr.urlencoded({extended: true}))
