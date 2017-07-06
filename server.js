@@ -7,7 +7,7 @@ const fs = require('fs');
 const bodyParsr = require('body-parser');
 
   //import auth from './middleware/auth'
-//const passport = require('passport');
+const passport = require('passport');
 
 //for call folder app
 function setupRoutes(app){
@@ -36,9 +36,9 @@ export function setup () {
     app.use(bodyParsr.json())
 
     // Passport Middleware
-    // app.use(passport.initialize());
-    // app.use(passport.session());
-    // require('./app/users/passport')(passport);
+    app.use(passport.initialize());
+    app.use(passport.session());
+    require('./app/users/passport')(passport);
 
     setupRoutes(app)
     

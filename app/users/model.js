@@ -29,17 +29,8 @@ const User = module.exports = mongoose.model('User', UserSchema, 'users');
 
 
 //-------------- METHOD FOR REGISTER ------------------------//
-module.exports.getUserById = function(id){
-//    const findUser = User.findById(id, function(err, user){
-//        if(err){
-//            console.log("findById err")
-//        }else{
-//             send(user)
-//        }
-//    })
-//    return findUser
-  const findUser =  User.findById(id)
-  return findUser
+module.exports.getUserById = function(id, callback){
+    User.findById(id, callback);
 }   
 module.exports.addUser = function(newUser){
     return new Promise((resolve, reject) => {
