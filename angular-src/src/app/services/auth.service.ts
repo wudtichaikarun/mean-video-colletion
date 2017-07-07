@@ -22,10 +22,13 @@ export class AuthService {
     const options: RequestOptionsArgs = {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
-    const response : Observable<Response> = this.http
-      .post('/api/users/login', user, options);
-    this.setTokenFromResponse(response);
-    this.router.navigate(['/'])
+    // const response : Observable<Response> = this.http
+    //   .post('/api/users/login', user, options)
+    //   .map((res: Response) => res.json()) 
+    //   this.setTokenFromResponse(response);
+    return this.http
+      .post('/api/users/login',user, options)
+      .map(res => res.json())
   }
 
   private setTokenFromResponse(observable: Observable<Response>){
@@ -46,10 +49,13 @@ export class AuthService {
     const options: RequestOptionsArgs = {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
-    const response : Observable<Response> = this.http
-      .post('/api/users/register', user, options);
-    this.setTokenFromResponse(response);
-    this.router.navigate(['/'])
+    // const response : Observable<Response> = this.http
+    //   .post('/api/users/register', user, options);
+    // this.setTokenFromResponse(response);
+    // this.router.navigate(['/'])
+      return this.http
+      .post('/api/users/register',user, options)
+      .map(res => res.json())
   }
 
   logout(){
