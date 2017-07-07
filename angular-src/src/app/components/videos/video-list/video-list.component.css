@@ -12,13 +12,13 @@
 .list-group{
     margin: 0px;
 }
-.paginationMain{
+/*.paginationMain{
     margin-top: 15px;
     text-align: center;
     border-left: 1px solid rgba(192,192,192,0.3);
     border-right: 1px solid rgba(192,192,192,0.3);
     border-bottom:  1px solid rgba(192,192,192,0.3);
-}
+}*/
 .pagination{
     margin: 0px;
 }

@@ -7,11 +7,11 @@
   <form class="videoDetailForm">
     <!-- ######################## Always show  #########################-->
     <!--title content-->
-    <h3 *ngIf="!editTitle">{{video.title}} </h3> 
+    <h3 class="fontDetail">{{video.title}} </h3> 
     <!--url content-->
-    <h4>video url: {{video.url}} </h4>
+    <h6 class="fontDetail">video url: {{video.url}} </h6>
     <!--description content-->
-    <h4>video description: {{video.discription}} </h4>
+    <h6 class="fontDetail">video description: {{video.discription}} </h6>
 
     <!-- ######################## video show when btn-edit click #########################-->
     <div *ngIf="editTitle" class="form-group">
@@ -24,23 +24,20 @@
       <input type="input" name="desc" class="form-control" placeholder="discription" [(ngModel)]="video.discription">
     </div>
     <!--Update btn-->
-    <button *ngIf="editTitle" type="button" (click)="updateVideo()" class="btn btn-warning">
+    <button *ngIf="editTitle" type="button" (click)="updateVideo()" class="btn btn-primary">
             Update
         </button>
-    <!--Delete btn-->
-    <!--<button *ngIf="editTitle" class="btn btn-danger" mwlConfirm [title]="title" [message]="message" placement="top" (confirm)="ConfirmClicked()"
-      (cancel)="cancelClicked = true" [(isOpen)]="isOpen">
-            Delete
-        </button>-->
-    <!--Cancel btn-->
+    <!--cancel btn-->
     <button *ngIf="editTitle" (click)="btnCancelClick()" class="btn btn-default">
             Cancel
         </button>
   </form>
+  <!--edite icon btn-->
   <div class="editeVideoConfig">
     <div class="editVideo" (click)="btnEditClick()">
-      <div class="iconEdite"></div><span>Edite </span></div>
-
+      <div class="iconEdite">Edite</div>
+    </div>
+    <!--delete icon btn-->
     <div 
         class="deleteVideo"
         mwlConfirm 
@@ -50,6 +47,7 @@
         (confirm)="ConfirmClicked()" 
         (cancel)="cancelClicked = true" 
         [(isOpen)]="isOpen" >
-      <div class="iconDelete"></div><span>delete</span></div>
+      <div class="iconDelete">delete</div>
+    </div>
   </div>
 </div>

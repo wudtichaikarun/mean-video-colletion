@@ -4,49 +4,81 @@ iframe{
 
 .videoDetailForm{
     padding: 0px 10px 3px 10px;
-    margin-bottom: 10px;
-    border-bottom:  1px solid  rgba(192,192,192,0.3);;
+    margin: 0px;
+    border-bottom:  1px solid  rgba(192,192,192,0.3);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 60px 1px rgba(0, 0, 0, 0.19);
 }
 
 .btn-default.btn-title{
     padding: 5px;
 }
+/*font url/detail*/
+.fontDetail{
+    color: gray;
+}
 
 /*css for edit and delet button*/
 .editeVideoConfig{
     padding: 16px 10px 16px 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 60px 1px rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
 }
+
+/*----------main edit/delete icon---------*/
+.editeVideoConfig{
+    height: 51px;
+}
+/*edite icon*/
 .editVideo{
     float: left;
-    margin-right: 7px;
+    margin-right: 15px;
 }
 div.editVideo:hover{
     float: left;
-    background-color: orange;
-}
-.deleteVideo{ 
-    float: left;
-}
-div.deleteVideo:hover {
-    float: left;
-    background-color: red;
+    color: #3399ff;
 }
 .iconEdite{
     float: left;
     background-repeat: no-repeat;
     background-image: url('../../../../assets/images/edite.png');
-    width: 19px;
+    width: 39px;
     height: 19px;
+    padding-left: 20px
+}
+.iconEdite:hover{
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url('../../../../assets/images/editeActive.png');
+    width: 39px;
+    height: 19px;
+    padding-left: 20px
+}
+/*delete icon*/
+.deleteVideo{ 
+    margin-left: 15px;
+    float: left;
+}
+div.deleteVideo:hover{
+    margin-left: 15px;
+    float: left;
+    color: red;
 }
 .iconDelete{
     float: left;
     background-repeat: no-repeat;
     background-image: url('../../../../assets/images/delete.png');
-    width: 19px;
+    width: 39px;
     height: 19px;
+    padding-left: 20px
 }
-.editeVideoConfig{
-    height: 51px;
+.iconDelete:hover{
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url('../../../../assets/images/deleteActice.png');
+    width: 39px;
+    height: 19px;
+    padding-left: 20px
 }
+
 
 

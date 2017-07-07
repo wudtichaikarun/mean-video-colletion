@@ -50,18 +50,20 @@
   </div>
 
   <!--######## video List Component ######-->
-  <div class="col-sm-3">
-    <div><button (click)="newVideo()" type="button" class="btn btn-default btn-lg btn-block">+ New Video</button></div>
-    <select class="form-control" id="select">
-          <option>----------Select By Category--------</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-    <hr />
-    <video-list (SelectVideo)="onSelectVideo($event)" [videos]="videos"></video-list>
-  </div>
+  <div class="col-sm-3 col-xs-12">
+   <div class="videoListMain">
+      <div><button (click)="newVideo()" type="button" class="btn btn-default btn-lg btn-block">+ New Video</button></div>
+      <select class="form-control" id="select">
+            <option>----------Select By Category--------</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+      <hr />
+      <video-list (SelectVideo)="onSelectVideo($event)" [videos]="videos"></video-list>
+    </div>
+   </div>
 
 </div>
 

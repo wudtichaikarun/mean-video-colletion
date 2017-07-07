@@ -27,10 +27,12 @@ function setupRoutes(app){
 
 export function setup () {
     const db = mongoose();
-    const port = 3000
+    const port = 3000;
     const app = express()
 
-    app.use(express.static(path.join(__dirname, 'public')))
+   
+
+    //app.use(express.static(path.join(__dirname, 'public')))
     //app.use(auth)
     app.use(bodyParsr.urlencoded({extended: true}))
     app.use(bodyParsr.json())
@@ -42,9 +44,10 @@ export function setup () {
 
     setupRoutes(app)
     
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'public/index.html'))
-    })
+    // app.get('*', (req, res) => {
+    //     res.sendFile(path.join(__dirname, 'public/index.html'))
+    // })
+
     app.listen(port, function(){
         console.log("server running on localhost:" + port);
     })
