@@ -1,5 +1,6 @@
 <div class="row">
-  <div class="col-sm-9">
+  <div class="col-sm-9 videoDetail">
+    <!--######## video Center Component Create new video ######-->
     <div *ngIf="!hidenewVideo">
       <h2>New Video</h2>
       <form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
@@ -23,6 +24,7 @@
             ngModel
             placeholder="Enter url link" >
         </div>
+
         <div class="form-group">
           <label>Description</label>
           <input 
@@ -35,20 +37,30 @@
         <button type="submit" class="btn btn-success">Save</button>
       </form>
     </div>
-    <video-detail 
-      (updateVideoEvent)="onUpdateVideoEvent($event)"
-      (deleteVideoEvent)="onDeleteVideoEvent($event)"
-      *ngIf="selectedVideo && hidenewVideo" 
-      [video]="selectedVideo">
-    </video-detail>
+    <!--######## video Detail component ######-->
+        <div class="videoDetail">
+          <video-detail 
+            (updateVideoEvent)="onUpdateVideoEvent($event)"
+            (deleteVideoEvent)="onDeleteVideoEvent($event)"
+            *ngIf="selectedVideo && hidenewVideo" 
+            [video]="selectedVideo">
+          </video-detail>
+        </div>
+
   </div>
-  
+
+  <!--######## video List Component ######-->
   <div class="col-sm-3">
     <div><button (click)="newVideo()" type="button" class="btn btn-default btn-lg btn-block">+ New Video</button></div>
-    <div class="videoListText"><h4>Videos List</h4></div>
+    <select class="form-control" id="select">
+          <option>----------Select By Category--------</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
     <hr />
     <video-list (SelectVideo)="onSelectVideo($event)" [videos]="videos"></video-list>
-
   </div>
 
 </div>

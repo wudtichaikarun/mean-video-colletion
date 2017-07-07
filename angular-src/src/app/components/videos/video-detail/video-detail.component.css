@@ -1,11 +1,52 @@
 iframe{
-    border-radius: 9px;
+    border: 0px;
 }
 
-form{
+.videoDetailForm{
+    padding: 0px 10px 3px 10px;
     margin-bottom: 10px;
+    border-bottom:  1px solid  rgba(192,192,192,0.3);;
 }
 
 .btn-default.btn-title{
     padding: 5px;
 }
+
+/*css for edit and delet button*/
+.editeVideoConfig{
+    padding: 16px 10px 16px 10px;
+}
+.editVideo{
+    float: left;
+    margin-right: 7px;
+}
+div.editVideo:hover{
+    float: left;
+    background-color: orange;
+}
+.deleteVideo{ 
+    float: left;
+}
+div.deleteVideo:hover {
+    float: left;
+    background-color: red;
+}
+.iconEdite{
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url('../../../../assets/images/edite.png');
+    width: 19px;
+    height: 19px;
+}
+.iconDelete{
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url('../../../../assets/images/delete.png');
+    width: 19px;
+    height: 19px;
+}
+.editeVideoConfig{
+    height: 51px;
+}
+
+
