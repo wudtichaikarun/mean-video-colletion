@@ -53,7 +53,7 @@ const UsersController = {
         User.getUserByUsername(username, (err, user) => {
             if(err) return (err);
             if(!user){
-                return res.json({ success: false, msg:'User not found'});
+                return res.json({ success: false, msg:'Invalid Username User not found!!'});
             }
             // Promise
             User.comparePassword(password, user).then(isMatch => {
@@ -66,8 +66,8 @@ const UsersController = {
                         console.log(`User name and password is ${isMatch}`)
                 } else{
                     res
-                        .status(401)
-                        .json({ success: false, msg:'Wrong password'})
+                        //.status(401)
+                        .json({ success: false, msg:'Invalid Password Please Try Again!!'})
                 }
             })
         })

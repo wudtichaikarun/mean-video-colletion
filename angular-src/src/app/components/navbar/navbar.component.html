@@ -18,7 +18,7 @@
         <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"> <a [routerLink]="['/profile']">Profile</a> </li>
       </ul>
       <!--Search-->
-      <form  class="navbar-form navbar-left" role="search">
+      <form *ngIf="authService.loggedIn()" class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>

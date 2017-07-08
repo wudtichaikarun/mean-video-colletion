@@ -1,6 +1,6 @@
 
 const Video = require('./model');
-const VideosController ={
+const VideosController = {
     // GET video by id
     get(req, res){
         Video.findById(req.params.id)
