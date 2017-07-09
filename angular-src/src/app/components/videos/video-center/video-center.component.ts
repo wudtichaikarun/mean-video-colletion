@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Video } from '../../../shared/video';
-import {FormGroup,FormControl, Validators, FormBuilder } from '@angular/forms';
-
+import { Router,ActivatedRoute } from '@angular/router';
+import { Subject, BehaviorSubject } from 'rxjs'
+import { videoPaginate } from '../../../shared/videosPaginate';
+import { FormGroup,FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Video } from '../../../shared/video'
 import { VideoService } from '../../../services/video.service';
-import {FlashMessagesService} from 'angular2-flash-messages';
-import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { VideosResponse } from'../../../shared/videos-response'
+
+
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap'
 
 @Component({
   selector: 'app-video-center',
@@ -13,8 +20,13 @@ import { Router } from '@angular/router';
 })
 export class VideoCenterComponent implements OnInit {
   form: FormGroup;
+
   videos: Array<Video>;
-  selectedVideo: Video;
+  currentPage: String;
+  totalPages: Number[];
+  
+  selectedVideo: videoPaginate;
+  
   private hidenewVideo: boolean = true;
   
   formErrors ={
@@ -46,19 +58,49 @@ export class VideoCenterComponent implements OnInit {
 
   constructor(
     private builder: FormBuilder,
-    private _videoService: VideoService, 
+    private _videoService: VideoService,
+    private route : ActivatedRoute,
     private router: Router
   ) {}
 
    ngOnInit() {
     this.buildForm()
-    this._videoService.getVideos()
-    .subscribe(resVideoData => {
-      this.videos = resVideoData
-    }, err => {
-      console.log(err);
-      return false;
-    });
+    this.subscribeToParams()
+    // this._videoService.getVideos()
+    // .subscribe(resVideoData => {
+    //   this.videos = resVideoData
+    //   console.log(this.videos)
+    // }, err => {
+    //   console.log(err);
+    //   return false;
+    // });
+  }
+  private subscribeToParams(){
+    this.route.queryParams.subscribe(
+      ({ page, categoryId }) => this.loadPage(page, categoryId)
+    )
+  }
+  private loadPage(page = 1, categoryId){
+    this._videoService
+      .getVideos(page , categoryId)
+      .subscribe(({ docs, page, pages}:VideosResponse) => {
+        this.videos = docs;
+        this.currentPage = page;
+        this.totalPages = Array.from({ length: +pages }, (_, index) => index +1)
+        console.log(this.videos)
+        console.log(this.currentPage)
+        console.log(this.totalPages)
+      })
+      // .subscribe(
+      //   ({ docs, page, pages }) => {
+      //   this.videos = docs ;
+      //   // create array
+      //   //this.totalPages = Array.from({ length: pages }, (_, index) => index +1)
+      //   // this.pages = Array.from({ length: pages }, (_, index) => index +1)
+      //   console.log(this.videos)
+      //   console.log(this.currentPage)
+      //   console.log(this.totalPages)
+      // })
   }
 
   // Build and validate form by angular
@@ -116,25 +158,25 @@ onUpdateVideoEvent(video: any){
   });
 }
 
-// Delete
-onDeleteVideoEvent(video: any){
-  let videoArray = this.videos;
-  this._videoService.deleteVideo(video)
-  .subscribe(resDeletedVideo => {
-    for (let i=0; i < videoArray.length; i++)
-    {
-      if (videoArray[i]._id === video._id)
-      {
-        videoArray.splice(i,1);
-      }
-    }
-  });
-  this.selectedVideo = null;
-}
+// // Delete
+// onDeleteVideoEvent(video: any){
+//   let videoArray = this.videos;
+//   this._videoService.deleteVideo(video)
+//   .subscribe(resDeletedVideo => {
+//     for (let i=0; i < videoArray.length; i++)
+//     {
+//       if (videoArray[i]._id === video._id)
+//       {
+//         videoArray.splice(i,1);
+//       }
+//     }
+//   });
+//   this.selectedVideo = null;
+// }
 
-newVideo(){
-  this.hidenewVideo = false;
-}
+// newVideo(){
+//   this.hidenewVideo = false;
+// }
 
 
 }

@@ -99,7 +99,11 @@
             <option>5</option>
           </select>
         <hr />
-      <video-list (SelectVideo)="onSelectVideo($event)" [videos]="videos"></video-list>
+      <video-list (SelectVideo)="onSelectVideo($event)" 
+      [videos]="videos"
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      ></video-list>
     </div>
   </div>
 </div>
