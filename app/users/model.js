@@ -26,9 +26,27 @@ const User = module.exports = mongoose.model('User', UserSchema, 'users');
 
 
 //-------------- METHOD FOR REGISTER ------------------------//
-module.exports.getUserById = function(id, callback){
-    User.findById(id, callback);
+
+ //For middleware/auth.js
+module.exports.getUserById = function(id){
+    //const idString = id.toString()
+    //console.log(idString)
+    return new Promise((resolve, reject)=>{
+        User.find({_id:id},(err, user) =>{
+            if(err){
+               reject("find err")
+            }else{
+                resolve(user)
+            }
+        })
+    })
 }   
+
+// // For passport
+// module.exports.getUserById = function(id, callback){
+//     User.findById(id, callback)
+// }
+
 module.exports.addUser = function(newUser){
     return new Promise((resolve, reject) => {
         bcrypt.genSalt(10, (err, salt) => {

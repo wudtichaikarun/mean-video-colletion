@@ -18,6 +18,10 @@ const videoSchema = new Schema({
     categoryId: {
         type: Number,
         required: true
+    },
+    authorId:{
+        type: String,
+        required: true
     }
 });
 videoSchema.plugin(mongoosePaginate);

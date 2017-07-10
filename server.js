@@ -6,8 +6,8 @@ const mongoose = require('./config/mongoose');
 const fs = require('fs');
 const bodyParsr = require('body-parser');
 
-  //import auth from './middleware/auth'
-const passport = require('passport');
+import auth from './middleware/auth'
+//const passport = require('passport');
 
 //for call folder app
 function setupRoutes(app){
@@ -33,14 +33,14 @@ export function setup () {
    
 
     //app.use(express.static(path.join(__dirname, 'public')))
-    //app.use(auth)
+    app.use(auth)
     app.use(bodyParsr.urlencoded({extended: true}))
     app.use(bodyParsr.json())
 
-    // Passport Middleware
-    app.use(passport.initialize());
-    app.use(passport.session());
-    require('./app/users/passport')(passport);
+    //Passport Middleware
+    // app.use(passport.initialize());
+    // app.use(passport.session());
+    // require('./app/users/passport')(passport);
 
     setupRoutes(app)
     

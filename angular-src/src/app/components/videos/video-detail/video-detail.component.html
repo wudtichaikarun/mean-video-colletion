@@ -9,17 +9,20 @@
     <!--title content-->
     <h3 class="fontDetail">{{video.title}} </h3> 
     <!--url content-->
-    <h6 class="fontDetail">video url: {{video.url}} </h6>
+    <h6 class="fontDetail">url: {{video.url}} </h6>
     <!--description content-->
-    <h6 class="fontDetail">video description: {{video.discription}} </h6>
+    <h6 class="fontDetail">description: {{video.discription}} </h6>
 
     <!-- ######################## video show when btn-edit click #########################-->
+    <!--Title input for edit-->
     <div *ngIf="editTitle" class="form-group">
       <input type="input" class="form-control" name="title" required placeholder="title" [(ngModel)]="video.title">
     </div>
+    <!--Url input for edite-->
     <div *ngIf="editTitle" class="form-group">
       <input type="input" class="form-control" name="url" required placeholder="url" [(ngModel)]="video.url">
     </div>
+    <!--Description input for edit-->
     <div *ngIf="editTitle" class="form-group">
       <input type="input" name="desc" class="form-control" placeholder="discription" [(ngModel)]="video.discription">
     </div>
@@ -32,6 +35,8 @@
             Cancel
         </button>
   </form>
+
+
   <!--edite icon btn-->
   <div class="editeVideoConfig">
     <div class="editVideo" (click)="btnEditClick()">
@@ -49,5 +54,7 @@
         [(isOpen)]="isOpen" >
       <div class="iconDelete">delete</div>
     </div>
+
+    
   </div>
 </div>

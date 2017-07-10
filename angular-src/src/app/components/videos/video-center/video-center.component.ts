@@ -41,8 +41,8 @@ export class VideoCenterComponent implements OnInit {
     // },
     title: {
       required: 'Username is required.',
-      minlength: 'Username required 4-10 character.',
-      maxlength: 'Username required 4-10 character.'
+      minlength: 'Username required 2 character.',
+      maxlength: 'Username required 65 character.'
     },
     url:{
       required: 'Email is required.',
@@ -87,9 +87,9 @@ export class VideoCenterComponent implements OnInit {
         this.videos = docs;
         this.currentPage = page;
         this.totalPages = Array.from({ length: +pages }, (_, index) => index +1)
-        console.log(this.videos)
-        console.log(this.currentPage)
-        console.log(this.totalPages)
+        //console.log(this.videos)
+        //console.log(this.currentPage)
+        //console.log(this.totalPages)
       })
       // .subscribe(
       //   ({ docs, page, pages }) => {
@@ -107,7 +107,11 @@ export class VideoCenterComponent implements OnInit {
   buildForm(){
     this.form = this.builder.group({
       // name: ['', Validators.required],
-      title: ['', Validators.required],
+       title: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(65)
+      ])],
       url: ['', Validators.required],
       discription: [],
       categoryId:['', Validators.required]
@@ -137,12 +141,12 @@ export class VideoCenterComponent implements OnInit {
 onSelectVideo(video: any){
   this.selectedVideo = video;
   this.hidenewVideo = true;
-  console.log(this.selectedVideo);
+  //console.log(this.selectedVideo);
 }
 
 // Create new video
 onSubmitAddVideo(even){
-  console.log(this.form.value)
+  //console.log(this.form.value)
   this._videoService.addVideo(this.form.value)
   .subscribe(resNewVideo => {
     this.videos.push(resNewVideo);
@@ -156,7 +160,8 @@ onUpdateVideoEvent(video: any){
   this._videoService.updateVideo(video)
   .subscribe(resUpdateVideo => {
     video = resUpdateVideo;
-    this.selectedVideo = resUpdateVideo;
+    this.selectedVideo = null
+    //this.selectedVideo = resUpdateVideo;
   });
 }
 

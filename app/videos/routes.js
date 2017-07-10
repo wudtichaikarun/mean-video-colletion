@@ -1,4 +1,3 @@
-
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 import controller from './controller';
@@ -11,8 +10,9 @@ var mongoosePaginate = require('mongoose-paginate');
 export function  setup(router){
     router
         .get('/:id', controller.get)
-        .get('/', passport.authenticate('jwt', {session:false}), 
-            (req, res) => { 
+        .get('/', controller.getAll)
+        // .get('/', passport.authenticate('jwt', {session:false}), 
+        //     (req, res) => { 
                 // Video.find()
                 //     .exec(function(err, videos){
                 //         if(err){
@@ -21,25 +21,8 @@ export function  setup(router){
                 //             res.json(videos);          
                 //         }
                 //     });
-                const { page, categoryId } = req.query;
-                if(categoryId == ""){
-                    Video.paginate({}, { page: +page, limit: 10 },function(err, videos){
-                        if(err){
-                            console.log("err paginate")
-                        }else{
-                          res.json(videos); 
-                        }
-                    })  
-                }else{
-                    Video.paginate({categoryId: +categoryId }, { page: +page, limit: 10 },function(err, videos){
-                        if(err){
-                            console.log("err paginate")
-                        }else{
-                            res.json(videos); 
-                        }
-                    })
-                }
-            })
+               
+        //     })
         .post('/', controller.create)
         .put('/:id', controller.update)
         .delete('/:id', controller.destroy)

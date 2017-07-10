@@ -1,17 +1,9 @@
 <div class="row">
-<<<<<<< HEAD
-  <div class="col-sm-9">
-      <!-- ######################## video show when btn + New Video click #########################-->
-    <div *ngIf="!hidenewVideo">
-      <h2>New Video</h2>
-      <form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
-=======
   <div class="col-sm-9 videoDetail">
     <!--######## video Center Component Create new video ######-->
     <div *ngIf="!hidenewVideo" class="addNewVideoMain">
     <!--<h2>New Video</h2>-->
     <!--<form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
->>>>>>> pagination
         <div class="form-group">
           <label>Title</label>
           <input 
@@ -97,17 +89,6 @@
       [video]="selectedVideo">
     </video-detail>
   </div>
-<<<<<<< HEAD
-  
-
-  <div class="col-sm-3">
-    <div class="col-4"><h3>Videos</h3></div>
-    <!--btn + New Video-->
-    <div class="col-4"><button (click)="newVideo()" type="button" class="btn-secondary btn-sm">+ New Video</button></div>
-    <hr />
-    <!--Videos list-->
-    <video-list (SelectVideo)="onSelectVideo($event)" [videos]="videos"></video-list>
-=======
 
 </div>
 
@@ -133,7 +114,6 @@
       [totalPages]="totalPages"
       ></video-list>
     </div>
->>>>>>> pagination
   </div>
 </div>
 
