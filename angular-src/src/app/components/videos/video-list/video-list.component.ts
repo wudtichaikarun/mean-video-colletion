@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { videoPaginate } from '../../../shared/videosPaginate';
+import { Video } from '../../../shared/video';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class VideoListComponent implements OnInit {
   ngOnInit() {
   }
 
-onSelect(vid: videoPaginate){
+onSelect(vid: Video ){
   this.SelectVideo.emit(vid);
 }
 

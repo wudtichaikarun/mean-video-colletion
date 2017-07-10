@@ -13,7 +13,7 @@ export class VideoService {
   constructor(private _http: AuthHttpService) { }
   
   // READ video
-  getVideos(page = 1, categoryId): Observable<VideosResponse> { 
+  getVideos(page = 1, categoryId = ""): Observable<VideosResponse> { 
     const options: RequestOptionsArgs = { params: {page, categoryId}};
 
     return this._http.get('/api/videos', options)

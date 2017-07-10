@@ -22,3 +22,15 @@
 .pagination{
     margin: 0px;
 }
+.mt-1{
+  padding: 10px 5px 5px 5px;  
+}
+
+
+/*pagination btn*/
+.page-item .active .page-link{
+     background-color: #0B0F01;
+}
+.btn.btn-default.page-item{
+    border-radius: 0px;
+}

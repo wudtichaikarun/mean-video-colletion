@@ -3,16 +3,16 @@
     {{ video.title }}
   </a>
 </div>
-  <nav class="mt-1">
-  <ul class="pagination">
-    <li 
+  <div class="btn-toolbar">
+  <div class="btn-group">
+     <a 
     *ngFor= "let page of totalPages" 
-    [ngClass]="{'page-item': true, 'active': page === currentPage }" >
-      <a 
-      class="page-link"
-      [routerLink]="['/books']" [queryParams]="{ page: page }" >
+    [ngClass]="{'page-item': true, 'active': page === currentPage }" 
+      
+      class="btn btn-default"
+      [routerLink]="['/videos']" [queryParams]="{ page: page }" >
       {{ page }}
       </a>
-    </li>
-  </ul>
-</nav>
+   
+  </div>
+</div>

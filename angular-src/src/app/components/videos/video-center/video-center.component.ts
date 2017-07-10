@@ -109,7 +109,8 @@ export class VideoCenterComponent implements OnInit {
       // name: ['', Validators.required],
       title: ['', Validators.required],
       url: ['', Validators.required],
-      discription: []
+      discription: [],
+      categoryId:['', Validators.required]
     });
     this.form
     .valueChanges
@@ -141,6 +142,7 @@ onSelectVideo(video: any){
 
 // Create new video
 onSubmitAddVideo(even){
+  console.log(this.form.value)
   this._videoService.addVideo(this.form.value)
   .subscribe(resNewVideo => {
     this.videos.push(resNewVideo);
@@ -159,24 +161,24 @@ onUpdateVideoEvent(video: any){
 }
 
 // // Delete
-// onDeleteVideoEvent(video: any){
-//   let videoArray = this.videos;
-//   this._videoService.deleteVideo(video)
-//   .subscribe(resDeletedVideo => {
-//     for (let i=0; i < videoArray.length; i++)
-//     {
-//       if (videoArray[i]._id === video._id)
-//       {
-//         videoArray.splice(i,1);
-//       }
-//     }
-//   });
-//   this.selectedVideo = null;
-// }
+onDeleteVideoEvent(video: any){
+  let videoArray = this.videos;
+  this._videoService.deleteVideo(video)
+  .subscribe(resDeletedVideo => {
+    for (let i=0; i < videoArray.length; i++)
+    {
+      if (videoArray[i]._id === video._id)
+      {
+        videoArray.splice(i,1);
+      }
+    }
+  });
+  this.selectedVideo = null;
+}
 
-// newVideo(){
-//   this.hidenewVideo = false;
-// }
+newVideo(){
+  this.hidenewVideo = false;
+}
 
 
 }

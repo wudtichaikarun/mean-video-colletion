@@ -7,6 +7,6 @@ export class videoPaginate {
     };
     total: Number;
     limit: Number;
-    page?: String;
+    page?: Number;
     pages?: Number;
 }

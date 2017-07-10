@@ -15,7 +15,10 @@ const videoSchema = new Schema({
         required: true,
     },
     discription: String,
-    categoryId: String
+    categoryId: {
+        type: Number,
+        required: true
+    }
 });
 videoSchema.plugin(mongoosePaginate);
 

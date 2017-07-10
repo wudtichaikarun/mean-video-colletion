@@ -30,6 +30,7 @@ hr{
     padding: 0px;
 }
 .btn.btn-default.btn-lg.btn-block{
+    height: 52px;
     padding: 5px 25px 5px 25px;
     border-radius: 0px;
     border: 0px;

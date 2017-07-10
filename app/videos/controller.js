@@ -29,6 +29,8 @@ const VideosController = {
         newVideo.title = req.body.title;
         newVideo.url = req.body.url;
         newVideo.discription = req.body.discription;
+        newVideo.categoryId = req.body.categoryId;
+
         newVideo.save(function(err, insertedVideo){
             if(err){
                 console.log('Error saving video');

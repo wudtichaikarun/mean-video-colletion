@@ -51,7 +51,7 @@ export class AuthService {
   }
     // Set token to localstorage
   storeToken(token: string){
-    localStorage.setItem('access-token', token)
+       localStorage.setItem('access-token', token)
   }
 
   // Register
