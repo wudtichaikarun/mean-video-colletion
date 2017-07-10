@@ -1,9 +1,17 @@
 <div class="row">
+<<<<<<< HEAD
   <div class="col-sm-9">
       <!-- ######################## video show when btn + New Video click #########################-->
     <div *ngIf="!hidenewVideo">
       <h2>New Video</h2>
       <form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
+=======
+  <div class="col-sm-9 videoDetail">
+    <!--######## video Center Component Create new video ######-->
+    <div *ngIf="!hidenewVideo" class="addNewVideoMain">
+    <!--<h2>New Video</h2>-->
+    <!--<form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
+>>>>>>> pagination
         <div class="form-group">
           <label>Title</label>
           <input 
@@ -24,6 +32,7 @@
             ngModel
             placeholder="Enter url link" >
         </div>
+
         <div class="form-group">
           <label>Description</label>
           <input 
@@ -34,15 +43,61 @@
             placeholder="Enter descrtption" >
         </div>
         <button type="submit" class="btn btn-success">Save</button>
-      </form>
-    </div>
-    <video-detail 
-      (updateVideoEvent)="onUpdateVideoEvent($event)"
-      (deleteVideoEvent)="onDeleteVideoEvent($event)"
-      *ngIf="selectedVideo && hidenewVideo" 
+      </form>-->
+
+    <h2 class="page-header">Add New Video</h2>
+    <form (submit)="onSubmitAddVideo()" [formGroup]="form">
+
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" class="form-control"  ngModel placeholder="Enter Title Name" formControlName="title">
+        <div *ngIf="formErrors.title" class="errMassage">
+          {{ formErrors.username }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="url">Url:</label>
+        <input type="text" id="url" class="form-control"   ngModel placeholder="Enter Url Link" formControlName="url">
+        <div *ngIf="formErrors.url" class="errMassage">
+          {{ formErrors.email }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="discription">Description:</label>
+        <input type="text" id="discription" class="form-control"   ngModel placeholder="Enter Description" formControlName="discription">
+        <div *ngIf="formErrors.discription" class="errMassage">
+          {{ formErrors.password }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Category">Category:</label>
+          <select class="form-control" id="categoryId" formControlName="categoryId">
+              <option class="selectCategory" >----Select Category----</option>
+              <option value=1>Android</option>
+              <option value=2>AngularJs</option>
+              <option value=3>Android</option>
+              <option value=4>Boostrap</option>
+              <option value=5>IOS</option>
+              <option value=6>Java</option>
+              <option value=7>Javascript</option>
+              <option value=8>Music</option>
+            </select>
+      </div>
+
+      <input *ngIf="form.valid" type="submit" class="btn btn-primary" value="ADD VIDEO">
+    </form>
+  </div>
+
+  <!--######## video Detail component ######-->
+  <div class="videoDetail">
+    <video-detail (updateVideoEvent)="onUpdateVideoEvent($event)" (deleteVideoEvent)="onDeleteVideoEvent($event)" *ngIf="selectedVideo && hidenewVideo"
       [video]="selectedVideo">
     </video-detail>
   </div>
+<<<<<<< HEAD
   
 
   <div class="col-sm-3">
@@ -52,7 +107,34 @@
     <hr />
     <!--Videos list-->
     <video-list (SelectVideo)="onSelectVideo($event)" [videos]="videos"></video-list>
-  </div>
+=======
 
 </div>
+
+    <!--######## video List Component ######-->
+  <div class="col-sm-3 col-xs-12">
+    <div class="videoListMain">
+      <div><button (click)="newVideo()" type="button" class="btn btn-default btn-lg btn-block">+ New Video</button></div>
+          <select class="form-control" id="select">
+            <option>----------Select By Category--------</option>
+            <option>Android</option>
+            <option>AngularJs</option>
+            <option>Android</option>
+            <option>Boostrap</option>
+            <option>IOS</option>
+            <option>Java</option>
+            <option>Javascript</option>
+            <option>Music</option>
+          </select>
+        <hr />
+      <video-list (SelectVideo)="onSelectVideo($event)" 
+      [videos]="videos"
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      ></video-list>
+    </div>
+>>>>>>> pagination
+  </div>
+</div>
+
 

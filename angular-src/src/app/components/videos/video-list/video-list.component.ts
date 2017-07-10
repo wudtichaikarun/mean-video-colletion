@@ -6,7 +6,7 @@ import { Video } from '../../../shared/video';
   selector: 'video-list',
   templateUrl: './video-list.component.html',
   styleUrls: ['./video-list.component.css'],
-  inputs: ['videos'],
+  inputs: ['videos','currentPage','totalPages'],
   outputs: ['SelectVideo']
 })
 export class VideoListComponent implements OnInit {
@@ -17,7 +17,7 @@ export class VideoListComponent implements OnInit {
   ngOnInit() {
   }
 
-onSelect(vid: Video){
+onSelect(vid: Video ){
   this.SelectVideo.emit(vid);
 }
 

@@ -22,10 +22,23 @@ export class AuthService {
     const options: RequestOptionsArgs = {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
-    const response : Observable<Response> = this.http
-      .post('/api/users/login', user, options);
-    this.setTokenFromResponse(response);
-    this.router.navigate(['/'])
+    // const response : Observable<Response> = this.http
+    //   .post('/api/users/login', user, options)
+    //   .map((res: Response) => res.json()) 
+    //   this.setTokenFromResponse(response);
+    return this.http
+      .post('/api/users/login',user, options)
+      .map(res => res.json())
+     
+    // return this.http
+    //   .post('/api/users/login',user, options)
+    //   .map(res => {
+    //     if(res.status == 201){
+    //       return res.json()
+    //     }else if(res.status == 401){
+    //       return res.json()
+    //     }
+    //   })
   }
 
   private setTokenFromResponse(observable: Observable<Response>){
@@ -38,7 +51,7 @@ export class AuthService {
   }
     // Set token to localstorage
   storeToken(token: string){
-    localStorage.setItem('access-token', token)
+       localStorage.setItem('access-token', token)
   }
 
   // Register
@@ -46,10 +59,14 @@ export class AuthService {
     const options: RequestOptionsArgs = {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
-    const response : Observable<Response> = this.http
-      .post('/api/users/register', user, options);
-    this.setTokenFromResponse(response);
-    this.router.navigate(['/'])
+    // const response : Observable<Response> = this.http
+    //   .post('/api/users/register', user, options);
+    // this.setTokenFromResponse(response);
+    // this.router.navigate(['/'])
+      return this.http
+      .post('/api/users/register',user, options)
+      .map(res => res.json())
+     
   }
 
   logout(){

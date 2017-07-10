@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Response, Headers, RequestOptionsArgs } from '@angular/http';
 import { AuthHttpService } from '../shared/auth-http.service'
+import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map';
 import { Video } from '../shared/video';
+import { VideosResponse } from'../shared/videos-response'
 
 
 @Injectable()
@@ -11,9 +13,16 @@ export class VideoService {
   constructor(private _http: AuthHttpService) { }
   
   // READ video
-  getVideos(){
-    return this._http.get('/api/videos')
-    .map(res => res.json());
+  getVideos(page = 1, categoryId = ""): Observable<VideosResponse> { 
+    const options: RequestOptionsArgs = { params: {page, categoryId}};
+
+    return this._http.get('/api/videos', options)
+    .map((res: Response) => res.json())
+    .map(({ docs, page, pages }) => ({
+      docs,
+      page,
+      pages
+    }))
   }
 
   // CREATE video

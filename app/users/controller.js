@@ -22,7 +22,6 @@ const UsersController = {
     //-------------- METHOD FOR REGISTER ------------------------//
     createUser(req, res, next){
         let newUser = new User({
-            name: req.body.name,
             email: req.body.email,
             username: req.body.username,
             password: req.body.password
@@ -32,10 +31,10 @@ const UsersController = {
                 if (err){
                     res 
                         .status(401)
-                        .json({ success: false, msg:'Failed to register user'}); 
+                        .json({ success: false, msg:'Failed to register duplicate username'}); 
                 }else{
                     res
-                        .header('Authorization', `JWT ${User.genToken(user)}`)
+                        //.header('Authorization', `JWT ${User.genToken(user)}`)
                         .status(201)
                         .json({ success: true, msg: 'User registered'});
                         //.json({ user: UsersSerializer.for('create', user)})
@@ -49,25 +48,26 @@ const UsersController = {
     authen(req, res){
         const username = req.body.username;
         const password = req.body.password;
-        console.log(`username is: ${username} && password is: ${password} `)
+        //console.log(`username is: ${username} && password is: ${password} `)
 
         User.getUserByUsername(username, (err, user) => {
             if(err) return (err);
             if(!user){
-                return res.json({ success: false, msg:'User not found'});
+                return res.json({ success: false, msg:'Invalid Username User not found!!'});
             }
             // Promise
             User.comparePassword(password, user).then(isMatch => {
                 if(isMatch){
+                    const token = User.genToken(user)
                     res
-                        .header('Authorization', `JWT ${User.genToken(user)}`)
+                        //.header('Authorization', `JWT ${User.genToken(user)}`)
                         .status(201)
-                        .json({ success: true, msg: 'Logeedin success'});
-                        console.log(`User name and password is ${isMatch}`)
+                        .json({ success: true, msg: 'Logeedin success', token:token});
+                        //console.log(`User name and password is ${isMatch}`)
                 } else{
                     res
-                        .status(401)
-                        .json({ success: false, msg:'Wrong password'})
+                        //.status(401)
+                        .json({ success: false, msg:'Invalid Password Please Try Again!!'})
                 }
             })
         })

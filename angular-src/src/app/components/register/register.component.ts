@@ -16,16 +16,16 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
 
   formErrors ={
-    name: '',
+    // name: '',
     username: '',
     email: '',
     password: ''
   }
 
   validatetionMessages = {
-    name: {
-      required: 'Name is required.'
-    },
+    // name: {
+    //   required: 'Name is required.'
+    // },
     username: {
       required: 'Username is required.',
       minlength: 'Username required 4-10 character.',
@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit {
   // Build and validate form by angular
   buildForm(){
     this.form = this.builder.group({
-      name: ['', Validators.required],
+      // name: ['', Validators.required],
       username: ['', Validators.compose([
         Validators.required,
         Validators.minLength(4),
@@ -94,23 +94,23 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  onRegisterSubmit(even){
-    event.preventDefault();
-    this.authService.register(this.form.value)
-  }
-
   // onRegisterSubmit(even){
-  //     event.preventDefault();
-  //   // Register user
-  //   this.authService.registerUser(this.form.value).subscribe(data => {
-  //     if(data.success){
-  //       this.flashMessages.show('You are now register and can login', {cssClass: 'alert-success', timeout: 3000 });
-  //       this.router.navigate(['/login']);
-  //     }else{
-  //       this.flashMessages.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000 });
-  //       this.router.navigate(['/register']);
-  //     }
-  //   });
+  //   event.preventDefault();
+  //   this.authService.register(this.form.value)
   // }
+
+  onRegisterSubmit(even){
+      event.preventDefault();
+    // Register user
+    this.authService.register(this.form.value).subscribe(data => {
+      if(data.success){
+        this.flashMessages.show('You are now register and can login', {cssClass: 'alert-success', timeout: 3000 });
+        this.router.navigate(['/login']);
+      }else{
+        this.flashMessages.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000 });
+        this.router.navigate(['/register']);
+      }
+    });
+  }
 
 }
