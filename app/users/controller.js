@@ -8,6 +8,10 @@ const Promise = require ('promise');
 
 //connectDB();
 const UsersController = {
+    
+    getProfile(req, res){
+          res.json({user: req.user}) 
+    },
 
     getAll(req, res){
         const authHeader = req.header('Authorization')
