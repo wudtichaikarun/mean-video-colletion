@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import {ConfirmOptions, Position} from 'angular2-bootstrap-confirm';
 import {Positioning} from 'angular2-bootstrap-confirm/position';
 
+
 @Component({
   selector: 'video-detail',
   templateUrl: './video-detail.component.html',
@@ -65,4 +66,5 @@ ConfirmClicked(){
   }
 }
 
+ 
 }
