@@ -1,3 +1,25 @@
+<!--<select class="form-control" id="select" onchange="location = this.value">
+  <option>----------Select By Category--------</option>
+  <option 
+    *ngFor="let category of CategoryId" 
+    value="{{ category.id }}"
+    [routerLink]="['/videos']" 
+    [queryParams]="{ categoryId: category.id }"> 
+    {{ category.title }} 
+  </option>
+</select>-->
+<div class="add-button" dropdown>
+  <div (click)="toggleDropdown()" class="dropDown">Select By Category <span class="caret"></span></div>
+  <ul class="dropdown" *ngIf="showDropdown">
+    <a *ngFor="let category of CategoryId" 
+      (click)="toggleDropdown()" 
+      [routerLink]="['/videos']" 
+      [queryParams]="{ categoryId: category.id }" >
+      <li class="li_DropDownCategory"><i class="fa fa-check-square-o fa-2"></i>{{ category.title }} </li>
+    </a>
+  </ul>
+</div>
+
 <!--Titl list name-->
 <div class="list-group">
   <a class="list-group-item" 

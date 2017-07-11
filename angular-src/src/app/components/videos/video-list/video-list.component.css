@@ -34,3 +34,69 @@
 .btn.btn-default.page-item{
     border-radius: 0px;
 }
+.form-control{
+    border: 0;
+    border-radius: 0px;
+}
+hr{
+    margin: 5px 0;
+}
+
+.dropDown{
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.dropDown:hover {
+    background-color: rgba(192,192,192,0.3);
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.li_DropDownCategory{
+    border-bottom:  1px solid rgba(192,192,192,0.3);
+}
+.li_DropDownCategory:hover{
+    border-bottom:  1px solid rgba(192,192,192,0.3);
+    background-color: rgba(192,192,192,0.3);
+}
+
+.dropdown {
+top: 5px;
+margin: 0 auto 5px auto;
+padding: 5px 0 5px 0;
+width: 250px;
+height: auto;
+background: white;
+border: 1px solid black;
+border-radius: 0px;
+list-style: none;
+}
+.dropdown:before {
+content: "";
+border-width: 1px 0 0 1px;
+border-style: solid;
+border-color: black;
+background: black;
+height: 14px;
+width: 14px;
+position: absolute;
+top: -7px;
+transform: translateX(-50%) rotate(45deg);
+}
+
+a {
+text-decoration: none;
+color: black;
+font-size: 1em;
+}
+li {
+  text-align: left;
+  padding:  10px 15px;
+  margin: 0;
+}
+i {
+margin-right: 10px;
+}

@@ -3,7 +3,8 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { Subject, BehaviorSubject } from 'rxjs'
 //import { videoPaginate } from '../../../shared/videosPaginate';
 import { FormGroup,FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Video } from '../../../shared/video'
+import { Video } from '../../../shared/video';
+import { categoryId } from '../../../shared/categoryId'
 import { VideoService } from '../../../services/video.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { VideosResponse } from'../../../shared/videos-response'
@@ -22,6 +23,7 @@ export class VideoCenterComponent implements OnInit {
   form: FormGroup;
 
   videos: Array<Video>;
+  CategoryId: Array<categoryId>;
   currentPage: String;
   totalPages: Number[];
   
@@ -66,14 +68,14 @@ export class VideoCenterComponent implements OnInit {
    ngOnInit() {
     this.buildForm()
     this.subscribeToParams()
-    // this._videoService.getVideos()
-    // .subscribe(resVideoData => {
-    //   this.videos = resVideoData
+    this._videoService.getCategory()
+     .subscribe(res => {
+       this.CategoryId = res
     //   console.log(this.videos)
     // }, err => {
     //   console.log(err);
     //   return false;
-    // });
+     });
   }
   private subscribeToParams(){
     this.route.queryParams.subscribe(

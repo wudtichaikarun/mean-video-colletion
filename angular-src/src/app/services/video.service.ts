@@ -25,6 +25,15 @@ export class VideoService {
     }))
   }
 
+  // READ categoryId
+  getCategory(){
+    const options:RequestOptionsArgs = {
+      headers: new Headers({'Content-Type': 'application/json'})
+    }
+    return this._http.get('/api/categorys',options)
+    .map((response: Response) => response.json());
+  }
+
   // CREATE video
   addVideo(video: Video){
     const options:RequestOptionsArgs = {
