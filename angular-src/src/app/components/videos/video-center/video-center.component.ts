@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Subject, BehaviorSubject } from 'rxjs'
-import { videoPaginate } from '../../../shared/videosPaginate';
+//import { videoPaginate } from '../../../shared/videosPaginate';
 import { FormGroup,FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Video } from '../../../shared/video'
 import { VideoService } from '../../../services/video.service';
@@ -25,7 +25,7 @@ export class VideoCenterComponent implements OnInit {
   currentPage: String;
   totalPages: Number[];
   
-  selectedVideo: videoPaginate;
+  selectedVideo: Video;
   
   private hidenewVideo: boolean = true;
   

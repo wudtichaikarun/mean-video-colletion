@@ -1,12 +1,13 @@
-const passport = require('passport');
-const jwt = require('jsonwebtoken');
-// import Paginate from '../pagination';
+// const passport = require('passport');
+// const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate');
-
 import ArticlesPolicy from './policy'
-
 const Video = require('./model');
+
+/* ---- Note middleware/auth.js get every req and decode 
+ req.user = user in database,req.user._id = _id,
+ you can use req.user.key every you want ----- */ 
 const VideosController = {
     // GET video by id
     get(req, res){
@@ -25,7 +26,7 @@ const VideosController = {
          if(ArticlesPolicy.for('get', req.user)){
             const { page, categoryId } = req.query;
                 if(categoryId == ""){
-                    Video.paginate({}, { page: +page, limit: 10 },function(err, videos){
+                    Video.paginate({authorId:req.user._id}, { page: +page, limit: 10 },function(err, videos){
                         if(err){
                             console.log("err paginate")
                         }else{
@@ -33,12 +34,15 @@ const VideosController = {
                         }
                     })  
                 }else{
-                    Video.paginate({categoryId: +categoryId }, { page: +page, limit: 10 },function(err, videos){
-                        if(err){
-                            console.log("err paginate")
-                        }else{
-                            res.json(videos); 
-                        }
+                    Video.paginate(
+                        {authorId:req.user._id,categoryId: +categoryId },
+                         { page: +page, limit: 10 },
+                            function(err, videos){
+                                if(err){
+                                    console.log("err paginate")
+                                }else{
+                                    res.json(videos); 
+                                }
                     })
                 }
          }else{
