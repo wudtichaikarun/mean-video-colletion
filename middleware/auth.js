@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
-//import config from '../config'  //call secreat key 'romantic_secret'
+ //call secreat key 'romantic_secret'
+const config = require('../config/config')
 //import { User } from '../app/users/model'
 const User = require('../app/users/model');
 
@@ -9,7 +10,7 @@ export default function(req, res, next){
     // select only token not need Bearer use regulaexpression /JWT (.*)/
     const accessToken = authHeader.match(/JWT (.*)/)[1]
     //console.log(accessToken)
-    jwt.verify(accessToken, 'romantic_secret', (err, decoded) => {
+    jwt.verify(accessToken, config.secret, (err, decoded) => {
         //console.log(decoded.sub)
         if(err) return next()
         User.getUserById(decoded.sub)

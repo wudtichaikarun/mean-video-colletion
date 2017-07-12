@@ -1,10 +1,9 @@
 //import { connectDB } from '../model'
 //import UsersSerializer from './serializer'
-
 const User = require('./model');
 //const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const Promise = require ('promise');
+const Promise = require ('promise'); 
 
 //connectDB();
 const UsersController = {

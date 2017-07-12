@@ -1,4 +1,5 @@
 //mport { connectDB } from '../model'
+const config = require('../../config/config');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 import jwt from 'jsonwebtoken'
@@ -67,7 +68,7 @@ module.exports.addUser = function(newUser){
 
 //-------------- METHOD FOR (LOGIN) && (REGISTER) ------------------------//
 module.exports.genToken = function (user){
-    return jwt.sign({ sub: user._id}, 'romantic_secret', { expiresIn: '1h' })
+    return jwt.sign({ sub: user._id}, config.secret, { expiresIn: '1h' })
 }
 
 //-------------- METHOD FOR AUTHENTICATION (LOGIN)------------------------//
