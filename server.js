@@ -27,7 +27,7 @@ function setupRoutes(app){
 
 export function setup () {
     const db = mongoose();
-    const port = 3000;
+    const port = process.env.PORT || 8080;
     const app = express()
 
    
