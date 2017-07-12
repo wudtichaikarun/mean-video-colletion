@@ -57,9 +57,9 @@ updateVideo(){
   this.updateVideoEvent.emit(this.video);
 }
 
-// deleteVideo(){
-//   this.deleteVideoEvent.emit(this.video);
-// }
+deleteVideo(){
+  this.deleteVideoEvent.emit(this.video);
+}
 
 ConfirmClicked(){
    this.confirmClicked = true
@@ -67,6 +67,5 @@ ConfirmClicked(){
     this.deleteVideoEvent.emit(this.video);
   }
 }
-
 
 }
