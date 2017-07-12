@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ConfirmModule } from 'angular2-bootstrap-confirm';
 
+//Alert popup
+//import { PopupModule } from 'ng2-opd-popup'
+
 // Service
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,6 +14,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { SafePipe } from './shared/safe.pipe';
 import { AuthHttpService } from './shared/auth-http.service'
 import { VideoService } from './services/video.service'
+
+
 
 // Component
 import { AppComponent } from './app.component';

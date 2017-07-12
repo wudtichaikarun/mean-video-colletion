@@ -43,7 +43,7 @@
       <div class="iconEdite">Edite</div>
     </div>
     <!--delete icon btn-->
-    <div 
+    <!--<div 
         class="deleteVideo"
         mwlConfirm 
         [title]="title" 
@@ -53,8 +53,12 @@
         (cancel)="cancelClicked = true" 
         [(isOpen)]="isOpen" >
       <div class="iconDelete">delete</div>
-    </div>
+      <popup #popup1>
+        Add you custom
+      </popup>
+      <button (click)=" ClickButton()" >test</button>
 
-    
+    </div>
+    -->
   </div>
 </div>
