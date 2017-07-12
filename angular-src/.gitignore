@@ -44,7 +44,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-tsconfig.json*
+tsconfig.json
 ../config/*
-yarn.lock*
+yarn.lock
 
