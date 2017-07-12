@@ -2,9 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ConfirmModule } from 'angular2-bootstrap-confirm';
 
-//Alert popup
-//import { PopupModule } from 'ng2-opd-popup'
-
 // Service
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
