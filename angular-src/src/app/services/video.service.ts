@@ -18,11 +18,11 @@ export class VideoService {
 
     return this._http.get('/api/videos', options)
     .map((res: Response) => res.json())
-    .map(({ docs, page, pages }) => ({
-      docs,
-      page,
-      pages
-    }))
+    // .map(({ docs, page, pages }) => ({
+    //   docs,
+    //   page,
+    //   pages
+    // }))
   }
 
   // READ categoryId
@@ -48,7 +48,7 @@ export class VideoService {
    const options:RequestOptionsArgs = {
       headers: new Headers({'Content-Type': 'application/json'})
     }
-    return this._http.put(`/api/videos/${video._id}`, JSON.stringify(video), options)
+    return this._http.patch(`/api/videos/${video._id}`, JSON.stringify(video), options)
     .map((response: Response) => response.json());
   }
 

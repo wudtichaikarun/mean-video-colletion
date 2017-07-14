@@ -1255,22 +1255,9 @@ var AuthService = (function () {
         var options = {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' })
         };
-        // const response : Observable<Response> = this.http
-        //   .post('/api/users/login', user, options)
-        //   .map((res: Response) => res.json()) 
-        //   this.setTokenFromResponse(response);
         return this.http
             .post('/api/users/login', user, options)
             .map(function (res) { return res.json(); });
-        // return this.http
-        //   .post('/api/users/login',user, options)
-        //   .map(res => {
-        //     if(res.status == 201){
-        //       return res.json()
-        //     }else if(res.status == 401){
-        //       return res.json()
-        //     }
-        //   })
     };
     AuthService.prototype.setTokenFromResponse = function (observable) {
         var _this = this;
@@ -1411,15 +1398,12 @@ var VideoService = (function () {
         if (categoryId === void 0) { categoryId = 0; }
         var options = { params: { page: page, categoryId: categoryId } };
         return this._http.get('/api/videos', options)
-            .map(function (res) { return res.json(); })
-            .map(function (_a) {
-            var docs = _a.docs, page = _a.page, pages = _a.pages;
-            return ({
-                docs: docs,
-                page: page,
-                pages: pages
-            });
-        });
+            .map(function (res) { return res.json(); });
+        // .map(({ docs, page, pages }) => ({
+        //   docs,
+        //   page,
+        //   pages
+        // }))
     };
     // READ categoryId
     VideoService.prototype.getCategory = function () {

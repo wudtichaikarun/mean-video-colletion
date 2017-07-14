@@ -22,23 +22,9 @@ export class AuthService {
     const options: RequestOptionsArgs = {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
-    // const response : Observable<Response> = this.http
-    //   .post('/api/users/login', user, options)
-    //   .map((res: Response) => res.json()) 
-    //   this.setTokenFromResponse(response);
     return this.http
       .post('/api/users/login',user, options)
       .map(res => res.json())
-     
-    // return this.http
-    //   .post('/api/users/login',user, options)
-    //   .map(res => {
-    //     if(res.status == 201){
-    //       return res.json()
-    //     }else if(res.status == 401){
-    //       return res.json()
-    //     }
-    //   })
   }
 
   private setTokenFromResponse(observable: Observable<Response>){
