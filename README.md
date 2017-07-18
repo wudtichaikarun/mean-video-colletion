@@ -21,11 +21,21 @@
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/login.png" />
 </a>
 
- ### Create Read/Render Update Delete: 
- <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/crud.png" target="_blank">
-    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/crud.png" />
+ ### Create:
+ <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/create.png" target="_blank">
+    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/create.png" />
 </a>
- 
+
+ ### Read/Render:
+ <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/read-render.png" target="_blank">
+    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/read-render.png" />
+</a>
+
+ ### Read/Render Update Delete: 
+ <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/update-delete.png" target="_blank">
+    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/update-delete.png" />
+</a>
+
  ## How to run project
  1. สร้าง folder config ใน folder config สร้าง file ชื่อ config.js และ mongoose.js<br>
     <a href="http://www.mx7.com/view2/zZHryFJweBZoYCuj" target="_blank">

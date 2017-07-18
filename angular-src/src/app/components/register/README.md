@@ -241,7 +241,7 @@ export class RegisterComponent implements OnInit {
     *ถ้าทุกอย่างถูกต้องหลังจากกด  Register ค่าที่กรอกใน input tag จะแสดงใน Consoleเป็น Object ประกอบไปด้วย username email password*<br>
 
 ### Validators
-- จะสังเกตได้ว่าที่ Template(register.component.html) input tag จะมีการใส่ placeholder="Enter Username 4-8 Character" ซึ่งก็คือต้องหารตรวจสอบการป้อน ข้อความเข้ามาจาก user กำหนดเงื่อนไขคือต้องมีตัวอักษร 4-8 ตัวเพื่อให้ใช้งานความสามารถนี้ได้เราจะใช้งานสิ่งที่เรียกว่า Validators
+- จะสังเกตได้ว่าที่ Template(register.component.html) input tag จะมีการใส่ placeholder="Enter Username 4-8 Character" ซึ่งก็คือต้องการตรวจสอบการป้อน ข้อความเข้ามาจาก user กำหนดเงื่อนไขคือต้องมีตัวอักษร 4-8 ตัวเพื่อให้ใช้งานความสามารถนี้ได้เราจะใช้งานสิ่งที่เรียกว่า Validators
 #### ขั้นตอนการใช้งาน FormControlName
 1. ไปที่ Conponent(register.component.ts )
  * import Validators เข้ามา
@@ -334,7 +334,7 @@ export class RegisterComponent implements OnInit {
   
 }
 ```
-3. ไปที่ Conponent(register.component.css)
+3. ไปที่ StyleSheey(register.component.css)
     - เพิ่ม code ใน file stylesheet
 ```sh
 .ng-valid:not(form):not(fieldset) {
@@ -392,7 +392,7 @@ export class RegisterComponent implements OnInit {
 5.   ทดสอบการทำงาน 
     * ที่ Termial ใช้คำสั่ง <code>ng serve</code> 
     * *ถ้าทุกอย่างถูกต้องที่Tag input จะมีสีแดง และไม่แสดงปุ่ม Register* <br><br>
-    <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register-validat.png"         target="_blank"><img border="1" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register-validat.png" />
+    <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/registerValidat.png"         target="_blank"><img border="1" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/registerValidat.png" />
     </a>
 
 6.   การแสดงข้อความ Error เมื่อมีการกรอกข้อมูลไม่ถูกต้องลงใน from
