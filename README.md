@@ -1,7 +1,7 @@
 # MEAN-STACK CRUD Use Angular2
  ## How to run project
- - create folder
-    [<img src="https://www.img.in.th/image/N0Jr" />]
+ - create folder<br>
+    ![List Products](https://www.img.in.th/image/N0Jr)
  - create file
     - config.js
     - mongoose.js
