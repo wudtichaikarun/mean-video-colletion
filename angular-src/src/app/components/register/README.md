@@ -280,6 +280,61 @@ export class RegisterComponent implements OnInit {
   
 }
 ```
+2. Validators ที่ใช้ในโปรเจคนี้
+    ในTag input 1 tag เราสามารถใช้ Validators หลายตัวได้
+    - username
+        - Validators.required ต้องมีการใส่ค่า
+        - Validators.minLength(4) ใช้ตัวอักษรต่ำสุดได้ 4 ตัวอักษร
+        - Validators.maxLength(10) ใช้ตัวอักษรสูงสุดได้ 10 ตัวอักษร
+     - email
+        - Validators.required ต้องมีการใส่ค่า
+        - Validators.pattern(...) คือ regular expression ของ email
+    - password
+        - Validators.required ต้องมีการใส่ค่า
+        - Validators.minLength(4) ใช้ตัวอักษรต่ำสุดได้ 4 ตัวอักษร
+        - Validators.maxLength(8) ใช้ตัวอักษรสูงสุดได้ 8 ตัวอักษร
+ ```sh
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms'; //<----import Validators
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+
+export class RegisterComponent implements OnInit {
+  form: FormGroup;
+
+  constructor(){}
+ 
+  ngOnInit() {
+    this.form = new FormGroup({
+      username: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(10)
+      ])],
+      email: ['@hotmail.com', Validators.compose([
+        Validators.required,
+        Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+      ])],
+      password: ['',Validators.compose([
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(8)
+      ])]
+    });
+  }
+
+  onSubmit(event){ 
+      event.preventDefault();
+      console.log(this.form.controls); //<----แก้ไขการแสดงค่า
+  }
+  
+}
+```
+
 ERROR:
 ```sh
 <form (submit)="onRegisterSubmit()" [formGroup]="form" > 

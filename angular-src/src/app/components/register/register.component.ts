@@ -52,7 +52,6 @@ export class RegisterComponent implements OnInit {
   // Build and validate form by angular
   buildForm(){
     this.form = this.builder.group({
-      // name: ['', Validators.required],
       username: ['', Validators.compose([
         Validators.required,
         Validators.minLength(4),
