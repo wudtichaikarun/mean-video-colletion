@@ -1,15 +1,28 @@
 # MEAN-STACK CRUD Use Angular2
  ## How to run project
- - create folder config<br>
-    <img src="https://www.img.in.th/images/69dcbc8dda429e7b9ad26b9c43764c9b.png" width="300" height="300" />
- - ใน folder config create file<br>
+ 1. create folder config ใน folder config create file config.js และ mongoose.js<br>
     <a href="http://www.mx7.com/view2/zZHryFJweBZoYCuj" target="_blank">
         <img border="0" width="300" height="300" src="http://www.mx7.com/i/22b/EecXAE.png" />
     </a>
     - config.js
+```sh
+module.exports = {
+    uri: "<<you data base>>",
+    secret: "<<you secret password>>"
+}
+}
+```
     - mongoose.js
+```sh
+var config = require('./config')
+var mongoose = require('mongoose')
+module.exports = function(){
+    var db = mongoose.connect(config.uri);
+    return db;
+}
+```
         
- - run
+ 2. run
     Download dependencies:
         <code>npm install </code>
     Start project:
