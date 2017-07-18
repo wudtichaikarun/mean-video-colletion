@@ -28,7 +28,7 @@
  ## How to run project
  1. สร้าง folder config ใน folder config สร้าง file ชื่อ config.js และ mongoose.js<br>
     <a href="http://www.mx7.com/view2/zZHryFJweBZoYCuj" target="_blank">
-        <img border="0" width="300" height="300" src="http://www.mx7.com/i/22b/EecXAE.png" />
+        <img border="0" src="http://www.mx7.com/i/22b/EecXAE.png" />
     </a><br>
 Project นี้ผมใช้ data base ของ <a href="https://mlab.com/login/">mLap</a> โดยรูปแบบ uri จะเป็น mongodb://ชื่อผู้ใช้:รหัสผ่าน@ds161041.mlab.com:61041/ชื่อ collection
 ```sh
