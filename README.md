@@ -1,4 +1,4 @@
-# MEAN-STACK CRRUD use angular2
+# MEAN-STACK CRUD use angular2
  - JWT
  - Becrypt
  - Http service & custome
