@@ -1,4 +1,4 @@
-# MEAN-STACK CRRUD Use Angular2
+# MEAN-STACK CRUD Use Angular2
  - Angular2 Driven Forms
  - Angular2 Reactive Forms
  - Angular2 RESTful API
