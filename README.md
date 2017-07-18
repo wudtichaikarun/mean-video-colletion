@@ -1,9 +1,16 @@
 # MEAN-STACK CRUD Use Angular2
  ## Project Overview
-  ### Register
-   <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/Artboard.png" target="_blank">
-    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/Artboard.png" />
+  ### Register: 
+   <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" target="_blank">
+    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" />
    </a>
+ 
+ ### Login: 
+
+ ### Create
+ ### Read/Render
+ ### Update
+ ### Delete
 
  ## How to run project
  1. สร้าง folder config ใน folder config สร้าง file ชื่อ config.js และ mongoose.js<br>
@@ -56,7 +63,3 @@ module.exports = function(){
 | Express Routing | เทคนิคการเขียน Routing ให้สามารถใช้ประโยชน์ จาก concept foder by feature |                                    |
 | Mongoose Paginate            |                                             |                                    |
 
-## Create
-## Read/Render
-## Update
-## Delete
