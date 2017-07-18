@@ -127,7 +127,7 @@ export class RegisterComponent implements OnInit {
 ```
 2. ไปที่ Template(register.component.html) 
     * ที่ input ของ username ทำการเพื่ิม FormControl เข้ามาโดยให้มีค่าตาม id ซึ่งก็คือ username *ทดสอบ username อันเดียวก่อน*
-    * ในข้อ 1 ที่ Conponent(register.component.ts ) เราสร้าง method รอไว้ชื่อว่า onSubmit() เพราะฉนั้น ที่Template(register.component.html) ที่ tag from ต้องมีการส่งค่าไปให้ Conponent(register.component.ts ) เราเรียกวีธีการนี้ว่า Event Binding
+    * ในข้อ 1 ที่ Conponent(register.component.ts ) เราสร้าง method รอไว้ชื่อว่า onSubmit() เพราะฉนั้น ที่Template(register.component.html) ที่ tag from ต้องมีการส่งค่าไปให้ Conponent(register.component.ts ) เราเรียกวีธีการนี้ว่า Event Binding --> (submit)="onSubmit()"
 ```sh 
 <form (submit)="onSubmit()" [formGroup]="form" > 
     
@@ -147,6 +147,13 @@ export class RegisterComponent implements OnInit {
 </form>
 }
 ```
+3. ทดสอบการทำงาน 
+    * ที่ Termial ใช้คำสั่ง <code>ng serve</code> 
+    * ที่ Chome คลิกขวา inspect ไปที่ Console
+    * ทำการป้อนข้อมูลที่ช่อง username กด Register
+
+    *ถ้าทุกอย่างถูกต้องหลังจากกด  Register ค่าที่กรอกใน input tag username จะแสดงใน Console*
+    
 
 ERROR:
 
