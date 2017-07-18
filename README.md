@@ -7,8 +7,6 @@
     |                                             
         |                                    
             |
-
-
 | Angular2 Reactive Forms              |                                             |                                    |
 | Angular2 RESTful API              |                                             |                                    |
 | Angular2 Http Service             |                                             |                                    |
