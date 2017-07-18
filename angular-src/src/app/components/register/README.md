@@ -395,7 +395,107 @@ export class RegisterComponent implements OnInit {
     <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register-validat.png"         target="_blank"><img border="1" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register-validat.png" />
     </a>
 
-ERROR:
+6.   การแสดงข้อความ Error เมื่อมีการกรอกข้อมูลไม่ถูกต้องลงใน from
+    * ที่ Conponent(register.component.ts )เนื่องจาก code ใน ngOnInit() เริ่มยาวมากและจำเป็นต้องเขียนเพิ่มอีกให้ทำการสร้างmethod ใหม่ขึ้นมาเพื่อทำหน้าที่ตั้งชื่อว่า buildForm() แล้วทำการย้าย code ไปไว้ใน method ใหม่
+    * สร้าง method ขึ้นมาเพื่อเฝ้าดูการเปลี่ยนแปลงค่าใน form ตั้งชื่อว่า onValueChanged()
+    * สร้าง object ขึ้นมาเพื่อใช้เก็บค่า error ไปแสดง ตั้งชื่อว่า formErrors = {...}
+    * สร้าง object ขึ้นมาเพื่อเอาไว้เก็บข้อความที่จะแสดงเมื่อ form invalid ตั้งชื่อว่า validatetionMessages = {...}
+```sh
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms'; //<----import Validators
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+
+export class RegisterComponent implements OnInit {
+  form: FormGroup;
+
+  formErrors = {
+    username: '',
+    email: '',
+    password: ''
+  }
+
+  validatetionMessages = {
+    username: {
+      required: 'Username is required.',
+      minlength: 'Username required 4-10 character.',
+      maxlength: 'Username required 4-10 character.'
+    },
+    email:{
+      required: 'Email is required.',
+      pattern: 'Invalid email pattern'
+    },
+    password:{
+      required: 'Password is required.',
+      minlength: 'Username required 4-8 character.',
+      maxlength: 'Username required 4-8 character.'
+    }
+  }
+
+  constructor(
+    private builder: FormBuilder,
+    private authService: AuthService,
+    private flashMessages: FlashMessagesService,
+    private router:Router
+  ){}
+
+  ngOnInit() {
+    this.buildForm()
+  }
+
+  // Build and validate form by angular
+  buildForm(){
+    this.form = this.builder.group({
+      username: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(10)
+      ])],
+      email: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+      ])],
+      password: ['',Validators.compose([
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(8)
+      ])],
+    });
+    this.form
+    .valueChanges
+    //.debounceTime(400)
+    //.distinctUntilChange()
+    .subscribe(()=> this.onValueChanged())
+  }
+  
+  onValueChanged(){
+    if(!this.form) return;
+    for(const field in this.formErrors){
+      this.formErrors[field] = '';
+      const control = this.form.get(field);
+      if(control && control.dirty && !control.valid){
+        const messages = this.validatetionMessages[field];
+        for(const key in control.errors){
+          this.formErrors[field] += messages[key] + '';
+        }
+      }
+    }
+  }
+
+  onSubmit(event){ 
+      event.preventDefault();
+      console.log(this.form.controls); 
+  }
+  
+}
+```
+7. ไปที่ Template(register.component.html)แก้ไข code
+    - ใส่เงื่อนไขในการแสดงข้อความ errror --> *ngIf="formErrors.username"
+    - ใส่ข้อความที่จะแสดงไว้ใน {{....}}
 ```sh
 <form (submit)="onRegisterSubmit()" [formGroup]="form" > 
     
@@ -438,7 +538,7 @@ ERROR:
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary" value="Register" ></button>
+    <input *ngIf="form.valid" type="submit" class="btn btn-primary" value="Register" >
 </form>
 }
 ```
