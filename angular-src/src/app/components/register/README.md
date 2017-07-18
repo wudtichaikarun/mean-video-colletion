@@ -275,7 +275,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(event){ 
       event.preventDefault();
-      console.log(this.form.controls); //<----แก้ไขการแสดงค่า
+      console.log(this.form.controls); 
   }
   
 }
@@ -329,11 +329,71 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(event){ 
       event.preventDefault();
-      console.log(this.form.controls); //<----แก้ไขการแสดงค่า
+      console.log(this.form.controls); 
   }
   
 }
 ```
+3. ไปที่ Conponent(register.component.css)
+    - เพิ่ม code ใน file stylesheet
+```sh
+.ng-valid:not(form):not(fieldset) {
+    border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form):not(fieldset){
+    border-left:  5px solid #A94442;
+}
+
+.errMassage{
+    color: #A94442;
+}
+```
+4. ไปที่ Template(register.component.html)แก้ไข code
+    * เพื่อใช้ประโยชน์จากValidators เราจะให้แสดงปุ่ม Register เมื่อ Form ผ่านการ Validat แล้วเท่านั้น
+```sh
+<form (submit)="onRegisterSubmit()" [formGroup]="form" > 
+    
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input 
+            type="text" 
+            id="username" 
+            class="form-control" 
+            placeholder="Enter Username 4-8 Character"
+            formControlName="username" >
+    </div>
+    
+    <div class="form-group">
+        <label for="email" >Email:</label>
+        <input 
+            type="text" 
+            id="email" 
+            class="form-control" 
+            placeholder="Enter Email"
+            formControlName="email" >
+    </div>
+    
+    <div class="form-group">
+        <label for="password" >Password:</label>
+        <input 
+            type="password" 
+            id="password" 
+            class="form-control" 
+            placeholder="Enter Password 4-8 Character"
+            formControlName="password" >
+    </div>
+
+    <input *ngIf="form.valid" type="submit" class="btn btn-primary" value="Register" >
+</form>
+}
+```
+
+5.   ทดสอบการทำงาน 
+    * ที่ Termial ใช้คำสั่ง <code>ng serve</code> 
+    * *ถ้าทุกอย่างถูกต้องที่Tag input จะมีสีแดง และไม่แสดงปุ่ม Register*
+    <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register-validat.png"         target="_blank"><img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register-validat.png" />
+    </a>
 
 ERROR:
 ```sh
@@ -342,11 +402,11 @@ ERROR:
     <div class="form-group">
         <label for="username">Username:</label>
         <input 
-        type="text" 
-        id="username" 
-        class="form-control" 
-        placeholder="Enter Username 4-8 Character"
-        formControlName="username" >
+            type="text" 
+            id="username" 
+            class="form-control" 
+            placeholder="Enter Username 4-8 Character"
+            formControlName="username" >
         <div *ngIf="formErrors.username" class="errMassage"> 
             {{ formErrors.username  }} 
         </div> 

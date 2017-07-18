@@ -667,15 +667,11 @@ var RegisterComponent = (function () {
         this.flashMessages = flashMessages;
         this.router = router;
         this.formErrors = {
-            // name: '',
             username: '',
             email: '',
             password: ''
         };
         this.validatetionMessages = {
-            // name: {
-            //   required: 'Name is required.'
-            // },
             username: {
                 required: 'Username is required.',
                 minlength: 'Username required 4-10 character.',
@@ -699,13 +695,12 @@ var RegisterComponent = (function () {
     RegisterComponent.prototype.buildForm = function () {
         var _this = this;
         this.form = this.builder.group({
-            // name: ['', Validators.required],
             username: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].compose([
                     __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].required,
                     __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].minLength(4),
                     __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].maxLength(10)
                 ])],
-            email: ['@hotmail.com', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].compose([
+            email: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].compose([
                     __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].required,
                     __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
                 ])],
@@ -733,10 +728,6 @@ var RegisterComponent = (function () {
             }
         }
     };
-    // onRegisterSubmit(even){
-    //   event.preventDefault();
-    //   this.authService.register(this.form.value)
-    // }
     RegisterComponent.prototype.onRegisterSubmit = function (even) {
         var _this = this;
         event.preventDefault();
@@ -1421,7 +1412,7 @@ var VideoService = (function () {
         return this._http.post('/api/videos', JSON.stringify(video), options)
             .map(function (response) { return response.json(); });
     };
-    // UPDATE video 
+    // UPDATE video
     VideoService.prototype.updateVideo = function (video) {
         var options = {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' })
