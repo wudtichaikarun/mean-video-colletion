@@ -22,16 +22,28 @@
 </a>
 
  ### Create:
+ * การเพิ่มกดที่ปุ่ม +NEW VIDEO
+ * ใช้เทคนิค Validate form แบบเดียวกับการ Register
+ * Category: ดึงข้อมูลจาก data base มา
  <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/create.png" target="_blank">
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/create.png" />
 </a>
 
  ### Read/Render:
+ * component ที่ใช้คือ ./angular-src/video ประกอบไปด้วย
+    * video-center component เป็นตัว main
+    * video-detail component คือส่วนที่แสดง video
+    * video-list component คือส่วนของ list รายชื่อ videos
  <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/read-render.png" target="_blank">
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/read-render.png" />
 </a>
 
- ### Read/Render Update Delete: 
+ ### Update Delete: 
+ * update กดปุ่ม edit เพื่อทำการ update แก้ไขข้อมูลของ video
+    * เงื่อนไขในการ edite update คือต้องเป็น videos ที่ตนเองเป็นคนสร้างเท่านั้น
+ * delete video กดที่ปุ่ม delete แล้วกดยืนยัน
+    * เงื่อนไขในการ delete คือต้องเป็น videos ที่ตนเองเป็นคนสร้างเท่านั้น
+    
  <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/update-delete.png" target="_blank">
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/update-delete.png" />
 </a>
