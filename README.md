@@ -1,9 +1,10 @@
 # MEAN-STACK CRUD Use Angular2
  ## How to run project
- 1. create folder config ใน folder config create file config.js และ mongoose.js<br>
+ 1. สร้าง folder config ใน folder config สร้าง file ชื่อ config.js และ mongoose.js<br>
     <a href="http://www.mx7.com/view2/zZHryFJweBZoYCuj" target="_blank">
         <img border="0" width="300" height="300" src="http://www.mx7.com/i/22b/EecXAE.png" />
     </a>
+Project นี้ผมใช้ data base ของ <a href="https://mlab.com/login/">mLap</a> โดยรูปแบบ uri จะเป็น mongodb://<dbuser>:<dbpassword>@ds161041.mlab.com:61041/ชื่อ collection
 ```sh
 //config.js
 module.exports = {
@@ -21,11 +22,7 @@ module.exports = function(){
 }
 ```
         
- 2. run
-    Download dependencies:
-        <code>npm install </code>
-    Start project:
-        <code>npm start</code> 
+ 2. Download dependencies ใช้คำสั่ง <code>npm install </code> จากนั้น สั่ง Start project ใช้คำสั่ง <code>npm start</code> 
 
  ## FontEnd(Angular2)
 | Topic                         | Description                                 | Link Detailed                            |
