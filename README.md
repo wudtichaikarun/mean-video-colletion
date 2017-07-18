@@ -3,10 +3,7 @@
  
 | Platform                          | Description                                 | Link                             |
 |:---------------------------------:|:-------------------------------------------:|:-----------------------------------|
-| <p style="color:red">Angular2 Driven Forms  </p>
-    |                                             
-        |                                    
-            |
+| <p style="color:red">Angular2 Driven Forms  </p> |                                           |                         |
 | Angular2 Reactive Forms              |                                             |                                    |
 | Angular2 RESTful API              |                                             |                                    |
 | Angular2 Http Service             |                                             |                                    |
