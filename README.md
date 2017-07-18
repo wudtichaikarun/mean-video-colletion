@@ -1,4 +1,10 @@
 # MEAN-STACK CRUD Use Angular2
+ ## Project Overview
+  ### Register
+   <a href="http://www.mx7.com/view2/zZHJ5yyvDKqMtXHl" target="_blank">
+    <img border="0" src="http://www.mx7.com/t/0d9/VNLyiV.png" />
+   </a>
+
  ## How to run project
  1. สร้าง folder config ใน folder config สร้าง file ชื่อ config.js และ mongoose.js<br>
     <a href="http://www.mx7.com/view2/zZHryFJweBZoYCuj" target="_blank">
@@ -8,8 +14,8 @@ Project นี้ผมใช้ data base ของ <a href="https://mlab.com/l
 ```sh
 //config.js
 module.exports = {
-    uri: "<<you data base>>",
-    secret: "<<you secret password>>"
+    uri: "<<you data base>>",// ใช้ได้ทั้ง database ในเครื่อง หรือ จากบริการของเว็ปไซต์
+    secret: "<<you secret password>>"//ใช้ตัวเลขตัวอักษรได้ตามใจชอบ
 }
 ```
 ```sh
