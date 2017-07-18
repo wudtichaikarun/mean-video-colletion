@@ -238,9 +238,49 @@ export class RegisterComponent implements OnInit {
     * ที่ Chome คลิกขวา inspect ไปที่ Console
     * ทำการป้อนข้อมูลที่ช่องให้ครบทุกช่อง กด Register
 
-    *ถ้าทุกอย่างถูกต้องหลังจากกด  Register ค่าที่กรอกใน input tag จะแสดงใน Consoleเป็น Object ประกอบไปด้วย username email password*
-ERROR:
+    *ถ้าทุกอย่างถูกต้องหลังจากกด  Register ค่าที่กรอกใน input tag จะแสดงใน Consoleเป็น Object ประกอบไปด้วย username email password*<br>
 
+### Validators
+- จะสังเกตได้ว่าที่ Template(register.component.html) input tag จะมีการใส่ placeholder="Enter Username 4-8 Character" ซึ่งก็คือต้องหารตรวจสอบการป้อน ข้อความเข้ามาจาก user กำหนดเงื่อนไขคือต้องมีตัวอักษร 4-8 ตัวเพื่อให้ใช้งานความสามารถนี้ได้เราจะใช้งานสิ่งที่เรียกว่า Validators
+#### ขั้นตอนการใช้งาน FormControlName
+1. ไปที่ Conponent(register.component.ts )
+ * import Validators เข้ามา
+ * เรียกใช้งาน
+    - argument ตัวแรก คือการใส่ค่าเริมต้นลงไปใน Tag input
+    - argument ตัวที่สอง คือเงื่อนใขในการ Validat จากตัวอย่าง  Validators.required คือต้องมีการใส่ค่าลงไป
+
+ ```sh
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms'; //<----import Validators
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+
+export class RegisterComponent implements OnInit {
+  form: FormGroup;
+
+  constructor(){}
+ 
+  ngOnInit() {
+      this.form = new FormGroup({
+          username: new FormControl('', Validators.required), //<---เรียกใช้งาน
+          email:  new FormControl('', Validators.required),
+          password:  new FormControl('', Validators.required)
+
+      })
+  }
+
+  onSubmit(event){ 
+      event.preventDefault();
+      console.log(this.form.controls); //<----แก้ไขการแสดงค่า
+  }
+  
+}
+```
+ERROR:
 ```sh
 <form (submit)="onRegisterSubmit()" [formGroup]="form" > 
     
