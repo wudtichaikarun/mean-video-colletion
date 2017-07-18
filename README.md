@@ -14,7 +14,7 @@
  
  ### Login: 
 <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/login.png" target="_blank">
-    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/login.png" />
+    <img border="0" width="300" height="300" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/login.png" />
 </a>
 
  ### Create Read/Render Update Delete: 
