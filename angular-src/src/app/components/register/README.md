@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
     * เพิ่ม button type เป็น submit 
     * ทำการรับค่าที่ component(register.component.ts) ทำ Property Binding มาให้ 
 ```sh
-<form [formGroup]="form" > //<---รับค่าที่
+<form [formGroup]="form" > //<---รับค่า
   
     <div class="form-group"> 
         <label for="username">Username:</label> 
@@ -96,7 +96,7 @@ export class RegisterComponent implements OnInit {
         * สร้าง method onSubmit() ไว้เพื่อตรวจสอบว่าสามารถส่งค่ามาจาก Template(register.component.html) ได้ไหม
 ```sh
 ...
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms'; //<----import FormControl
 ...
 @Component({
   selector: 'app-register',
@@ -106,7 +106,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 
 export class RegisterComponent implements OnInit {
   form: FormGroup;
-  userName: FormControl;
+  userName: FormControl; //<----สร้างตัวแปรขึ้นมา firstName
   
   constructor(){}
  
@@ -115,10 +115,10 @@ export class RegisterComponent implements OnInit {
 
       })
 
-      this.userName = new FormControl();
+      this.userName = new FormControl(); //<----initialค่าให้ตัวแปร firstName
   }
 
-  onSubmit(event){
+  onSubmit(event){ //<---สร้าง method รอรับ Event Binding จาก Template(register.component.html) 
       event.preventDefault();
       console.log(this.userName.value);
   }
@@ -138,7 +138,7 @@ export class RegisterComponent implements OnInit {
             id="username" 
             class="form-control" 
             placeholder="Enter Username 4-8 Character"
-            [FormControl]="username" >
+            [FormControl]="username" > 
     </div>
    
     .....
