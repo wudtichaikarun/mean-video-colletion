@@ -202,11 +202,11 @@ export class RegisterComponent implements OnInit {
     <div class="form-group">
         <label for="username">Username:</label>
         <input 
-        type="text" 
-        id="username" 
-        class="form-control" 
-        placeholder="Enter Username 4-8 Character"
-        formControlName="username" >
+            type="text" 
+            id="username" 
+            class="form-control" 
+            placeholder="Enter Username 4-8 Character"
+            formControlName="username" >
     </div>
     
     <div class="form-group">
@@ -233,6 +233,12 @@ export class RegisterComponent implements OnInit {
 </form>
 }
 ```
+3. ทดสอบการทำงาน 
+    * ที่ Termial ใช้คำสั่ง <code>ng serve</code> 
+    * ที่ Chome คลิกขวา inspect ไปที่ Console
+    * ทำการป้อนข้อมูลที่ช่องให้ครบทุกช่อง กด Register
+
+    *ถ้าทุกอย่างถูกต้องหลังจากกด  Register ค่าที่กรอกใน input tag จะแสดงใน Consoleเป็น Object ประกอบไปด้วย username email password*
 ERROR:
 
 ```sh

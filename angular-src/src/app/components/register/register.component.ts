@@ -15,17 +15,13 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   form: FormGroup;
 
-  formErrors ={
-    // name: '',
+  formErrors = {
     username: '',
     email: '',
     password: ''
   }
 
   validatetionMessages = {
-    // name: {
-    //   required: 'Name is required.'
-    // },
     username: {
       required: 'Username is required.',
       minlength: 'Username required 4-10 character.',
@@ -40,7 +36,6 @@ export class RegisterComponent implements OnInit {
       minlength: 'Username required 4-8 character.',
       maxlength: 'Username required 4-8 character.'
     }
-
   }
 
   constructor(
@@ -93,11 +88,6 @@ export class RegisterComponent implements OnInit {
       }
     }
   }
-
-  // onRegisterSubmit(even){
-  //   event.preventDefault();
-  //   this.authService.register(this.form.value)
-  // }
 
   onRegisterSubmit(even){
       event.preventDefault();
