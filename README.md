@@ -16,6 +16,7 @@
 </a>
  
  ### Login: 
+ * [Login(FontEnd)](angular-src/src/app/components/login/README.md) เทคนิคการใช้ Angular2 Driven Forms 
 <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/login.png" target="_blank">
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/login.png" />
 </a>
@@ -34,14 +35,14 @@ Project นี้ผมใช้ data base ของ <a href="https://mlab.com/l
 ```sh
 //config.js
 module.exports = {
-    uri: "<<you data base>>",// ใช้ได้ทั้ง database ในเครื่อง หรือ จากบริการของเว็ปไซต์
+    uri: "<<you data base>>",// ใช้ได้ทั้ง databaseในเครื่องหรือจากบริการของเว็ปไซต์
     secret: "<<you secret password>>"//ใช้ตัวเลขตัวอักษรได้ตามใจชอบ
 }
 ```
 ```sh
 // mongoose.js
-var config = require('./config')
-var mongoose = require('mongoose')
+var config = require('./config');
+var mongoose = require('mongoose');
 module.exports = function(){
     var db = mongoose.connect(config.uri);
     return db;
