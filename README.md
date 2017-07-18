@@ -16,8 +16,7 @@
 | Topic                         | Description                                 | Link Detailed                            |
 |:---------------------------------:|:-------------------------------------------:|:-----------------------------------|
 | MVC Folder By Feature             |                                             |                                    |
-| NodeJs login | Login ประกอบไปด้วยการจัดการ routing controller และ models |[Loin(BackEnd)](app/users/README.md)|
-| NodeJs login | Register ประกอบไปด้วยการจัดการ routing controller และ models  |[Register(BackEnd)](app/users/README.md)|
+| NodeJs login/Register | Login ประกอบไปด้วยการจัดการ routing controller และ models |[Loin/Register(BackEnd)](app/users/README.md)|
 | Express Routing            |                                             |                                    |
 | Mongoose Paginate            |                                             |                                    |
 
