@@ -1,8 +1,14 @@
 # MEAN-STACK CRUD Use Angular2
  ## How to run project
  - create folder
+    <img src="https://www.img.in.th/image/N0Jr" data-canonical-src="https://www.img.in.th/image/N0Jr" width="240" height="100" />
  - create file
+    - config.js
+    - mongoose.js
  - run
+```sh
+npm start
+```   
 
  ## FontEnd(Angular2)
 | Topic                         | Description                                 | Link Detailed                            |
