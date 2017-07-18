@@ -1,8 +1,8 @@
 # MEAN-STACK CRUD Use Angular2
  ## Project Overview
   ### Register
-   <a href="http://www.mx7.com/view2/zZHJ5yyvDKqMtXHl" target="_blank">
-    <img border="0" width="600" height="400" src="https://www.mx7.com/i/0d9/VNLyiV.png" />
+   <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/Artboard.png" target="_blank">
+    <img border="0" width="600" height="400" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/Artboard.png" />
    </a>
 
  ## How to run project
