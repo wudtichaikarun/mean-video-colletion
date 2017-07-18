@@ -3,8 +3,7 @@
  - Javascript(register.component.ts) จะเป็นคนจัดการเกี่ยวกับฟอม(Logic)
  - Template(register.component.html) จะใช้ในการรับค่าและแสดงผลไม่ยุ่งเกี่ยวกับ Logic 
  ### FormGroup
-  * คือ form ที่ครอบตัว input tag ใน html ใน FormGroup อาจจะประกอบไปด้วยด้วย input tag หลายtagหรือ มีแค่tagเดียวก็ได้
-  * กรณี ประกอบไปด้วยด้วย input tag หลายtag เช่น FormGroup ของ Name ที่ประกอบไปด้วย FirstName และ LastName เป็นต้น
+  * คือ form ที่ครอบตัว input tag ทั้งหมดใน Template(register.component.html) ค่าทุกค่าที่อยู่ใน input tag จะถูกเก็บไว้ในFormGroup
   #### ขั้นตอนการเรียกใช้งาน
 1. ไปที่ ./angular-src/src/app/app.module.ts
     * import ReactiveFormsModule เข้ามาใช้
@@ -154,7 +153,86 @@ export class RegisterComponent implements OnInit {
 
     *ถ้าทุกอย่างถูกต้องหลังจากกด  Register ค่าที่กรอกใน input tag username จะแสดงใน Console*
     
+### FormControlName
+- อย่างที่เราทราบกันแล้วว่า FormGroup คือตัวที่ครอบ FormControlไว้เพราะฉนั้นเราไม่มีความจำเป็นที่จะมาประกาศ FormControl แยกทีละตัวเราจะรวม FormControl ทั้งหมดไว้ในFormGroup ผ่านสึ่งที่เรียกว่า FormControlName
+#### ขั้นตอนการใช้งาน FormControlName
+ 1. ไปที่ Conponent(register.component.ts )
+  * ลบ userName ที่ประกาศไว้ออก
+  * initialค่าให้ตัวแปร firstName ภายใต้ FormGroup
+  * เพิ่มตัวแปรให้ครบกับจำนวน Input tag ในTemplate(register.component.html) 
+  * แก้ไขการแสดงค่าในconsole.log()
+ ```sh
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms'; //<----import FormControl
 
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+
+export class RegisterComponent implements OnInit {
+  form: FormGroup;
+
+  constructor(){}
+ 
+  ngOnInit() {
+      this.form = new FormGroup({
+          username: new FormControl(), //<---firstName ภายใต้ FormGroup
+          email:  new FormControl(),
+          password:  new FormControl()
+
+      })
+  }
+
+  onSubmit(event){ 
+      event.preventDefault();
+      console.log(this.form.controls); //<----แก้ไขการแสดงค่า
+  }
+  
+}
+```
+2. ไปที่ Template(register.component.html)แก้ไข code
+   *  เปลี่ยนจาก [FormControl]="username" เป็น formControlName="username"
+   *  ใส่ formControlName ให้กับ Tag input ทุกตัว
+
+```sh
+<form (submit)="onRegisterSubmit()" [formGroup]="form" > 
+    
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input 
+        type="text" 
+        id="username" 
+        class="form-control" 
+        placeholder="Enter Username 4-8 Character"
+        formControlName="username" >
+    </div>
+    
+    <div class="form-group">
+        <label for="email" >Email:</label>
+        <input 
+            type="text" 
+            id="email" 
+            class="form-control" 
+            placeholder="Enter Email"
+            formControlName="email" >
+    </div>
+    
+    <div class="form-group">
+        <label for="password" >Password:</label>
+        <input 
+            type="password" 
+            id="password" 
+            class="form-control" 
+            placeholder="Enter Password 4-8 Character"
+            formControlName="password" >
+    </div>
+
+    <button type="submit" class="btn btn-primary" value="Register" ></button>
+</form>
+}
+```
 ERROR:
 
 ```sh
