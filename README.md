@@ -3,7 +3,9 @@
  - create folder config<br>
     <img src="https://www.img.in.th/images/69dcbc8dda429e7b9ad26b9c43764c9b.png" width="300" height="300" />
  - ใน folder config create file<br>
-    <img src="https://www.img.in.th/images/27ba6e3f7b498038d12a34e853e8bd29.png" width="300" height="300" />
+    <a href="http://www.mx7.com/view2/zZHryFJweBZoYCuj" target="_blank">
+        <img border="0" width="300" height="300" src="http://www.mx7.com/i/22b/EecXAE.png" />
+    </a>
     - config.js
     - mongoose.js
         
