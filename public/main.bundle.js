@@ -554,7 +554,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" >\n  <h2 class=\"page-header\" > id = {{user._id}} </h2>\n  <ul class=\"list-group\" >\n    <li class=\"list-group-item\" >Username: {{ user.username }} </li>\n    <li class=\"list-group-item\" >Email: {{ user.email }} </li>\n  </ul>\n</div>"
+module.exports = "<div *ngIf=\"user\" >\n  <h2 class=\"page-header\" > {{user.username}} </h2>\n  <ul class=\"list-group\" >\n    <li class=\"list-group-item\" >Username: {{ user.username }} </li>\n    <li class=\"list-group-item\" >Email: {{ user.email }} </li>\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -1426,7 +1426,7 @@ var VideoService = (function () {
         var options = {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' })
         };
-        return this._http.put("/api/videos/" + video._id, JSON.stringify(video), options)
+        return this._http.patch("/api/videos/" + video._id, JSON.stringify(video), options)
             .map(function (response) { return response.json(); });
     };
     // DELETE video

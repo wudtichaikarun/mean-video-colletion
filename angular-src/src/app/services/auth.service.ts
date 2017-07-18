@@ -52,7 +52,7 @@ export class AuthService {
       return this.http
       .post('/api/users/register',user, options)
       .map(res => res.json())
-     
+
   }
 
   logout(){
@@ -71,7 +71,7 @@ export class AuthService {
   loggedIn() {
   return  tokenNotExpired('access-token');
   }
-  
+
 }
 //---------------_> New HTTP- SERVICE START----------------------------------
 

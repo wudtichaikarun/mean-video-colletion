@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   username: String;
   password: String;
+
   isloggedIn: Subject<boolean>
 
   constructor(
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   onLoginSubmit(){
     const user = {
       username: this.username,

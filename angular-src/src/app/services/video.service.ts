@@ -11,9 +11,9 @@ import { VideosResponse } from'../shared/videos-response'
 export class VideoService {
 
   constructor(private _http: AuthHttpService) { }
-  
+
   // READ video
-  getVideos(page = 1, categoryId = 0): Observable<VideosResponse> { 
+  getVideos(page = 1, categoryId = 0): Observable<VideosResponse> {
     const options: RequestOptionsArgs = { params: {page, categoryId}};
 
     return this._http.get('/api/videos', options)
@@ -43,7 +43,7 @@ export class VideoService {
     .map((response: Response) => response.json());
   }
 
-  // UPDATE video 
+  // UPDATE video
   updateVideo(video: Video){
    const options:RequestOptionsArgs = {
       headers: new Headers({'Content-Type': 'application/json'})

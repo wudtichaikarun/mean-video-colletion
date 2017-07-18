@@ -4,6 +4,6 @@ export function setup(router) {
         .get('/profile',controller.getProfile)
         //.get('/:id', controller.get)
         .post('/register', controller.createUser) 
-        .post('/login', controller.authen) 
+        .post('/login', controller.authen) //  'api/users/login'
 
 }
