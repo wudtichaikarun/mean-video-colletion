@@ -2,7 +2,7 @@
  ## Project Overview
   ### Register
    <a href="http://www.mx7.com/view2/zZHJ5yyvDKqMtXHl" target="_blank">
-    <img border="0" src="http://www.mx7.com/t/0d9/VNLyiV.png" />
+    <img border="0" width="400" height="400" src="http://www.mx7.com/t/0d9/VNLyiV.png" />
    </a>
 
  ## How to run project
