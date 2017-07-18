@@ -391,7 +391,7 @@ export class RegisterComponent implements OnInit {
 
 5.   ทดสอบการทำงาน 
     * ที่ Termial ใช้คำสั่ง <code>ng serve</code> 
-    * *ถ้าทุกอย่างถูกต้องที่Tag input จะมีสีแดง และไม่แสดงปุ่ม Register* <br>
+    * *ถ้าทุกอย่างถูกต้องที่Tag input จะมีสีแดง และไม่แสดงปุ่ม Register* <br><br>
     <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register-validat.png"         target="_blank"><img border="1" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register-validat.png" />
     </a>
 
