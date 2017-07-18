@@ -1,5 +1,4 @@
 # MEAN-STACK CRUD Use Angular2
- - Start Project
  - Angular2 Driven Forms
  - Angular2 Reactive Forms
  - Angular2 RESTful API
@@ -10,5 +9,4 @@
  - MVC Folder By Feature
  - Express Routing
  - Mongoose Paginate
- 
- ## Angular2 Driven Forms
+
