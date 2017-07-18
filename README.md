@@ -4,9 +4,11 @@
 - **FontEnd(Angular2)**
 - **BackEnd(MVC)**
  ## Project Overview
- ###### - Register
- ###### - Login
- ###### - Create Read/Render Update Delete 
+ ### - Register
+ ### - Login
+ ### - Create  
+ ### - Read/Render
+ ### - Update Delete 
   ### Register: 
   * [Register(FontEnd)](angular-src/src/app/components/register/README.md) เทคนิคการใช้ Angular2 Reactive Forms 
   * [Http service](angular-src/README/HTTP/README.md) การส่งข้อมูลจาก Form ผ่าน http protocol
@@ -40,7 +42,7 @@
 
  ### Update Delete: 
  * update กดปุ่ม edit เพื่อทำการ update แก้ไขข้อมูลของ video
-    * เงื่อนไขในการ edite update คือต้องเป็น videos ที่ตนเองเป็นคนสร้างเท่านั้น
+    * เงื่อนไขในการ edit update คือต้องเป็น videos ที่ตนเองเป็นคนสร้างเท่านั้น
  * delete video กดที่ปุ่ม delete แล้วกดยืนยัน
     * เงื่อนไขในการ delete คือต้องเป็น videos ที่ตนเองเป็นคนสร้างเท่านั้น
     

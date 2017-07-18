@@ -90,7 +90,7 @@ export class RegisterComponent implements OnInit {
   #### ขั้นตอนการใช้งาน FormControl
    1. ไปที่ Conponent(register.component.ts ) ./angular-src/src/app/components/register/register.component.ts 
         * import FormControl เข้ามาใช้งาน
-        * สร้างตัวแปรขึ้นมา firstName โดยให้มีค่าเป็น FormControl 
+        * สร้างตัวแปรขึ้นมา userName โดยให้มีค่าเป็น FormControl 
         * initial ค่าให้ตัวแปร firstName ที่สร้างขึ้นมา
         * สร้าง method onSubmit() ไว้เพื่อตรวจสอบว่าสามารถส่งค่ามาจาก Template(register.component.html) ได้ไหม
 ```sh
@@ -158,7 +158,7 @@ export class RegisterComponent implements OnInit {
 #### ขั้นตอนการใช้งาน FormControlName
  1. ไปที่ Conponent(register.component.ts )
   * ลบ userName ที่ประกาศไว้ออก
-  * initialค่าให้ตัวแปร firstName ภายใต้ FormGroup
+  * initialค่าให้ตัวแปร userName ภายใต้ FormGroup
   * เพิ่มตัวแปรให้ครบกับจำนวน Input tag ในTemplate(register.component.html) 
   * แก้ไขการแสดงค่าในconsole.log()
  ```sh
