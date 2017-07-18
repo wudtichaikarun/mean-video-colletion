@@ -1,17 +1,20 @@
 # MEAN-STACK CRUD Use Angular2
+- Project Overviews
+- How to run Project
+- FontEnd(Angular2)
+- BackEnd(MVC)
  ## Project Overview
+ - Register
+ - Login
+ - Create Read/Render Update Delete 
   ### Register: 
    <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" target="_blank">
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" />
    </a>
  
  ### Login: 
-
- ### Create
- ### Read/Render
- ### Update
- ### Delete
-
+ ### Create Read/Render Update Delete 
+ 
  ## How to run project
  1. สร้าง folder config ใน folder config สร้าง file ชื่อ config.js และ mongoose.js<br>
     <a href="http://www.mx7.com/view2/zZHryFJweBZoYCuj" target="_blank">
