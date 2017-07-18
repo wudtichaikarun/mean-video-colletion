@@ -8,6 +8,9 @@
  - Login
  - Create Read/Render Update Delete 
   ### Register: 
+  - [Register(FontEnd)](angular-src/src/app/components/register/README.md) เทคนิคการใช้ Angular2 Reactive Forms 
+  - [Http service](angular-src/README/HTTP/README.md) การส่งข้อมูลจาก Form ผ่าน http protocol
+  - [Login/Register(BackEnd)](app/users/README.md) การใช้ Express Routing ไปที่ NodeJs(controller) และทำการบันทึกข้อมูลด้วย Mongoose(Model)
 <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" target="_blank">
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" />
 </a>
