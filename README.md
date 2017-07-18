@@ -8,12 +8,19 @@
  - Login
  - Create Read/Render Update Delete 
   ### Register: 
-   <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" target="_blank">
+<a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" target="_blank">
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/register.png" />
-   </a>
+</a>
  
  ### Login: 
- ### Create Read/Render Update Delete 
+<a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/login.png" target="_blank">
+    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/login.png" />
+</a>
+
+ ### Create Read/Render Update Delete: 
+ <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/crud.png" target="_blank">
+    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/crud.png" />
+</a>
  
  ## How to run project
  1. สร้าง folder config ใน folder config สร้าง file ชื่อ config.js และ mongoose.js<br>
