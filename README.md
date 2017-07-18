@@ -2,7 +2,7 @@
  ## Project Overview
   ### Register
    <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/Artboard.png" target="_blank">
-    <img border="0" width="600" height="400" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/Artboard.png" />
+    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/Artboard.png" />
    </a>
 
  ## How to run project
