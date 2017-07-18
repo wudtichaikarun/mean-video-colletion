@@ -39,7 +39,7 @@ export class AppModule { }
     * initial ค่าให้ตัวแปร form ที่สร้างขึ้นมา
 ```sh
 ...
-import { FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms'; // <-----import FormGroup
 ...
 @Component({
   selector: 'app-register',
@@ -48,12 +48,12 @@ import { FormGroup } from '@angular/forms';
 })
 
 export class RegisterComponent implements OnInit {
-  form: FormGroup;
+  form: FormGroup;//<----สร้างตัวแปร form
   
   constructor(){}
  
   ngOnInit() {
-      this.form = new FormGroup({
+      this.form = new FormGroup({ //<----initialค่าให้ตัวแปรform
 
       })
   }
@@ -61,15 +61,15 @@ export class RegisterComponent implements OnInit {
 }
 ```
 3. ที่ Template(register.component.html) 
-    * สร้าง form ขึ้นมาใส่ input tag ตามจำนวนที่ต้องการ 
+    * สร้าง form ขึ้นมาภายใต้FormGroupใส่ input tag ตามจำนวนที่ต้องการ 
     * เพิ่ม button type เป็น submit 
     * ทำการรับค่าที่ component(register.component.ts) ทำ Property Binding มาให้ 
 ```sh
-<form [formGroup]="form" > 
+<form [formGroup]="form" > //<---รับค่าที่
   
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" placeholder="Enter Username 4-8 Character" >  
+    <div class="form-group"> 
+        <label for="username">Username:</label> 
+        <input type="text" id="username" placeholder="Enter Username 4-8 Character" >  //<-----สร้าง input tag 
     </div>
   
     <div class="form-group">
@@ -82,7 +82,7 @@ export class RegisterComponent implements OnInit {
         <input type="password" id="password"  placeholder="Enter Password 4-8 Character" >
     </div>
 
-  <input *ngIf="form.valid" type="submit" class="btn btn-primary" value="Register" >
+  <button type="submit" class="btn btn-primary" value="Register" ></button> //<-----เพิ่ม button
 </form>
 }
 ```
@@ -143,7 +143,7 @@ export class RegisterComponent implements OnInit {
    
     .....
 
-    <input *ngIf="form.valid" type="submit" class="btn btn-primary" value="Register" >
+    <button type="submit" class="btn btn-primary" value="Register" ></button>
 </form>
 }
 ```
@@ -192,7 +192,7 @@ ERROR:
         </div>
     </div>
 
-    <input *ngIf="form.valid" type="submit" class="btn btn-primary" value="Register" >
+    <button type="submit" class="btn btn-primary" value="Register" ></button>
 </form>
 }
 ```
