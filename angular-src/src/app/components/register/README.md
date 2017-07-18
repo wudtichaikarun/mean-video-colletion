@@ -38,9 +38,9 @@ export class AppModule { }
     * สร้างตัวแปร form ขึ้นมาโดยให้มีค่าเป็น FormGroup 
     * initial ค่าให้ตัวแปร form ที่สร้างขึ้นมา
 ```sh
-...
+import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms'; // <-----import FormGroup
-...
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -95,9 +95,9 @@ export class RegisterComponent implements OnInit {
         * initial ค่าให้ตัวแปร firstName ที่สร้างขึ้นมา
         * สร้าง method onSubmit() ไว้เพื่อตรวจสอบว่าสามารถส่งค่ามาจาก Template(register.component.html) ได้ไหม
 ```sh
-...
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'; //<----import FormControl
-...
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
