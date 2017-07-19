@@ -12,17 +12,24 @@
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/http.png" />
 </a>
 
+> อธิบายรูปตามหมายเลข
+  1. มีการพิมพ์ Url ลงที่ Web Browser ซึ่งก็คือการเรียกมาที่ http://localhost:4200/videos  ด้วยMethod: GET (สมมุติว่าตอนนี้ผมเขียนcode เสร็จแล้วสั่งรัน <code>ng serve</code>
+  
+  2. angular ก็จะส่ง result ทั้งหมดกลับไปให้ web browser (เช่น code,รูป )
+     * ภานใน angular จะมีสิ่งที่เรียกว่า Route คอยบริหารจัดการว่าจะเอา component ตัวไหนไปแสดงโดยตัดสินใจจาก path ที่ส่ง request มาในที่นี้คือ/videos ก็ให้ vieos componet ขึ้นมาทำงาน
+     * เมื่อ videos componet ถูกเรียกจะมี method ที่ชื่อว่า ngOnInit(){...} ถูกเรียนขึ้นมาทำงาน(Browser เป็นคนเรียก)
+    
+  3. ผมก็เขียน code เรียกใช้งาน Http service ไว้ภายใต้  ngOnInit(){...} เรียกไปที่ /api/videos 
+<br>
+
+> **ปัญหาคือPORTไม่ตรงกัน!!!!**
+  * angular http service เรียกมาที่ http://localhost:4200/api/videos 
+  * server ให้บริหารที่ http://localhost:3000/api/videos
 
 
 
-
-
-
-
-
-
-
-
+<br><br><br><br>
+===================================
 * project นี้ใช้ RESTful APIซึ่งเป็น stateless ก็คือ server ไม่มีการจดจำข้อมูลใดๆเกี่ยวกับ user ไว้เลย *แล้วเราจะ ระบุตัวตน user ที่ login เข้ามาในระบบได้ยังไง?*<br>
     * *คำตอบคือ* ใช้ Token ซึ่งผมเลือกใช้เป็น Json Web Tokenตัวย่อคือ(JWT)ศึกษาเพิ่มเติมได้ที่ [Token และ JWT คืออะไร? ](https://devahoy.com/posts/understanding-token-and-jwt-create-authentication-with-hapijs/)
  * การสร้าง Token 
