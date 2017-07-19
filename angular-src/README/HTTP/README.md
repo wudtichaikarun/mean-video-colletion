@@ -26,7 +26,8 @@
 > **ปัญหาคือPORTไม่ตรงกัน!!!!**
   * angular http service เรียกมาที่ http://localhost:4200/api/videos 
   * server ให้บริหารที่ http://localhost:3000/api/videos
-
+  
+      อย่างที่เราทราบกันว่า angular2 เป็น web แบบ single page คำศัพใหม่มาอีกละ!  ไม่เข้าใจว่า sigle page web คืออะไรเชิญทางนี้ -->[Evolution of Frontend](https://www.youtube.com/watch?v=JhwaEWKq4pw&index=15&list=PLuI72UCT2_FGMXOpsJfcOhGoK3Wt8lx3J) เมื่อPortไม่ตรงกันเราก็ใช้ angular cli สั่ง <code>ng build</code> 
 
 
 <br><br><br><br>
