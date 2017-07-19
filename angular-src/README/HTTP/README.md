@@ -13,7 +13,7 @@
 </a>
 
 > อธิบายรูปตามหมายเลข
-  1. มีการพิมพ์ Url ลงที่ Web Browser ซึ่งก็คือการเรียกมาที่ http://localhost:4200/videos  ด้วยMethod: GET (สมมุติว่าตอนนี้ผมเขียนcode เสร็จแล้วสั่งรัน <code>ng serve</code>
+  1. เมื่อมีการพิมพ์ Url ลงที่ Web Browser ซึ่งก็คือการเรียกมาที่ http://localhost:4200/videos  ด้วยMethod: GET (สมมุติว่าตอนนี้ผมเขียนcode เสร็จแล้วสั่งรัน <code>ng serve</code>
   
   2. angular ก็จะส่ง result ทั้งหมดกลับไปให้ web browser (เช่น code,รูป )
      * ภานใน angular จะมีสิ่งที่เรียกว่า Route คอยบริหารจัดการว่าจะเอา component ตัวไหนไปแสดงโดยตัดสินใจจาก path ที่ส่ง request มาในที่นี้คือ/videos ก็ให้ vieos componet ขึ้นมาทำงาน
