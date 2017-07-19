@@ -44,7 +44,17 @@
   
   .....
  ```
+2. ให้ server มาอ่าน file ใน folder public (code จาก server.js) 
 
+ ```sh
+ ......
+  app.use(express.static(path.join(__dirname, 'public')))
+ 
+  app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'public/index.html'))
+    }) 
+  .....
+ ```
 
 <br><br><br><br>
 ===================================
