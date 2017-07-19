@@ -55,11 +55,36 @@
     }) 
   .....
  ```
- **แต่!! อีกแล้ว.. ถ้าตอนนี้ถ้าเราอยากเปลี่ยนcode ฝั่ง angularแก้เสร็จอยากดูผลลัพต้องสั่ง ng build ทุกครั้งคงเสียเวลาแย่เลย**
+ * **แต่!! อีกแล้ว.. ถ้าตอนนี้ถ้าเราอยากเปลี่ยนcode ฝั่ง angularแก้เสร็จอยากดูผลลัพต้องสั่ง ng build ทุกครั้งคงเสียเวลาแย่เลย**
  *เราจะใช้สิ่งที่เรียกว่า proxxy แก้ปัญหานี้* 
  หลักการทำงานก็คือเมื่อเราการเรียกมาที่  http://localhost:4200/api/... เราจะ forward port ไปที่ http://localhost:3000/api/...
+ 
+    * สร้าง file ชื่อ proxy.conf.json เก็บไว้ที่ ./angular-src/ 
+    * ที่ ./angular-src/package.json แก้ code ให้เวลาสั่ง <code>ng serve</code>ให้รันผ่าน proxy   
+ 
+ ```
+ // ./angular-src/proxy.conf.json
+{
+    "/api/*": {
+        "target": "http://localhost:3000/",
+        "changeOrigin": true,
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
+```   
     
+```
+// ./angular-src/package.json
+......
 
+"scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.conf.json",
+    
+ .....
+ ```
+  
 <br><br><br><br>
 ===================================
 * project นี้ใช้ RESTful APIซึ่งเป็น stateless ก็คือ server ไม่มีการจดจำข้อมูลใดๆเกี่ยวกับ user ไว้เลย *แล้วเราจะ ระบุตัวตน user ที่ login เข้ามาในระบบได้ยังไง?*<br>
