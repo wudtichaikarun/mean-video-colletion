@@ -1,4 +1,9 @@
 # Register(FontEnd)
+- **FormGroup**
+- **FormControl**
+- **FormControlName**
+- **Validators**
+
 ## Angular2 Reactive Forms
  - Javascript(register.component.ts) จะเป็นคนจัดการเกี่ยวกับฟอม(Logic)
  - Template(register.component.html) จะใช้ในการรับค่าและแสดงผลไม่ยุ่งเกี่ยวกับ Logic 

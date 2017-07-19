@@ -4,11 +4,11 @@
 - **FontEnd(Angular2)**
 - **BackEnd(MVC)**
  ## Project Overview
- ### - Register
- ### - Login
- ### - Create  
- ### - Read/Render
- ### - Update Delete 
+ - **Register**
+ - **Login**
+ - **Create** 
+ - **Read/Render**
+ - **Update Delete**
   ### Register: 
   * [Register(FontEnd)](angular-src/src/app/components/register/README.md) เทคนิคการใช้ Angular2 Reactive Forms 
   * [Http service](angular-src/README/HTTP/README.md) การส่งข้อมูลจาก Form ผ่าน http protocol
