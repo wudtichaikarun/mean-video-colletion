@@ -12,17 +12,81 @@
     <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/http.png" />
 </a>
 
+> อธิบายรูปตามหมายเลข
+  1. เมื่อมีการพิมพ์ Url ลงที่ Web Browser ซึ่งก็คือการเรียกมาที่ http://localhost:4200/videos  ด้วยMethod: GET (สมมุติว่าตอนนี้ผมเขียนcode เสร็จแล้วสั่งรัน <code>ng serve</code>
+  
+  2. angular ก็จะส่ง result ทั้งหมดกลับไปให้ web browser (เช่น code,รูป )
+     * ภานใน angular จะมีสิ่งที่เรียกว่า Route คอยบริหารจัดการว่าจะเอา component ตัวไหนไปแสดงโดยตัดสินใจจาก path ที่ส่ง request มาในที่นี้คือ/videos ก็ให้ vieos componet ขึ้นมาทำงาน
+     * เมื่อ videos componet ถูกเรียกจะมี method ที่ชื่อว่า ngOnInit(){...} ถูกเรียนขึ้นมาทำงาน(Browser เป็นคนเรียก)
+    
+  3. ผมก็เขียน code เรียกใช้งาน Http service ไว้ภายใต้  ngOnInit(){...} เรียกไปที่ /api/videos 
+  4. ไม่ทำงาน?????
+<br>
 
+> **ปัญหาคือPORTไม่ตรงกัน!!!!**
+  * angular http service เรียกมาที่ http://localhost:4200/api/videos 
+  * server ให้บริหารที่ http://localhost:3000/api/videos
+  
+  ###### แก้ปัญหาportไม่ตรงกัน
+  1. อย่างที่เราทราบกันว่า angular2 เป็น web แบบ single page คำศัพใหม่มาอีกละ!  ไม่เข้าใจว่า sigle page web คืออะไรเชิญทางนี้ -->[Evolution of Frontend](https://www.youtube.com/watch?v=JhwaEWKq4pw&index=15&list=PLuI72UCT2_FGMXOpsJfcOhGoK3Wt8lx3J) เมื่อPortไม่ตรงกันเราก็ใช้ angular cli สั่ง <code>ng build</code> anglar cli ก็จะ build project และสร้าง folder ชื่อ dist ขึ้นมาและเก็บ code ที่ build เป็น single page website ไว้ในนั้น แต่ในโปรเจคนี้ผมอยากได้ folder ชื่อ public ก็เข้าไปแก้ใน ./angular-src/.angular-cli.json ตรง outDir <br>
+ *เข้าไปดูผลลัพจากการสั่ง ng build ได้ใน folderชื่อ public*
+ ```sh
+ ......
+ 
+   "apps": [
+    {
+      "root": "src",
+      "outDir": "../public",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+  
+  .....
+ ```
+2. ให้ server มาอ่าน file ใน folder public (code จาก server.js) 
 
+ ```sh
+ ......
+  app.use(express.static(path.join(__dirname, 'public')))
+ 
+  app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'public/index.html'))
+    }) 
+  .....
+ ```
+ * **แต่!! อีกแล้ว.. ถ้าตอนนี้ถ้าเราอยากเปลี่ยนcode ฝั่ง angularแก้เสร็จอยากดูผลลัพต้องสั่ง ng build ทุกครั้งคงเสียเวลาแย่เลย**
+ *เราจะใช้สิ่งที่เรียกว่า proxxy แก้ปัญหานี้* 
+ หลักการทำงานก็คือเมื่อเราการเรียกมาที่  http://localhost:4200/api/... เราจะ forward port ไปที่ http://localhost:3000/api/...
+ 
+    * สร้าง file ชื่อ proxy.conf.json เก็บไว้ที่ ./angular-src/ 
+    * ที่ ./angular-src/package.json แก้ code ให้เวลาสั่ง <code>ng start</code>ให้รันผ่าน proxy   
+ 
+ ```
+ // ./angular-src/proxy.conf.json
+{
+    "/api/*": {
+        "target": "http://localhost:3000/",
+        "changeOrigin": true,
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
+```   
+    
+```
+// ./angular-src/package.json
+......
 
-
-
-
-
-
-
-
-
+"scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.conf.json",
+    
+ .....
+ ```
+  
+<br><br><br><br>
+===================================
 * project นี้ใช้ RESTful APIซึ่งเป็น stateless ก็คือ server ไม่มีการจดจำข้อมูลใดๆเกี่ยวกับ user ไว้เลย *แล้วเราจะ ระบุตัวตน user ที่ login เข้ามาในระบบได้ยังไง?*<br>
     * *คำตอบคือ* ใช้ Token ซึ่งผมเลือกใช้เป็น Json Web Tokenตัวย่อคือ(JWT)ศึกษาเพิ่มเติมได้ที่ [Token และ JWT คืออะไร? ](https://devahoy.com/posts/understanding-token-and-jwt-create-authentication-with-hapijs/)
  * การสร้าง Token 
