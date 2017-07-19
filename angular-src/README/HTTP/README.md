@@ -8,7 +8,9 @@
   > ปัญหาที่พบตอนศึกษาแรกๆ
   * ไม่เข้าเรื่องวิธีการเรียกใช้งาน angular และ server
   * สับสนเรื่อง Route ระหว่างของ angular และ server
-  
+  <a href="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/http.png" target="_blank">
+    <img border="0" src="https://github.com/wudtichaikarun/mean-video-colletion/blob/master/angular-src/src/assets/images/http.png" />
+</a>
 
 
 
