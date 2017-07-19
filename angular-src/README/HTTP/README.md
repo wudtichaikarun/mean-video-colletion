@@ -60,7 +60,7 @@
  หลักการทำงานก็คือเมื่อเราการเรียกมาที่  http://localhost:4200/api/... เราจะ forward port ไปที่ http://localhost:3000/api/...
  
     * สร้าง file ชื่อ proxy.conf.json เก็บไว้ที่ ./angular-src/ 
-    * ที่ ./angular-src/package.json แก้ code ให้เวลาสั่ง <code>ng serve</code>ให้รันผ่าน proxy   
+    * ที่ ./angular-src/package.json แก้ code ให้เวลาสั่ง <code>ng start</code>ให้รันผ่าน proxy   
  
  ```
  // ./angular-src/proxy.conf.json
