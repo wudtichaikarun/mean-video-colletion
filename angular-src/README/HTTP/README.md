@@ -23,8 +23,8 @@
 <br>
 
 > **ปัญหาคือPORTไม่ตรงกัน!!!!**
-  * angular http service เรียกมาที่ http://localhost:4200/api/videos 
-  * server ให้บริหารที่ http://localhost:3000/api/videos
+  * angular http service เรียกมาที่ http://localhost:**4200**/api/videos 
+  * server ให้บริหารที่ http://localhost:**3000**/api/videos
 
 
 
