@@ -7,7 +7,7 @@
 ## Angular2 Reactive Forms
  - Javascript(register.component.ts) จะเป็นคนจัดการเกี่ยวกับฟอม(Logic)
  - Template(register.component.html) จะใช้ในการรับค่าและแสดงผลไม่ยุ่งเกี่ยวกับ Logic 
- ### > FormGroup
+> ### FormGroup
   * คือ form ที่ครอบตัว input tag ทั้งหมดใน Template(register.component.html) ค่าทุกค่าที่อยู่ใน input tag จะถูกเก็บไว้ในFormGroup
   #### ขั้นตอนการเรียกใช้งาน
 1. ไปที่ ./angular-src/src/app/app.module.ts
@@ -90,7 +90,7 @@ export class RegisterComponent implements OnInit {
 </form>
 }
 ```
- ### > FormControl
+> ### FormControl
  * คือ Tag input ต่างๆที่อยู่ใน Template(register.component.html) เพราะอยู่ภายใต้การcontrol ของFormGroup
   #### ขั้นตอนการใช้งาน FormControl
    1. ไปที่ Conponent(register.component.ts ) ./angular-src/src/app/components/register/register.component.ts 
@@ -158,7 +158,7 @@ export class RegisterComponent implements OnInit {
 
     *ถ้าทุกอย่างถูกต้องหลังจากกด  Register ค่าที่กรอกใน input tag username จะแสดงใน Console*
     
-### > FormControlName
+> ### FormControlName
 - อย่างที่เราทราบกันแล้วว่า FormGroup คือตัวที่ครอบ FormControlไว้เพราะฉนั้นเราไม่มีความจำเป็นที่จะมาประกาศ FormControl แยกทีละตัวเราจะรวม FormControl ทั้งหมดไว้ในFormGroup ผ่านสึ่งที่เรียกว่า FormControlName
 #### ขั้นตอนการใช้งาน FormControlName
  1. ไปที่ Conponent(register.component.ts )
@@ -245,7 +245,7 @@ export class RegisterComponent implements OnInit {
 
     *ถ้าทุกอย่างถูกต้องหลังจากกด  Register ค่าที่กรอกใน input tag จะแสดงใน Consoleเป็น Object ประกอบไปด้วย username email password*<br>
 
-### > Validators
+ > ### Validators
 - จะสังเกตได้ว่าที่ Template(register.component.html) input tag จะมีการใส่ placeholder="Enter Username 4-8 Character" ซึ่งก็คือต้องการตรวจสอบการป้อน ข้อความเข้ามาจาก user กำหนดเงื่อนไขคือต้องมีตัวอักษร 4-8 ตัวเพื่อให้ใช้งานความสามารถนี้ได้เราจะใช้งานสิ่งที่เรียกว่า Validators
 #### ขั้นตอนการใช้งาน FormControlName
 1. ไปที่ Conponent(register.component.ts )
