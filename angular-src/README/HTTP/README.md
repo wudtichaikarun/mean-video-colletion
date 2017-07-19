@@ -28,7 +28,7 @@
   * server ให้บริหารที่ http://localhost:3000/api/videos
   
   ###### แก้ปัญหาportไม่ตรงกัน
-  1. อย่างที่เราทราบกันว่า angular2 เป็น web แบบ single page คำศัพใหม่มาอีกละ!  ไม่เข้าใจว่า sigle page web คืออะไรเชิญทางนี้ -->[Evolution of Frontend](https://www.youtube.com/watch?v=JhwaEWKq4pw&index=15&list=PLuI72UCT2_FGMXOpsJfcOhGoK3Wt8lx3J) เมื่อPortไม่ตรงกันเราก็ใช้ angular cli สั่ง <code>ng build</code> anglar cli ก็จะ build project และสร้าง folder ชื่อ dist ขึ้นมาและเก็บ code ที่ build เป็น single page website ไว้ในนั้น แต่ในโปรเจคนี้ผมอยากได้ folder ชื่อ public ก็เข้าไปแก้ใน ./angular-src/.angular-cli.json ตรง outDir
+  1. อย่างที่เราทราบกันว่า angular2 เป็น web แบบ single page คำศัพใหม่มาอีกละ!  ไม่เข้าใจว่า sigle page web คืออะไรเชิญทางนี้ -->[Evolution of Frontend](https://www.youtube.com/watch?v=JhwaEWKq4pw&index=15&list=PLuI72UCT2_FGMXOpsJfcOhGoK3Wt8lx3J) เมื่อPortไม่ตรงกันเราก็ใช้ angular cli สั่ง <code>ng build</code> anglar cli ก็จะ build project และสร้าง folder ชื่อ dist ขึ้นมาและเก็บ code ที่ build เป็น single page website ไว้ในนั้น แต่ในโปรเจคนี้ผมอยากได้ folder ชื่อ public ก็เข้าไปแก้ใน ./angular-src/.angular-cli.json ตรง outDir <br>
  *เข้าไปดูผลลัพจากการสั่ง ng build ได้ใน folderชื่อ public*
  ```sh
  ......
