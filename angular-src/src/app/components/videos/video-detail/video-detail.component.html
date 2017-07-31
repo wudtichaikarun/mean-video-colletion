@@ -1,0 +1,59 @@
+<div>
+  <!-- ######################## iframe play video ########################-->
+  <div>
+    <iframe [src]="video.url | safe" width="100%" height="500"></iframe>
+  </div>
+
+  <form class="videoDetailForm">
+    <!-- ######################## Always show  #########################-->
+    <!--title content-->
+    <h3 class="fontDetail">{{video.title}} </h3>
+    <!--url content-->
+    <h6 class="fontDetail">url: {{video.url}} </h6>
+    <!--description content-->
+    <h6 class="fontDetail">description: {{video.discription}} </h6>
+
+    <!-- ######################## video show when btn-edit click #########################-->
+    <!--Title input for edit-->
+    <div *ngIf="editTitle" class="form-group">
+      <input type="input" class="form-control" name="title" required placeholder="title" [(ngModel)]="video.title">
+    </div>
+    <!--Url input for edite-->
+    <div *ngIf="editTitle" class="form-group">
+      <input type="input" class="form-control" name="url" required placeholder="url" [(ngModel)]="video.url">
+    </div>
+    <!--Description input for edit-->
+    <div *ngIf="editTitle" class="form-group">
+      <input type="input" name="desc" class="form-control" placeholder="discription" [(ngModel)]="video.discription">
+    </div>
+    <!--Update btn-->
+    <button *ngIf="editTitle" type="button" (click)="updateVideo()" class="btn btn-primary">
+            Update
+        </button>
+    <!--cancel btn-->
+    <button *ngIf="editTitle" (click)="btnCancelClick()" class="btn btn-default">
+            Cancel
+        </button>
+  </form>
+
+
+  <!--edite icon btn-->
+  <div class="editeVideoConfig">
+    <div class="editVideo" (click)="btnEditClick()">
+      <div class="iconEdite">Edit</div>
+    </div>
+    <!--delete icon btn-->
+    <div
+        class="deleteVideo"
+        mwlConfirm
+        [title]="title"
+        [message]="message"
+        placement="top"
+        (confirm)="ConfirmClicked()"
+        (cancel)="cancelClicked = true"
+        [(isOpen)]="isOpen" >
+      <div class="iconDelete">delete</div>
+    </div>
+
+  </div>
+</div>

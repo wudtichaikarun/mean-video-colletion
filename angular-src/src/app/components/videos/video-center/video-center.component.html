@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col-sm-9 videoDetail">
+    <!--######## video Center Component Create new video ######-->
+    <div *ngIf="!hidenewVideo" class="addNewVideoMain">
+    <!--<h2>New Video</h2>-->
+    <!--<form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
+        <div class="form-group">
+          <label>Title</label>
+          <input
+            type="text"
+            class="form-control"
+            required
+            name="title"
+            ngModel
+            placeholder="Enter titie name" >
+        </div>
+        <div class="form-group">
+          <label>Url</label>
+          <input
+            type="text"
+            class="form-control"
+            required
+            name="url"
+            ngModel
+            placeholder="Enter url link" >
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="discription"
+            ngModel
+            placeholder="Enter descrtption" >
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+      </form>-->
+
+    <h2 class="page-header">Add New Video</h2>
+    <form (submit)="onSubmitAddVideo()" [formGroup]="form">
+
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" class="form-control"  ngModel placeholder="Enter Title Name" formControlName="title">
+        <div *ngIf="formErrors.title" class="errMassage">
+          {{ formErrors.username }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="url">Url:</label>
+        <input type="text" id="url" class="form-control"   ngModel placeholder="Enter Url Link" formControlName="url">
+        <div *ngIf="formErrors.url" class="errMassage">
+          {{ formErrors.email }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="discription">Description:</label>
+        <input type="text" id="discription" class="form-control"   ngModel placeholder="Enter Description" formControlName="discription">
+        <div *ngIf="formErrors.discription" class="errMassage">
+          {{ formErrors.password }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Category">Category:</label>
+          <select class="form-control" id="categoryId" ngModel formControlName="categoryId">
+              <option class="selectCategory">----Select Category----</option>
+              <option value=1>Music</option>
+              <option value=2>Android</option>
+              <option value=3>AngularJs</option>
+              <option value=4>Boostrap</option>
+              <option value=5>Css</option>
+              <option value=6>IOS</option>
+              <option value=7>Javascript</option>
+              <option value=8>Other</option>
+            </select>
+      </div>
+
+      <input *ngIf="form.valid" type="submit" class="btn btn-primary" value="ADD VIDEO">
+    </form>
+  </div>
+
+  <!--######## video Detail component ######-->
+  <div class="videoDetail">
+    <video-detail (updateVideoEvent)="onUpdateVideoEvent($event)" (deleteVideoEvent)="onDeleteVideoEvent($event)" *ngIf="selectedVideo && hidenewVideo"
+      [video]="selectedVideo">
+    </video-detail>
+  </div>
+
+</div>
+
+    <!--######## video List Component ######-->
+  <div class="col-sm-3 col-xs-12">
+    <div class="videoListMain">
+      <div><button (click)="newVideo()" type="button" class="btn btn-default btn-lg btn-block">+ New Video</button></div>
+      <video-list (SelectVideo)="onSelectVideo($event)"
+        [CategoryId]="CategoryId"
+        [videos]="videos"
+        [currentPage]="currentPage"
+        [totalPages]="totalPages" >
+      </video-list>
+    </div>
+  </div>
+</div>
+
+
