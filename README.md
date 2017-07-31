@@ -4,7 +4,7 @@
 - **FontEnd(Angular2)**
 - **BackEnd(MVC)**
  ## Project Overview
- - **ทดลองใช้งาน** https://peaceful-bastion-87749.herokuapp.com/videos?categoryId=4
+ - **ทดลองใช้งาน** https://peaceful-bastion-87749.herokuapp.com
  - **Register**
  - **Login**
  - **Create** 
