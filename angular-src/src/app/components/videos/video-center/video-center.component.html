@@ -6,31 +6,31 @@
     <!--<form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
         <div class="form-group">
           <label>Title</label>
-          <input 
-            type="text" 
-            class="form-control" 
-            required 
-            name="title" 
+          <input
+            type="text"
+            class="form-control"
+            required
+            name="title"
             ngModel
             placeholder="Enter titie name" >
         </div>
         <div class="form-group">
           <label>Url</label>
-          <input 
-            type="text" 
-            class="form-control" 
-            required 
-            name="url" 
+          <input
+            type="text"
+            class="form-control"
+            required
+            name="url"
             ngModel
             placeholder="Enter url link" >
         </div>
 
         <div class="form-group">
           <label>Description</label>
-          <input 
-            type="text" 
-            class="form-control"  
-            name="discription" 
+          <input
+            type="text"
+            class="form-control"
+            name="discription"
             ngModel
             placeholder="Enter descrtption" >
         </div>
@@ -67,7 +67,7 @@
       <div class="form-group">
         <label for="Category">Category:</label>
           <select class="form-control" id="categoryId" ngModel formControlName="categoryId">
-              <option class="selectCategory" >----Select Category----</option>
+              <option class="selectCategory">----Select Category----</option>
               <option value=1>Music</option>
               <option value=2>Android</option>
               <option value=3>AngularJs</option>
@@ -96,7 +96,7 @@
   <div class="col-sm-3 col-xs-12">
     <div class="videoListMain">
       <div><button (click)="newVideo()" type="button" class="btn btn-default btn-lg btn-block">+ New Video</button></div>
-      <video-list (SelectVideo)="onSelectVideo($event)" 
+      <video-list (SelectVideo)="onSelectVideo($event)"
         [CategoryId]="CategoryId"
         [videos]="videos"
         [currentPage]="currentPage"

@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   onLogoutClick(){
     this.authService.logout();
     this.flashMessage.show('You are logged out', {
-      cssClass: 'alert-success',timeout: 5000
+      cssClass: 'alert-success',timeout: 2000
     });
     this.router.navigate(['/login']);
     return false;
@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
     isIn = false;   // store state
     toggleState() { // click handler
         let bool = this.isIn;
-        this.isIn = bool === false ? true : false; 
+        this.isIn = bool === false ? true : false;
     }
 
 }

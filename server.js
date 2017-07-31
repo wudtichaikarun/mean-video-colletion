@@ -28,11 +28,13 @@ function setupRoutes(app){
 export function setup () {
     const db = mongoose();
     const port = process.env.PORT || 8080;
+    //const port = 3000;
     const app = express()
 
    
 
     app.use(express.static(path.join(__dirname, 'public')))
+    // use auth instead of passport
     app.use(auth)
     app.use(bodyParsr.urlencoded({extended: true}))
     app.use(bodyParsr.json())

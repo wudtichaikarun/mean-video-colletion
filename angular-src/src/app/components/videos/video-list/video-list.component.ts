@@ -10,6 +10,7 @@ import { Video } from '../../../shared/video';
   outputs: ['SelectVideo']
 })
 export class VideoListComponent implements OnInit {
+  selectVideosCategory: String = "Select category";
   showDropdown: boolean = false;
   public SelectVideo = new EventEmitter();
   constructor() { }
@@ -23,8 +24,9 @@ onSelect(vid: Video ){
 
 
 
-toggleDropdown():void { 
+toggleDropdown(title) {
    this.showDropdown = !this.showDropdown;
+   this.selectVideosCategory = title;
 }
 
 }

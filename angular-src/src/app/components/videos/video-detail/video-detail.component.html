@@ -7,7 +7,7 @@
   <form class="videoDetailForm">
     <!-- ######################## Always show  #########################-->
     <!--title content-->
-    <h3 class="fontDetail">{{video.title}} </h3> 
+    <h3 class="fontDetail">{{video.title}} </h3>
     <!--url content-->
     <h6 class="fontDetail">url: {{video.url}} </h6>
     <!--description content-->
@@ -40,20 +40,20 @@
   <!--edite icon btn-->
   <div class="editeVideoConfig">
     <div class="editVideo" (click)="btnEditClick()">
-      <div class="iconEdite">Edite</div>
+      <div class="iconEdite">Edit</div>
     </div>
     <!--delete icon btn-->
-    <div 
+    <div
         class="deleteVideo"
-        mwlConfirm 
-        [title]="title" 
-        [message]="message" 
-        placement="top" 
-        (confirm)="ConfirmClicked()" 
-        (cancel)="cancelClicked = true" 
+        mwlConfirm
+        [title]="title"
+        [message]="message"
+        placement="top"
+        (confirm)="ConfirmClicked()"
+        (cancel)="cancelClicked = true"
         [(isOpen)]="isOpen" >
       <div class="iconDelete">delete</div>
     </div>
-    
+
   </div>
 </div>
