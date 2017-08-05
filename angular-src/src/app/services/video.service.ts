@@ -13,8 +13,8 @@ export class VideoService {
   constructor(private _http: AuthHttpService) { }
 
   // READ video
-  getVideos(page = 1, categoryId = 0): Observable<VideosResponse> {
-    const options: RequestOptionsArgs = { params: {page, categoryId}};
+  getVideos(page = 1, categorieID = 0): Observable<VideosResponse> {
+    const options: RequestOptionsArgs = { params: {page, categorieID}};
 
     return this._http.get('/api/videos', options)
     .map((res: Response) => res.json())
@@ -30,7 +30,7 @@ export class VideoService {
     const options:RequestOptionsArgs = {
       headers: new Headers({'Content-Type': 'application/json'})
     }
-    return this._http.get('/api/categorys',options)
+    return this._http.get('/api/categories',options)
     .map((response: Response) => response.json());
   }
 

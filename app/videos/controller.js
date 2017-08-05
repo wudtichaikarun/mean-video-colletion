@@ -24,8 +24,8 @@ const VideosController = {
     getAll(req, res){
         //console.log(req.user)
         if(ArticlesPolicy.for('get', req.user)){
-            const { page, categoryId } = req.query;
-                if(categoryId == 0){
+            const { page, categorieID } = req.query;
+                if(categorieID == 0){
                     Video.paginate({authorId:req.user._id}, { page: +page, limit: 9 },function(err, videos){
                         if(err){
                             console.log("err paginate")
@@ -35,7 +35,7 @@ const VideosController = {
                     })  
                 }else{
                     Video.paginate(
-                        {authorId:req.user._id,categoryId: +categoryId },
+                        {authorId:req.user._id,categoryId: +categorieID },
                          { page: +page, limit: 9 },
                             function(err, videos){
                                 if(err){

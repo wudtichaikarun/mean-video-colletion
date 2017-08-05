@@ -1112,7 +1112,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/components/videos/video-list/video-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<select class=\"form-control\" id=\"select\" onchange=\"location = this.value\">\n  <option>----------Select By Category--------</option>\n  <option\n    *ngFor=\"let category of CategoryId\"\n    value=\"{{ category.id }}\"\n    [routerLink]=\"['/videos']\"\n    [queryParams]=\"{ categoryId: category.id }\">\n    {{ category.title }}\n  </option>\n</select>-->\n<div class=\"add-button\" dropdown>\n  <div (click)=\"toggleDropdown()\" class=\"dropDown\">{{ selectVideosCategory }} <span class=\"caret\"></span></div>\n  <ul class=\"dropdown\" *ngIf=\"showDropdown\">\n    <a *ngFor=\"let category of CategoryId\"\n      (click)=\"toggleDropdown(category.title)\"\n      [routerLink]=\"['/videos']\"\n      [queryParams]=\"{ categoryId: category.id }\" >\n      <li class=\"li_DropDownCategory\"><i class=\"fa fa-check-square-o fa-2\"></i>{{ category.title }} </li>\n    </a>\n  </ul>\n</div>\n\n<!--Titl list name-->\n<div class=\"list-group\">\n  <a class=\"list-group-item\"\n    (click)=\"onSelect(video)\"\n    *ngFor=\"let video of videos\">\n    {{ video.title }}\n  </a>\n</div>\n\n<!--Pagination-->\n<div class=\"btn-toolbar\">\n  <div class=\"btn-group\">\n    <a\n      *ngFor= \"let page of totalPages\"\n      [ngClass]=\"{'page-item': true, 'active': page === currentPage }\"\n      class=\"btn btn-default\"\n      [routerLink]=\"['/videos']\"\n      [queryParams]=\"{ page: page }\" >\n      {{ page }}\n    </a>\n\n  </div>\n</div>\n"
+module.exports = "<!--<select class=\"form-control\" id=\"select\" onchange=\"location = this.value\">\n  <option>----------Select By Category--------</option>\n  <option\n    *ngFor=\"let category of CategoryId\"\n    value=\"{{ category.id }}\"\n    [routerLink]=\"['/videos']\"\n    [queryParams]=\"{ categoryId: category.id }\">\n    {{ category.title }}\n  </option>\n</select>-->\n\n<!-- Categories list -->\n<div class=\"add-button\" dropdown>\n  <div (click)=\"toggleDropdown()\" class=\"dropDown\">{{ selectVideosCategory }} <span class=\"caret\"></span></div>\n  <ul class=\"dropdown\" *ngIf=\"showDropdown\">\n    <a *ngFor=\"let category of CategoryId\"\n      (click)=\"toggleDropdown(category.title)\"\n      [routerLink]=\"['/videos']\"\n      [queryParams]=\"{ categoryId: category.id }\" >\n      <li class=\"li_DropDownCategory\"><i class=\"fa fa-check-square-o fa-2\"></i>{{ category.title }} </li>\n    </a>\n  </ul>\n</div>\n\n<!--Titl list name-->\n<div class=\"list-group\">\n  <a class=\"list-group-item\"\n    (click)=\"onSelect(video)\"\n    *ngFor=\"let video of videos\">\n    {{ video.title }}\n  </a>\n</div>\n\n<!--Pagination-->\n<div class=\"btn-toolbar\">\n  <div class=\"btn-group\">\n    <a\n      *ngFor= \"let page of totalPages\"\n      [ngClass]=\"{'page-item': true, 'active': page === currentPage }\"\n      class=\"btn btn-default\"\n      [routerLink]=\"['/videos']\"\n      [queryParams]=\"{ page: page }\" >\n      {{ page }}\n    </a>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1386,10 +1386,10 @@ var VideoService = (function () {
         this._http = _http;
     }
     // READ video
-    VideoService.prototype.getVideos = function (page, categoryId) {
+    VideoService.prototype.getVideos = function (page, categorieID) {
         if (page === void 0) { page = 1; }
-        if (categoryId === void 0) { categoryId = 0; }
-        var options = { params: { page: page, categoryId: categoryId } };
+        if (categorieID === void 0) { categorieID = 0; }
+        var options = { params: { page: page, categorieID: categorieID } };
         return this._http.get('/api/videos', options)
             .map(function (res) { return res.json(); });
         // .map(({ docs, page, pages }) => ({
@@ -1403,7 +1403,7 @@ var VideoService = (function () {
         var options = {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' })
         };
-        return this._http.get('/api/categorys', options)
+        return this._http.get('/api/categories', options)
             .map(function (response) { return response.json(); });
     };
     // CREATE video
