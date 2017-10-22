@@ -51,7 +51,7 @@ const UsersController = {
     authen(req, res){
         const username = req.body.username;
         const password = req.body.password;
-        //console.log(`username is: ${username} && password is: ${password} `)
+        console.log(`username is: ${username} && password is: ${password} `)
 
         User.getUserByUsername(username, (err, user) => {
             if(err) return (err);
@@ -66,7 +66,7 @@ const UsersController = {
                         //.header('Authorization', `JWT ${User.genToken(user)}`)
                         .status(201)
                         .json({ success: true, msg: 'Logeedin success', token:token});
-                        //console.log(`User name and password is ${isMatch}`)
+                        console.log(`User name and password is ${isMatch}`)
                 } else{
                     res
                         //.status(401)

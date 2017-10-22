@@ -48,7 +48,7 @@ module.exports.getUserById = function(id){
 //     User.findById(id, callback)
 // }
 
-module.exports.addUser = function(newUser){
+module.exports.addUser = function (newUser)  {
     return new Promise((resolve, reject) => {
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -68,11 +68,11 @@ module.exports.addUser = function(newUser){
 
 //-------------- METHOD FOR (LOGIN) && (REGISTER) ------------------------//
 module.exports.genToken = function (user){
-    return jwt.sign({ sub: user._id}, config.secret, { expiresIn: '1h' })
+    return jwt.sign({ sub: user._id}, config.secret, { expiresIn: '100h' })
 }
 
 //-------------- METHOD FOR AUTHENTICATION (LOGIN)------------------------//
-module.exports.getUserByUsername = function(username, callback){
+module.exports.getUserByUsername = function (username, callback) {
     const query = {username: username}
     User.findOne(query, callback);
 }

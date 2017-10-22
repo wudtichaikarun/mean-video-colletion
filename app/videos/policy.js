@@ -3,6 +3,7 @@ import Policy from '../policy'
 const articlePolicy = {
     ...Policy,
     get(user){
+        console.log(!!user)
         return !!user
     },
 

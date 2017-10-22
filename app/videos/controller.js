@@ -22,7 +22,7 @@ const VideosController = {
     },
     // GET all videos
     getAll(req, res){
-        //console.log(req.user)
+        console.log(`user =${req.user.username}`)
         if(ArticlesPolicy.for('get', req.user)){
             const { page, categorieID } = req.query;
                 if(categorieID == 0){

@@ -17,7 +17,7 @@ export default function(req, res, next){
         .then((msg)=>{
             var user = msg
             user = user[0]
-            //console.log(msg)
+            //console.log(user)
             req.user = user
             next()
         })
