@@ -10,7 +10,7 @@ import {Positioning} from 'angular2-bootstrap-confirm/position';
   styleUrls: ['./video-detail.component.css'],
   inputs: ['video'],
   outputs: ['updateVideoEvent', 'deleteVideoEvent'],
-  providers: [ 
+  providers: [
     ConfirmOptions,
     {provide: Position, useClass: Positioning}
   ]

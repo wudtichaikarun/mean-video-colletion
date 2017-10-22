@@ -1,47 +1,49 @@
 import { Injectable } from '@angular/core';
-import { RequestOptionsArgs, Response ,Headers } from '@angular/http';
+import { RequestOptionsArgs, Response, Headers } from '@angular/http';
 import { AuthHttpService } from '../shared/auth-http.service'
-import { Observable, BehaviorSubject} from 'rxjs';
+// tslint:disable-next-line:import-blacklist
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 export class AuthService {
-  //-----------------_> New HTTP- SERVICE START ---------------------------
-  //loggedIn = new Subject<boolean>();
+  // -----------------_> New HTTP- SERVICE START ---------------------------
+  // loggedIn = new Subject<boolean>();
    authToken: any;
 
   constructor(
     private http: AuthHttpService,
     private router: Router
-  ){}
+  ) {}
 
   // Login
-  logIn(user){
+  logIn (user) {
     const options: RequestOptionsArgs = {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
     return this.http
-      .post('/api/users/login',user, options)
+      .post('/api/users/login', user, options)
       .map(res => res.json())
   }
 
-  private setTokenFromResponse(observable: Observable<Response>){
+  private setTokenFromResponse (observable: Observable<Response>) {
     observable
       .map(({ headers }: Response) => headers.get('Authorization'))
       .map((token: string) => token.match(/JWT (.*)/)[1])
       .subscribe((token: string) => {
-      this.storeToken(token);
+      this.storeToken('access-token', token);
       })
   }
     // Set token to localstorage
-  storeToken(token: string){
-       localStorage.setItem('access-token', token)
+  storeToken(tokenKey: string, token: string) {
+       // localStorage.setItem('access-token', token)
+       localStorage.setItem(tokenKey, token)
   }
 
   // Register
-  register(user){
+  register (user) {
     const options: RequestOptionsArgs = {
       headers: new Headers({ 'Content-Type': 'application/json'})
     };
@@ -50,39 +52,39 @@ export class AuthService {
     // this.setTokenFromResponse(response);
     // this.router.navigate(['/'])
       return this.http
-      .post('/api/users/register',user, options)
+      .post('/api/users/register', user, options)
       .map(res => res.json())
 
   }
 
-  logout(){
+  logout () {
     localStorage.clear()
   }
-  registerUser(user){
+  registerUser(user) {
 
   }
 
-  getProfile(){
+  getProfile () {
     return this.http.get('/api/users/profile')
     .map(res => res.json());
   }
 
 
-  loggedIn() {
+  loggedIn () {
   return  tokenNotExpired('access-token');
   }
 
 }
-//---------------_> New HTTP- SERVICE START----------------------------------
+// ---------------_> New HTTP- SERVICE START----------------------------------
 
 
 
-//export class AuthService {
-  //authToken: any;
-  //user: any;
+// export class AuthService {
+  // authToken: any;
+  // user: any;
   // constructor(private http: Http ) {}
 
-  //--------------_>old http start-----------------------------------------
+  // --------------_>old http start-----------------------------------------
 
 //   // Register Sent data to routes/users.js method post('/register', ....) like postMan
 //   registerUser(user){
@@ -135,7 +137,7 @@ export class AuthService {
 //     this.user = null;
 //     localStorage.clear();
 //   }
-//}
-//--------------_> Old HTTP- SERVICE- END -------------------------------------
+// }
+// --------------_> Old HTTP- SERVICE- END -------------------------------------
 
 

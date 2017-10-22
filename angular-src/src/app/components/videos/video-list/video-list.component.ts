@@ -18,15 +18,13 @@ export class VideoListComponent implements OnInit {
   ngOnInit() {
   }
 
-onSelect(vid: Video ){
-  this.SelectVideo.emit(vid);
-}
+  onSelect(vid: Video ){
+    this.SelectVideo.emit(vid);
+  }
 
-
-
-toggleDropdown(title) {
-   this.showDropdown = !this.showDropdown;
-   this.selectVideosCategory = title;
-}
+  toggleDropdown(title) {
+    this.showDropdown = !this.showDropdown;
+    this.selectVideosCategory = title;
+  }
 
 }

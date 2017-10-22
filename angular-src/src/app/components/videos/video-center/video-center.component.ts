@@ -26,11 +26,11 @@ export class VideoCenterComponent implements OnInit {
   CategoryId: Array<categoryId>;
   currentPage: String;
   totalPages: Number[];
-  
+
   selectedVideo: Video;
-  
+
   private hidenewVideo: boolean = true;
-  
+
   formErrors ={
     // name: '',
     title: '',
@@ -91,7 +91,7 @@ export class VideoCenterComponent implements OnInit {
         this.totalPages = Array.from({ length: +pages }, (_, index) => index +1)
         //console.log(this.videos)
         //console.log(this.currentPage)
-        //console.log(this.totalPages)
+        console.log("tottalPage = "+this.totalPages)
       })
       // .subscribe(
       //   ({ docs, page, pages }) => {

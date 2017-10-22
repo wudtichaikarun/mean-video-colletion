@@ -16,7 +16,7 @@ export class AuthHttpService extends Http {
     const token = localStorage.getItem('access-token');
     options.headers.set('Authorization', `JWT ${token}`);
 
-    super(backend,options)
+    super(backend, options)
   }
 
   request(
@@ -25,8 +25,9 @@ export class AuthHttpService extends Http {
   ): Observable<Response> {
     const token = localStorage.getItem('access-token')
 
-    if(typeof url === 'string'){
-      if(!options) options = { headers: new Headers()};
+    if (typeof url === 'string') {
+      // tslint:disable-next-line:curly
+      if (!options) options = { headers: new Headers() };
       options.headers.set('Authorization', `JWT ${token}`);
     }else {
       url.headers.set('Authorization', `JWT ${token}`);
