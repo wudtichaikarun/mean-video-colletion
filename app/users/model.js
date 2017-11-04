@@ -1,3 +1,4 @@
+// 5. check mongoose syntax again
 const config = require('../../config/config')
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')

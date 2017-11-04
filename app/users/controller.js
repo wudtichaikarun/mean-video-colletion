@@ -1,3 +1,4 @@
+// 4. change syntax call controller
 const User = require('./model')
 module.exports.getProfile = function (req, res) {
   res.json({user: req.user})

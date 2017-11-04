@@ -1,3 +1,4 @@
+// change syntax
 const Categories = require('./model')
 
 module.exports.getAll = function (req, res) {

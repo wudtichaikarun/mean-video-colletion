@@ -1,10 +1,11 @@
+// 2. check this file
 const express = require('express')
 const path = require('path')
 const fs = require('fs')
 const bodyParsr = require('body-parser')
 const auth = require('./middleware/auth')
 const db = require('./config/mongoose')
-// for call folder app
+
 function setupRoutes (app) {
   const APP_DIR = `${__dirname}/app`
   const features = fs.readdirSync(APP_DIR).filter(
@@ -20,8 +21,8 @@ function setupRoutes (app) {
 }
 
 module.exports.startServer = function () {
+  // db.connect use for connect db whatever you want see in config/mongoose.js
   db.connectDb()
-  // const port = process.env.PORT || 8080;
   const port = 8080
   const app = express()
 

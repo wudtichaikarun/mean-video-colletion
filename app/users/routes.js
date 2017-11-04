@@ -1,3 +1,4 @@
+// 3. change routes syntax
 const controller = require('./controller')
 module.exports.setup = function (router) {
   router
