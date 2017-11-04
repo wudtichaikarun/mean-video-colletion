@@ -1,9 +1,9 @@
 //mport { connectDB } from '../model'
-const config = require('../../config/config');
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-import jwt from 'jsonwebtoken'
-const Schema = mongoose.Schema;
+const config = require('../../config/config')
+const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const Schema = mongoose.Schema
 
 //connectDB();
 // User Screma

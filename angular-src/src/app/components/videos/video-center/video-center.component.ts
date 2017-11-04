@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
-import { Subject, BehaviorSubject } from 'rxjs'
-//import { videoPaginate } from '../../../shared/videosPaginate';
-import { FormGroup,FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+// tslint:disable-next-line:import-blacklist
+import { Subject, BehaviorSubject } from 'rxjs';
+// import { videoPaginate } from '../../../shared/videosPaginate';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Video } from '../../../shared/video';
 import { categoryId } from '../../../shared/categoryId'
 import { VideoService } from '../../../services/video.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { VideosResponse } from'../../../shared/videos-response'
+import { VideosResponse } from '../../../shared/videos-response';
 
 
 import 'rxjs/add/operator/debounceTime';
@@ -29,9 +30,9 @@ export class VideoCenterComponent implements OnInit {
 
   selectedVideo: Video;
 
-  private hidenewVideo: boolean = true;
+  private hidenewVideo = true;
 
-  formErrors ={
+  formErrors = {
     // name: '',
     title: '',
     url: ''
@@ -46,7 +47,7 @@ export class VideoCenterComponent implements OnInit {
       minlength: 'Username required 2 character.',
       maxlength: 'Username required 65 character.'
     },
-    url:{
+    url: {
       required: 'Email is required.',
       pattern: 'Invalid email pattern'
     }
@@ -61,7 +62,7 @@ export class VideoCenterComponent implements OnInit {
   constructor(
     private builder: FormBuilder,
     private _videoService: VideoService,
-    private route : ActivatedRoute,
+    private route: ActivatedRoute,
     private router: Router
   ) {}
 
@@ -77,21 +78,22 @@ export class VideoCenterComponent implements OnInit {
     //   return false;
      });
   }
-  private subscribeToParams(){
+  private subscribeToParams() {
     this.route.queryParams.subscribe(
       ({ page, categoryId }) => this.loadPage(page, categoryId)
     )
   }
-  private loadPage(page = 1, categoryId){
+  private loadPage (page = 1, categoryId) {
     this._videoService
       .getVideos(page , categoryId)
-      .subscribe(({ docs, page, pages}:VideosResponse) => {
+      // tslint:disable-next-line:no-shadowed-variable
+      .subscribe(({ docs, page, pages}: VideosResponse) => {
         this.videos = docs;
         this.currentPage = page;
-        this.totalPages = Array.from({ length: +pages }, (_, index) => index +1)
-        //console.log(this.videos)
-        //console.log(this.currentPage)
-        console.log("tottalPage = "+this.totalPages)
+        this.totalPages = Array.from({ length: +pages }, (_, index) => index + 1)
+        // console.log(this.videos)
+        // console.log(this.currentPage)
+        console.log('totta lPage = ' + this.totalPages)
       })
       // .subscribe(
       //   ({ docs, page, pages }) => {
@@ -120,19 +122,22 @@ export class VideoCenterComponent implements OnInit {
     });
     this.form
     .valueChanges
-    //.debounceTime(400)
-    //.distinctUntilChange()
+    // .debounceTime(400)
+    // .distinctUntilChange()
     .subscribe(()=> this.onValueChanged())
   }
 
-    onValueChanged(){
-    if(!this.form) return;
-    for(const field in this.formErrors){
+    onValueChanged () {
+    // tslint:disable-next-line:curly
+    if (!this.form) return;
+    // tslint:disable-next-line:forin
+    for (const field in this.formErrors) {
       this.formErrors[field] = '';
-      const control = this.form.get(field);
-      if(control && control.dirty && !control.valid){
+      const control = this.form.get (field);
+      if (control && control.dirty && !control.valid) {
         const messages = this.validatetionMessages[field];
-        for(const key in control.errors){
+        // tslint:disable-next-line:forin
+        for (const key in control.errors) {
           this.formErrors[field] += messages[key] + '';
         }
       }
@@ -143,12 +148,12 @@ export class VideoCenterComponent implements OnInit {
 onSelectVideo(video: any){
   this.selectedVideo = video;
   this.hidenewVideo = true;
-  //console.log(this.selectedVideo);
+  // console.log(this.selectedVideo);
 }
 
 // Create new video
 onSubmitAddVideo(even){
-  //console.log(this.form.value)
+  // console.log(this.form.value)
   this._videoService.addVideo(this.form.value)
   .subscribe(resNewVideo => {
     this.videos.push(resNewVideo);
@@ -163,13 +168,13 @@ onUpdateVideoEvent(video: any){
   .subscribe(resUpdateVideo => {
     video = resUpdateVideo;
     this.selectedVideo = null
-    //this.selectedVideo = resUpdateVideo;
+    // this.selectedVideo = resUpdateVideo;
   });
 }
 
 // // Delete
 onDeleteVideoEvent(video: any){
-  let videoArray = this.videos;
+  const videoArray = this.videos;
   this._videoService.deleteVideo(video)
   .subscribe(resDeletedVideo => {
     for (let i=0; i < videoArray.length; i++)
@@ -183,7 +188,7 @@ onDeleteVideoEvent(video: any){
   this.selectedVideo = null;
 }
 
-newVideo(){
+newVideo () {
   this.hidenewVideo = false;
 }
 

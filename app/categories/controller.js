@@ -1,16 +1,26 @@
-import Categories from './model'
-const mongoose = require('mongoose');
+const Categories = require('./model')
 
-const CategoriesController = {
-    getAll(req, res){
-        Categories.find()
-            .exec((err, categorys) =>{ 
-                if(err){
-                    console.log("error !",err)
-                }else{
-                    res.json(categorys); 
-                }
-            })
+module.exports.getAll = function (req, res) {
+  Categories.find()
+  .exec((err, categorys) => {
+    if (err) {
+      console.log('error !', err)
+    } else {
+      res.json(categorys)
     }
+  })
 }
-export default CategoriesController
+
+/* const CategoriesController = {
+  getAll (req, res) {
+    Categories.find()
+    .exec((err, categorys) => {
+      if (err) {
+        console.log('error !', err)
+      } else {
+        res.json(categorys)
+      }
+    })
+  }
+}
+export default CategoriesController */

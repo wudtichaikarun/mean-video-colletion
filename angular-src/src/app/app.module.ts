@@ -12,8 +12,6 @@ import { SafePipe } from './shared/safe.pipe';
 import { AuthHttpService } from './shared/auth-http.service'
 import { VideoService } from './services/video.service'
 
-
-
 // Component
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';

@@ -1,4 +1,7 @@
-import controller from './controller';
-export function setup(router) {
-    router .get('/', controller.getAll)
+const controller = require('./controller')
+// const setup = module.exports = function (router) {
+//  router.get('/', controller.getAll)
+// }
+module.exports.setup = function (router) {
+  router.get('/', controller.getAll)
 }

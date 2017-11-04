@@ -1,2 +1,2 @@
-import { setup } from './server';
-setup();
+const startServer = require('./server')
+startServer.startServer()
